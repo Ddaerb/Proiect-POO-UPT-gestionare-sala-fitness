@@ -1,17 +1,22 @@
+using System;
+
 namespace WinFormsApp1;
 
 public class Antrenor
 {
-    public string NumeComplet { get; private set; }
-    public string Specializare { get; private set; }
-    public int NumarMaximClienti { get; private set; }
-    public (TimeSpan OraInceput, TimeSpan OraSfarsit) OrarePrestabilit { get; private set; }
+    public string NumeComplet { get; set; }
+    public string Specializare { get; set; }
+    public int NumarMaximClienti { get; set; }
+    public (TimeSpan OraInceput, TimeSpan OraSfarsit) OrarPrestabilit { get; set; }
 
     public Antrenor(string numeComplet, string specializare, int numarMaximClienti, TimeSpan oraInceput, TimeSpan oraSfarsit)
     {
         NumeComplet = numeComplet;
         Specializare = specializare;
         NumarMaximClienti = numarMaximClienti;
-        OrarePrestabilit = (oraInceput, oraSfarsit);
+        OrarPrestabilit = (oraInceput, oraSfarsit);
     }
+
+    //Constructor fara parametrii pentru compatibilitate cu JSON
+    public Antrenor() { }
 }
