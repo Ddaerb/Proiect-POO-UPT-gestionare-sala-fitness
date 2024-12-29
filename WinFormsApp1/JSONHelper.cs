@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.IO;
 
-namespace ConsoleApp8;
+namespace WinFormsApp1;
 
 public static class JSONHelper
 {
