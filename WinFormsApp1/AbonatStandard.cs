@@ -9,6 +9,7 @@ public class AbonatStandard
     private string _tipAbonament;
     private int _pretAbonament;
     private int _taxaDepasireDurataProgramari;
+    private List<Programare> _istoricProgramari;
 
     public string NumeComplet
     {
@@ -61,6 +62,18 @@ public class AbonatStandard
     public virtual string TipAbonament => "standard";
     public virtual int PretAbonament => 100;
     public virtual int TaxaDepasireDurataProgramari => 5;
+
+    public List<Programare> IstoricProgramari
+    {
+        get
+        {
+            if (_istoricProgramari == null)
+            {
+                _istoricProgramari = new List<Programare>();
+            }
+            return _istoricProgramari;
+        }
+    }
 
     public AbonatStandard(string numeComplet, string cnp, string username, string password)
     {
