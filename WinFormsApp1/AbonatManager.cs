@@ -3,10 +3,10 @@ namespace WinFormsApp1;
 public class AbonatManager
 {
 	public const string standardFilePath = "AbonatiStandard.json"; // Locatia fisierului JSON
-	public List<AbonatStandard> AbonatiStandard { get; private set; }
+	public List<AbonatStandard> AbonatiStandard { get; private set; } = new List<AbonatStandard>();
 
 	public const string premiumFilePath = "AbonatiPremium.json";
-	public List<AbonatPremium> AbonatiPremium { get; private set; }
+	public List<AbonatPremium> AbonatiPremium { get; private set; } = new List<AbonatPremium>();
 
 
 	public AbonatManager()
@@ -123,14 +123,14 @@ public class AbonatManager
 	}
 
 	//Metoda pentru listarea tuturor abonatilor
-	public void ListeazaAbonati(List<AbonatStandard> AbonatiStd, List<AbonatPremium> AbonatiPrem)
+	public void ListeazaAbonati()
 	{
 		Console.WriteLine("Lista tuturor abonatilor: ");
-		foreach (var abonat in AbonatiStd)
+		foreach (var abonat in AbonatiStandard)
 		{
 			Console.WriteLine($"Nume: {abonat.NumeComplet}, CNP: {abonat.CNP}, Tip: {abonat.TipAbonament}, Pret: {abonat.PretAbonament}");
 		}
-		foreach (var abonat in AbonatiPrem)
+		foreach (var abonat in AbonatiPremium)
 		{
 			Console.WriteLine($"Nume: {abonat.NumeComplet}, CNP: {abonat.CNP}, Tip: {abonat.TipAbonament}, Pret: {abonat.PretAbonament}");
 		}
