@@ -17,8 +17,6 @@ public class Programare
         set { _antrenor = value; }
     }
 
-    //trebuie adaugata validare data (sa nu fie < data curenta + sa fie data valida)
-
     private DateTime _data;
 
     public DateTime Data
@@ -35,11 +33,20 @@ public class Programare
         set { _durataProgramataOre = value; }
     }
 
+    private string _statusProgramare;
+
+    public string StatusProgramare
+    {
+        get { return _statusProgramare; }
+        set { _statusProgramare = value; }
+    }
+
     public Programare(string abonatUsername, Antrenor antrenor, DateTime data, int durataProgramataOre)
     {
         AbonatUsername = abonatUsername;
         Antrenor = antrenor;
         Data = data;
         DurataProgramataOre = durataProgramataOre;
+        StatusProgramare = "Valida.";
     }
 }
