@@ -77,7 +77,7 @@ public class ProgramareManager
         }
     }
 
-    public void AnuleazaProgramare(string username, int index)
+    public bool AnuleazaProgramare(string username, int index)
     {
         var programariAbonat = ListaProgramari.Where(p => p.AbonatUsername == username).ToList();
         if (index >= 0 && index < programariAbonat.Count)
@@ -85,11 +85,20 @@ public class ProgramareManager
             var programareDeAnulat = programariAbonat[index];
             ListaProgramari.Remove(programareDeAnulat);
             ActualizeazaFisierJSON();
+            if ((programareDeAnulat.Data - DateTime.Now).TotalHours < 24)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
             Console.WriteLine("Index invalid pentru anulare programare.");
         }
+        return false;
     }
 
     public void ListeazaProgramariDupaNumeAntrenor()
