@@ -49,15 +49,38 @@ public class ProgramareManager
 
         return null; // Nu a fost gasit abonatul
     }
-
     private void ActualizeazaFisierJSON()
     {
         JSONHelper.SaveToFile(CaleFisier, ListaProgramari);
     }
 
-    public void AdaugaProgramare(Programare programare)
+    public void AdaugaProgramare(Programare programare, AbonatStandard abonatStandard)
     {
+        if (abonatStandard == null)
+        {
+            Console.WriteLine("Nu s-a gasit acest abonat.");
+            return;
+        }
+
+        if (programare.AbonatUsername != abonatStandard.Username)
+        {
+            Console.WriteLine("Abonatul specificat nu corespunde cu utilizatorul gasit.");
+            return;
+        }
+
+        if (ListaProgramari.Contains(programare))
+        {
+            Console.WriteLine("Aceasta programare exista deja in sistem.");
+            return;
+        }
+
         ListaProgramari.Add(programare);
+
+        if (!abonatStandard.IstoricProgramari.Contains(programare))
+        {
+            abonatStandard.IstoricProgramari.Add(programare);
+        }
+
         ActualizeazaFisierJSON();
     }
 
