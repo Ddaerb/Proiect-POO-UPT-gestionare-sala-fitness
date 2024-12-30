@@ -14,8 +14,4 @@ public class SalaFitness
         ProgramFunctionare = (oraInceput, oraSfarsit);
     }
 
-    //public void AdaugaAntrenor(Antrenor antrenor)
-    //{
-    //    ListaAntrenoriDisponibili.Add(antrenor);
-    //}
 }

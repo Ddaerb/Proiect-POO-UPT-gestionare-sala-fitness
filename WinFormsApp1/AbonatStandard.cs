@@ -73,8 +73,11 @@ public class AbonatStandard
             }
             return _istoricProgramari;
         }
+        set
+        {
+            _istoricProgramari = value;
+        }
     }
-
     public AbonatStandard(string numeComplet, string cnp, string username, string password)
     {
         NumeComplet = numeComplet;
@@ -82,6 +85,8 @@ public class AbonatStandard
         Username = username;
         Password = password;
     }
+
+
 
 
 }
