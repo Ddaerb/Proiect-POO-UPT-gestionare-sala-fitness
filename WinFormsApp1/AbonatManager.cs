@@ -51,17 +51,25 @@ public class AbonatManager
 	}
 
 	// Adauga un nou abonat standard si actualizeaza fisierul JSON
-	public void AdaugaAbonatStandard(AbonatStandard abonatStd)
+	public void AdaugaAbonatStandard(AbonatStandard abonatStd, string username)
 	{
-		AbonatiStandard.Add(abonatStd);
-		JSONHelper.SaveToFile(standardFilePath, AbonatiStandard);
+		var abonatStandard = AbonatiStandard.FirstOrDefault(a => a.Username == username);
+		if (abonatStandard == null)
+		{
+			AbonatiStandard.Add(abonatStd);
+			JSONHelper.SaveToFile(standardFilePath, AbonatiStandard);
+		}
 	}
 
 	// Adauga un nou abonat premium si actualizeaza fisierul JSON
-	public void AdaugaAbonatPremium(AbonatPremium abonatPrem)
+	public void AdaugaAbonatPremium(AbonatPremium abonatPrem, string username)
 	{
-		AbonatiPremium.Add(abonatPrem);
-		JSONHelper.SaveToFile(premiumFilePath, AbonatiPremium);
+		var abonatPremium = AbonatiPremium.FirstOrDefault(a => a.Username == username);
+		if (abonatPremium == null)
+		{
+			AbonatiPremium.Add(abonatPrem);
+			JSONHelper.SaveToFile(premiumFilePath, AbonatiPremium);
+		}
 	}
 
 	// Metoda pentru retrogradarea unui abonat
@@ -169,8 +177,7 @@ public class AbonatManager
 			return;
 
 		}
-
-
 	}
+
 
 }
