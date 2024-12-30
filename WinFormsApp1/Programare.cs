@@ -2,11 +2,11 @@ namespace WinFormsApp1;
 
 public class Programare
 {
-    private AbonatStandard _abonat;
-    public AbonatStandard Abonat
+    private string _abonatUsername;
+    public string AbonatUsername
     {
-        get { return _abonat; }
-        set { _abonat = value; }
+        get { return _abonatUsername; }
+        set { _abonatUsername = value; }
     }
 
     private Antrenor _antrenor;
@@ -17,7 +17,7 @@ public class Programare
         set { _antrenor = value; }
     }
 
-    //trebuie adaugata validare data (sa nu fie > data curenta + sa fie data valida)
+    //trebuie adaugata validare data (sa nu fie < data curenta + sa fie data valida)
 
     private DateTime _data;
 
@@ -35,9 +35,9 @@ public class Programare
         set { _durataProgramataOre = value; }
     }
 
-    public Programare(AbonatStandard abonat, Antrenor antrenor, DateTime data, int durataProgramataOre)
+    public Programare(string abonatUsername, Antrenor antrenor, DateTime data, int durataProgramataOre)
     {
-        Abonat = abonat;
+        AbonatUsername = abonatUsername;
         Antrenor = antrenor;
         Data = data;
         DurataProgramataOre = durataProgramataOre;
