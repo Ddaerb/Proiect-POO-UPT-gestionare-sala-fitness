@@ -59,8 +59,19 @@ public class AbonatStandard
         }
     }
 
+    public int PretAbonament
+    {
+        get
+        {
+            return _pretAbonament;
+        }
+        set
+        {
+            _pretAbonament = value;
+        }
+    }
+
     public virtual string TipAbonament => "standard";
-    public virtual int PretAbonament => 100;
     public virtual int TaxaDepasireDurataProgramari => 5;
 
     public List<Programare> IstoricProgramari
@@ -84,6 +95,7 @@ public class AbonatStandard
         CNP = cnp;
         Username = username;
         Password = password;
+        PretAbonament = 100;
     }
 
 

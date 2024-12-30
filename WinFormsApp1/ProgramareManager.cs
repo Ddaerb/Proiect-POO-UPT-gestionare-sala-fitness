@@ -100,21 +100,29 @@ public class ProgramareManager
         }
     }
 
-    public bool AnuleazaProgramare(string username, int index)
+    public bool AnuleazaProgramare(string username, int index, AbonatStandard abonatStandard)
     {
         var programariAbonat = ListaProgramari.Where(p => p.AbonatUsername == username).ToList();
         if (index >= 0 && index < programariAbonat.Count)
         {
             var programareDeAnulat = programariAbonat[index];
-            ListaProgramari.Remove(programareDeAnulat);
-            ActualizeazaFisierJSON();
-            if ((programareDeAnulat.Data - DateTime.Now).TotalHours < 24)
+            if (programareDeAnulat.AbonatUsername != abonatStandard.Username)
             {
-                return true;
+                Console.WriteLine("Username-ul nu corespunde cu utilizatorul gasit.");
+                return false;
             }
             else
             {
-                return false;
+                ListaProgramari.Remove(programareDeAnulat);
+                ActualizeazaFisierJSON();
+                if ((programareDeAnulat.Data - DateTime.Now).TotalHours < 24)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
         else
