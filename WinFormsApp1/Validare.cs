@@ -31,13 +31,12 @@ public class Validare
         TimeSpan ora;
         while (!TimeSpan.TryParse(input, out ora))
         {
-            Console.WriteLine("Ora nu este intr-un format valid (HH:MM). Introdu din nou:");
+            Console.WriteLine("Ora nu este intr-un format valid (HH:MM:SS). Introdu din nou:");
             input = Console.ReadLine();
         }
         return ora;
     }
 
-    // trebuie modificata
     public (TimeSpan, TimeSpan) ValideazaInterval(string oraInceputInput, string oraSfarsitInput)
     {
         TimeSpan oraInceput, oraSfarsit;
