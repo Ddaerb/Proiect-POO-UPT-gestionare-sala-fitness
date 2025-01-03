@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace WinFormsApp1;
+namespace WinFormsApp2;
 
 public class ProgramareManager
 {

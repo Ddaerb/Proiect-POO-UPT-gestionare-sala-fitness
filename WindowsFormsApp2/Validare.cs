@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace WinFormsApp1;
+namespace WinFormsApp2;
 using System.Linq; //folosim metoda All din LINQ impreuna cu functia char.IsDigit pentru a verifica daca un string contine doar cifre
 
 public class Validare

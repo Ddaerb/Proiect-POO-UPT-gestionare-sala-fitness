@@ -1,6 +1,6 @@
 using System;
 
-namespace WinFormsApp1;
+namespace WinFormsApp2;
 
 public class Antrenor
 {

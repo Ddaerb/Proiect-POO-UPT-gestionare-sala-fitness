@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text.Json;
 using System.IO;
 
-namespace WinFormsApp1;
+namespace WinFormsApp2;
 
 public class AntrenorManager
 {
