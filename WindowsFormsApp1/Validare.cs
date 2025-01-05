@@ -1,6 +1,8 @@
-﻿using System.Data;
-
-
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data;
 using System.Linq; //folosim metoda All din LINQ impreuna cu functia char.IsDigit pentru a verifica daca un string contine doar cifre
 namespace WindowsFormsApp1
 {
