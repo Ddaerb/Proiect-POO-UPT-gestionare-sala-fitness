@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.Json;
 using System.IO;
+using System.Text.Json.Serialization;
 
 namespace WindowsFormsApp1
 {
@@ -20,11 +21,19 @@ namespace WindowsFormsApp1
 
         public static T LoadFromFile<T>(string filePath)
         {
-            if (!File.Exists(filePath))
-                return default;
+            try
+            {
+                if (!File.Exists(filePath))
+                    return default;
 
-            var json = File.ReadAllText(filePath);
-            return JsonSerializer.Deserialize<T>(json);
+                var json = File.ReadAllText(filePath);
+                return JsonSerializer.Deserialize<T>(json);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading from file: {ex.Message}");
+                return default;
+            }
         }
     }
 }
