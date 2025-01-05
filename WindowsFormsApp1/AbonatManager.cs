@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -68,6 +69,16 @@ namespace WindowsFormsApp1
                 AbonatiStandard.Add(abonatStd);
                 JSONHelper.SaveToFile(standardFilePath, AbonatiStandard);
             }
+            else
+            {
+                MessageBox.Show
+                (
+                "Aveti deja cont. Va rugam sa va autentificati.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
+            }
         }
 
         // Adauga un nou abonat premium si actualizeaza fisierul JSON
@@ -80,6 +91,16 @@ namespace WindowsFormsApp1
             {
                 AbonatiPremium.Add(abonatPrem);
                 JSONHelper.SaveToFile(premiumFilePath, AbonatiPremium);
+            }
+            else
+            {
+                MessageBox.Show
+                (
+                "Aveti deja cont. Va rugam sa va autentificati.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
             }
         }
 
@@ -104,7 +125,13 @@ namespace WindowsFormsApp1
             }
             else
             {
-                Console.WriteLine("Abonatul premium nu a fost gasit.");
+                MessageBox.Show
+                (
+                "Abonatul premium nu a fost gasit.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
             }
         }
 
@@ -129,7 +156,13 @@ namespace WindowsFormsApp1
             }
             else
             {
-                Console.WriteLine("Abonatul standard nu a fost gasit.");
+                MessageBox.Show
+                (
+                "Abonatul standard nu a fost gasit.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
             }
         }
 
@@ -157,12 +190,23 @@ namespace WindowsFormsApp1
                 if (abonatStandard.Password == parolaVeche)
                 {
                     abonatStandard.Password = parolaNoua;
-                    Console.WriteLine("Parola a fost schimbata cu succes");
+                    MessageBox.Show
+                    (
+                    "Parola a fost schimbata cu succes.",
+                    "Parola schimbata",
+                    MessageBoxButtons.OK
+                    );
                     JSONHelper.SaveToFile(standardFilePath, AbonatiStandard);
                 }
                 else
                 {
-                    Console.WriteLine("Parola nu poate fi schimbata");
+                    MessageBox.Show
+                    (
+                    "Parola nu poate fi schimbata.",
+                    "Eroare",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
                 }
                 return; // Iesim din metoda daca gasim abonatul
             }
@@ -175,12 +219,23 @@ namespace WindowsFormsApp1
                 if (abonatPremium.Password == parolaVeche)
                 {
                     abonatPremium.Password = parolaNoua;
-                    Console.WriteLine("Parola a fost schimbata cu succes");
+                    MessageBox.Show
+                    (
+                    "Parola a fost schimbata cu succes.",
+                    "Parola schimbata",
+                    MessageBoxButtons.OK
+                    );
                     JSONHelper.SaveToFile(premiumFilePath, AbonatiPremium);
                 }
                 else
                 {
-                    Console.WriteLine("Parola nu poate fi schimbata");
+                    MessageBox.Show
+                    (
+                    "Parola nu poate fi schimbata.",
+                    "Eroare",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
                 }
 
 
@@ -199,7 +254,14 @@ namespace WindowsFormsApp1
             var abonatPremium = AbonatiPremium.FirstOrDefault(a => a.Username == username);
             if (abonatStandard == null && abonatPremium == null)
             {
-                Console.WriteLine("Abonatul specificat nu a fost gasit.");
+                MessageBox.Show
+                (
+                "Abonatul specificat nu a fost gasit.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
+
                 return;
             }
 
