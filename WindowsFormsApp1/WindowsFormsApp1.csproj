@@ -100,6 +100,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="JSONHelper.cs" />
+    <Compile Include="Orar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Programare.cs" />
     <Compile Include="ProgramareManager.cs" />

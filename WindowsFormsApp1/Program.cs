@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         {
             ProgramareManager programaremanager = new ProgramareManager();
             AbonatManager abonatmanager = new AbonatManager();
+            AntrenorManager antrenormanager = new AntrenorManager();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
