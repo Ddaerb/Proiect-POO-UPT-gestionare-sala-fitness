@@ -1,0 +1,35 @@
+[
+  {
+    "TipAbonament": "premium",
+    "TaxaDepasireDurataProgramari": 2,
+    "NumeComplet": "George Gheorghe",
+    "CNP": "3234327890123",
+    "Username": "george.gheorghe",
+    "Password": "parola749",
+    "PretAbonament": 150,
+    "IstoricProgramari": [
+      {
+        "AbonatUsername": "george.gheorghe",
+        "Antrenor": {
+          "NumeComplet": "Diana Pop",
+          "Specializare": "Yoga",
+          "NumarMaximClienti": 8,
+          "OrarPrestabilit": {}
+        },
+        "Data": "2025-01-11T00:00:00",
+        "DurataProgramataOre": 5,
+        "StatusProgramare": "Valida."
+      }
+    ]
+  },
+  {
+    "TipAbonament": "premium",
+    "TaxaDepasireDurataProgramari": 2,
+    "NumeComplet": "Ana Popescu",
+    "CNP": "3234127890123",
+    "Username": "ana.popescu",
+    "Password": "parola2349",
+    "PretAbonament": 150,
+    "IstoricProgramari": []
+  }
+]

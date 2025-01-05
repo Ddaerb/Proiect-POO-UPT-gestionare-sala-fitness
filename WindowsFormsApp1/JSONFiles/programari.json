@@ -1,0 +1,86 @@
+[
+  {
+    "AbonatUsername": "ion.popescu",
+    "Antrenor": {
+      "NumeComplet": "Alex Stan",
+      "Specializare": "Fitness",
+      "NumarMaximClienti": 10,
+      "OrarPrestabilit": {}
+    },
+    "Data": "2025-01-06T04:29:53.580786+03:00",
+    "DurataProgramataOre": 2,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "maria.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Diana Pop",
+      "Specializare": "Yoga",
+      "NumarMaximClienti": 8,
+      "OrarPrestabilit": {}
+    },
+    "Data": "2025-01-07T04:29:53.5817851+03:00",
+    "DurataProgramataOre": 1,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "george.vasilescu",
+    "Antrenor": {
+      "NumeComplet": "Vlad Ionescu",
+      "Specializare": "Culturism",
+      "NumarMaximClienti": 12,
+      "OrarPrestabilit": {}
+    },
+    "Data": "2025-01-08T04:29:53.5817851+03:00",
+    "DurataProgramataOre": 3,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.popescu",
+    "Antrenor": {
+      "NumeComplet": "Diana Pop",
+      "Specializare": "Yoga",
+      "NumarMaximClienti": 8,
+      "OrarPrestabilit": {}
+    },
+    "Data": "2025-01-09T04:29:53.5817851+03:00",
+    "DurataProgramataOre": 1,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "maria.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Alex Stan",
+      "Specializare": "Fitness",
+      "NumarMaximClienti": 10,
+      "OrarPrestabilit": {}
+    },
+    "Data": "2025-01-10T04:29:53.5817851+03:00",
+    "DurataProgramataOre": 2,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "george.gheorghe",
+    "Antrenor": {
+      "NumeComplet": "Diana Pop",
+      "Specializare": "Yoga",
+      "NumarMaximClienti": 8,
+      "OrarPrestabilit": {}
+    },
+    "Data": "2025-01-11T00:00:00",
+    "DurataProgramataOre": 5,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "george.vasilescu",
+    "Antrenor": {
+      "NumeComplet": "Alex Stan",
+      "Specializare": "Fitness",
+      "NumarMaximClienti": 10,
+      "OrarPrestabilit": {}
+    },
+    "Data": "2025-01-08T00:00:00",
+    "DurataProgramataOre": 2,
+    "StatusProgramare": "Valida."
+  }
+]
