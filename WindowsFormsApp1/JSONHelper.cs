@@ -1,22 +1,23 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Text.Json;
 using System.IO;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace WindowsFormsApp1
 {
-
-
     public static class JSONHelper
     {
         public static void SaveToFile<T>(string filePath, T data)
         {
-            var json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(filePath, json);
+            try
+            {
+                var json = JsonConvert.SerializeObject(data, Formatting.Indented);
+                File.WriteAllText(filePath, json);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error saving to file: {ex.Message}");
+            }
         }
 
         public static T LoadFromFile<T>(string filePath)
@@ -27,7 +28,7 @@ namespace WindowsFormsApp1
                     return default;
 
                 var json = File.ReadAllText(filePath);
-                return JsonSerializer.Deserialize<T>(json);
+                return JsonConvert.DeserializeObject<T>(json);
             }
             catch (Exception ex)
             {
