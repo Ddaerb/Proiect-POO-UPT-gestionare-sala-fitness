@@ -39,7 +39,13 @@ namespace WindowsFormsApp1
         {
             if (ListaAntrenori.Count == 0)
             {
-                Console.WriteLine("Nu exista antrenori în lista.");
+                MessageBox.Show
+                (
+                "Nu exista antrenori în lista.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
                 return;
             }
 
@@ -65,7 +71,13 @@ namespace WindowsFormsApp1
                 }
             }
 
-            Console.WriteLine($"Nu a fost gasit niciun antrenor cu numele '{nume}' si specializarea '{specializare}'.");
+            MessageBox.Show
+            (
+            $"Nu a fost gasit niciun antrenor cu numele '{nume}' si specializarea '{specializare}'.",
+            "Eroare",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error
+            );
             return null;
         }
     }

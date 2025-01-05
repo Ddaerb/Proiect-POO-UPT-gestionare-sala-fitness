@@ -61,19 +61,37 @@ namespace WindowsFormsApp1
         {
             if (abonatStandard == null)
             {
-                Console.WriteLine("Nu s-a gasit acest abonat.");
+                MessageBox.Show
+                (
+                "Nu s-a gasit acest abonat.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
                 return;
             }
 
             if (programare.AbonatUsername != abonatStandard.Username)
             {
-                Console.WriteLine("Abonatul specificat nu corespunde cu utilizatorul gasit.");
+                MessageBox.Show
+                (
+                "Abonatul specificat nu corespunde cu utilizatorul gasit.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
                 return;
             }
 
             if (ListaProgramari.Contains(programare))
             {
-                Console.WriteLine("Aceasta programare exista deja in sistem.");
+                MessageBox.Show
+                (
+                "Aceasta programare exista deja in sistem.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
                 return;
             }
 
@@ -99,7 +117,13 @@ namespace WindowsFormsApp1
             }
             else
             {
-                Console.WriteLine("Index invalid pentru programare.");
+                MessageBox.Show
+                (
+                "Index invalid pentru programare.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
             }
         }
 
@@ -111,7 +135,13 @@ namespace WindowsFormsApp1
                 var programareDeAnulat = programariAbonat[index];
                 if (programareDeAnulat.AbonatUsername != abonatStandard.Username)
                 {
-                    Console.WriteLine("Username-ul nu corespunde cu utilizatorul gasit.");
+                    MessageBox.Show
+                    (
+                    "Username-ul nu corespunde cu utilizatorul gasit.",
+                    "Eroare",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                    );
                     return false;
                 }
                 else
@@ -130,7 +160,13 @@ namespace WindowsFormsApp1
             }
             else
             {
-                Console.WriteLine("Index invalid pentru anulare programare.");
+                MessageBox.Show
+                (
+                "Index invalid pentru anulare programare.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
             }
             return false;
         }

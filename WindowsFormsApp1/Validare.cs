@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
         {
             while (string.IsNullOrWhiteSpace(input) || !IsAlphabetic(input))
             {
-                MessageBox.Show("Numele trebuie să conțină doar caractere alfabetice.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Numele trebuie sa contina doar caractere alfabetice.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 input = PromptForInput("Introduceți un nume:");
             }
             return input;
@@ -24,8 +24,8 @@ namespace WindowsFormsApp1
             int rezultat;
             while (!int.TryParse(input, out rezultat) || rezultat < 1 || rezultat > 10)
             {
-                MessageBox.Show("Introduceți un număr între 1 și 10.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                input = PromptForInput("Introduceți numărul de clienți:");
+                MessageBox.Show("Introduceti un numar între 1 si 10.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                input = PromptForInput("Introduceti numarul de clienti:");
             }
             return rezultat;
         }
