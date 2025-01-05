@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
 
     public class AntrenorManager
     {
-        private const string CaleFisier = "antrenori.json";
+        private string CaleFisier => FilePaths.GetFilePath("antrenori.json");
         public List<Antrenor> ListaAntrenori { get; set; }
 
         public AntrenorManager()

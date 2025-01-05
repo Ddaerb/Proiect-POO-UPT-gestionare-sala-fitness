@@ -92,6 +92,7 @@
     <Compile Include="AbonatStandard.cs" />
     <Compile Include="Antrenor.cs" />
     <Compile Include="AntrenoriManager.cs" />
+    <Compile Include="FilePaths.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

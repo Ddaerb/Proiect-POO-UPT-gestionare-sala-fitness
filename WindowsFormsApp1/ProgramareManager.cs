@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
 
     public class ProgramareManager
     {
-        private const string CaleFisier = "programari.json";
+        private string CaleFisier => FilePaths.GetFilePath("programari.json");
         public List<Programare> ListaProgramari { get; set; }
         private AbonatManager abonatManager; // Manager pentru gestionarea abonatilor
 

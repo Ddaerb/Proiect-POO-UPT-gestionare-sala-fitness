@@ -9,10 +9,10 @@ namespace WindowsFormsApp1
 
     public class AbonatManager
     {
-        public const string standardFilePath = "AbonatiStandard.json"; // Locatia fisierului JSON
+        public string standardFilePath => FilePaths.GetFilePath("AbonatiStandard.json"); // Locatia fisierului JSON
         public List<AbonatStandard> AbonatiStandard { get; private set; } = new List<AbonatStandard>();
 
-        public const string premiumFilePath = "AbonatiPremium.json";
+        public string premiumFilePath => FilePaths.GetFilePath("AbonatiPremium.json");
         public List<AbonatPremium> AbonatiPremium { get; private set; } = new List<AbonatPremium>();
 
 
