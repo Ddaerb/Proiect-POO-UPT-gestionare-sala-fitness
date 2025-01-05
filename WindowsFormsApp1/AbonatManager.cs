@@ -279,6 +279,11 @@ namespace WindowsFormsApp1
 
         }
 
+        public void ActualizeazaAbonati()
+        {
+            JSONHelper.SaveToFile(standardFilePath, AbonatiStandard);
+            JSONHelper.SaveToFile(premiumFilePath, AbonatiPremium);
+        }
 
-    }
+        }
 }

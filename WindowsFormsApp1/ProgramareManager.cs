@@ -10,8 +10,10 @@ namespace WindowsFormsApp1
     public class ProgramareManager
     {
         private string CaleFisier => FilePaths.GetFilePath("programari.json");
+        private string CaleFisierAbonatiStandard => FilePaths.GetFilePath("AbonatiStandard.json");
+        private string CaleFisierAbonatiPremium => FilePaths.GetFilePath("Abonati.json");
         public List<Programare> ListaProgramari { get; set; }
-        private AbonatManager abonatManager; // Manager pentru gestionarea abonatilor
+        private AbonatManager abonatManager { get; set; } // Manager pentru gestionarea abonatilor
 
         public ProgramareManager()
         {
@@ -99,7 +101,30 @@ namespace WindowsFormsApp1
 
             if (!abonatStandard.IstoricProgramari.Contains(programare))
             {
-                abonatStandard.IstoricProgramari.Add(programare);
+                abonatManager = new AbonatManager();
+                if(abonatStandard.TipAbonament=="standard")
+                {
+                    foreach(var abonat in abonatManager.AbonatiStandard)
+                    {
+                        if(abonat.Username==abonatStandard.Username)
+                        {
+                            abonat.IstoricProgramari.Add (programare);
+                            abonatManager.ActualizeazaAbonati();
+                        }
+                    }
+                }
+                else if (abonatStandard.TipAbonament=="premium")
+                {
+                    foreach (var abonat in abonatManager.AbonatiPremium)
+                    {
+                        if (abonat.Username == abonatStandard.Username)
+                        {
+                            abonat.IstoricProgramari.Add(programare);
+                            abonatManager.ActualizeazaAbonati();
+                        }
+                    }
+                }
+                //abonatStandard.IstoricProgramari.Add(programare);
             }
 
             ActualizeazaFisierJSON();
