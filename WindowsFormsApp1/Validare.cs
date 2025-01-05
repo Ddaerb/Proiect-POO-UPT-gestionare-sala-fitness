@@ -13,8 +13,8 @@ namespace WindowsFormsApp1
         {
             while (string.IsNullOrWhiteSpace(input) || !IsAlphabetic(input))
             {
-                Console.WriteLine("Numele trebuie sa contina doar caractere alfabetice. Introdu din nou:");
-                input = Console.ReadLine();
+                MessageBox.Show("Numele trebuie să conțină doar caractere alfabetice.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                input = PromptForInput("Introduceți un nume:");
             }
             return input;
         }
@@ -24,8 +24,8 @@ namespace WindowsFormsApp1
             int rezultat;
             while (!int.TryParse(input, out rezultat) || rezultat < 1 || rezultat > 10)
             {
-                Console.WriteLine($"Introduceti un numar intre 1 si 10:");
-                input = Console.ReadLine();
+                MessageBox.Show("Introduceți un număr între 1 și 10.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                input = PromptForInput("Introduceți numărul de clienți:");
             }
             return rezultat;
         }
@@ -35,78 +35,44 @@ namespace WindowsFormsApp1
             TimeSpan ora;
             while (!TimeSpan.TryParse(input, out ora))
             {
-                Console.WriteLine("Ora nu este intr-un format valid (HH:MM:SS). Introdu din nou:");
-                input = Console.ReadLine();
+                MessageBox.Show("Ora nu este într-un format valid (HH:MM:SS).", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                input = PromptForInput("Introduceți ora (HH:MM:SS):");
             }
             return ora;
         }
 
         public (TimeSpan, TimeSpan) ValideazaInterval(string oraInceputInput, string oraSfarsitInput)
         {
-            TimeSpan oraInceput, oraSfarsit;
-
-            oraInceput = ValideazaOra(oraInceputInput);
-            oraSfarsit = ValideazaOra(oraSfarsitInput);
+            TimeSpan oraInceput = ValideazaOra(oraInceputInput);
+            TimeSpan oraSfarsit = ValideazaOra(oraSfarsitInput);
 
             while (oraInceput >= oraSfarsit)
             {
-                Console.WriteLine("Ora de inceput trebuie sa fie mai mica decat ora de sfarsit.");
-                oraInceput = ValideazaOra(Console.ReadLine());
-                oraSfarsit = ValideazaOra(Console.ReadLine());
+                MessageBox.Show("Ora de început trebuie să fie mai mică decât ora de sfârșit.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                oraInceput = ValideazaOra(PromptForInput("Introduceți ora de început:"));
+                oraSfarsit = ValideazaOra(PromptForInput("Introduceți ora de sfârșit:"));
             }
             return (oraInceput, oraSfarsit);
         }
 
-        private bool IsAlphabetic(string input)
-        {
-            foreach (char c in input)
-            {
-                if (!char.IsLetter(c) && !char.IsWhiteSpace(c))
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        //metoda pentru verificarea cnp-ului unui abonat
         public string VerificareCNP(string cnp)
         {
             while (!(cnp.Length == 13) || !(cnp.All(char.IsDigit)))
             {
-                Console.WriteLine("CNP-ul nu este intr-un format valid.");
-                cnp = Console.ReadLine();
+                MessageBox.Show("CNP-ul nu este într-un format valid.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cnp = PromptForInput("Introduceți un CNP:");
             }
             return cnp;
         }
 
-        //Metoda pentru validarea unei date (sa nu fie mai mica ca data curenta si sa fie o data valida)
         public DateTime ValidareData(string dataInput)
         {
             DateTime data;
 
-            if (!DateTime.TryParse(dataInput, out data))
+            while (!DateTime.TryParse(dataInput, out data) || data < DateTime.Now)
             {
-                Console.WriteLine("Formatul introdus nu este corect. Introduceti o data valida (ex. 'YYYY/MM/DD').");
-                return ValidareData(Console.ReadLine());
-            }
-
-            if (data.Day < 1 || data.Day > DateTime.DaysInMonth(data.Year, data.Month))
-            {
-                Console.WriteLine("Ziua introdusa nu este corecta.");
-                return ValidareData(Console.ReadLine());
-            }
-
-            if (data.Month < 1 || data.Month > 12)
-            {
-                Console.WriteLine("Luna introdusa nu este corecta.");
-                return ValidareData(Console.ReadLine());
-            }
-
-            if (data < DateTime.Now)
-            {
-                Console.WriteLine("Data nu trebuie sa fie in trecut.");
-                return ValidareData(Console.ReadLine());
+                MessageBox.Show("Data nu este într-un format valid sau este în trecut.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dataInput = PromptForInput("Introduceți o dată validă (YYYY/MM/DD):");
             }
 
             return data;
@@ -116,11 +82,37 @@ namespace WindowsFormsApp1
         {
             while (!IsAlphabetic(input))
             {
-                Console.WriteLine("Numele complet trebuie sa contina doar caractere alfabetice. Introdu din nou:");
-                input = Console.ReadLine();
+                MessageBox.Show("Numele complet trebuie să conțină doar caractere alfabetice.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                input = PromptForInput("Introduceți un nume complet:");
             }
             return input;
         }
 
+        private bool IsAlphabetic(string input)
+        {
+            return input.All(c => char.IsLetter(c) || char.IsWhiteSpace(c));
+        }
+
+        // Helper function to prompt for input
+        private string PromptForInput(string message)
+        {
+            using (var prompt = new Form())
+            {
+                prompt.Width = 400;
+                prompt.Height = 150;
+                prompt.Text = "Input";
+
+                Label textLabel = new Label() { Left = 10, Top = 20, Text = message, Width = 360 };
+                TextBox inputBox = new TextBox() { Left = 10, Top = 50, Width = 360 };
+                Button confirmation = new Button() { Text = "OK", Left = 150, Width = 100, Top = 80, DialogResult = DialogResult.OK };
+
+                prompt.Controls.Add(textLabel);
+                prompt.Controls.Add(inputBox);
+                prompt.Controls.Add(confirmation);
+                prompt.AcceptButton = confirmation;
+
+                return prompt.ShowDialog() == DialogResult.OK ? inputBox.Text : string.Empty;
+            }
+        }
     }
 }
