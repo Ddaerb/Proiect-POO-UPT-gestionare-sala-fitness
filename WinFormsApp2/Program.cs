@@ -68,7 +68,7 @@ namespace WinFormsApp2
             programaremanager.AdaugaProgramare(programare6);
             programaremanager.AdaugaProgramare(programare7);*/
 
-            programaremanager.AnuleazaProgramare("ion.popescu",0);
+            //programaremanager.AnuleazaProgramare("ion.popescu",0);
 
             Application.Run(form1);
         }
@@ -78,31 +78,36 @@ namespace WinFormsApp2
             return Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
-                   
+
                     services.AddSingleton<Form1>();
-                    services.AddSingleton<IMyService, MyService>(); 
+                    services.AddSingleton<IMyService, MyService>();
                 })
                 .ConfigureLogging(logging =>
                 {
                     logging.ClearProviders();
                     logging.AddConsole();
-                  
+
                 });
+
         }
     }
     public partial class Form1 : Form
     {
         private readonly IMyService _myService;
+        private readonly ILogger<Form1> _logger;
 
-        public Form1(IMyService myService)
+        public Form1(IMyService myService, ILogger<Form1> logger)
         {
             _myService = myService;
+            _logger = logger;
             InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            _logger.LogInformation("Form1 is loading...");
             _myService.DoSomething();
+            _logger.LogInformation("Service action completed in Form1.");
         }
     }
 }
