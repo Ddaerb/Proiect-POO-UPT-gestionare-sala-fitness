@@ -33,6 +33,22 @@
     "Username": "ana.popescu",
     "Password": "parola2349",
     "PretAbonament": 150,
-    "IstoricProgramari": []
+    "IstoricProgramari": [
+      {
+        "AbonatUsername": "ana.popescu",
+        "Antrenor": {
+          "NumeComplet": "Diana Pop",
+          "Specializare": "Yoga",
+          "NumarMaximClienti": 8,
+          "OrarPrestabilit": {
+            "OraInceput": "08:00:00",
+            "OraSfarsit": "16:00:00"
+          }
+        },
+        "Data": "2025-01-10T00:00:00",
+        "DurataProgramataOre": 4,
+        "StatusProgramare": "Valida."
+      }
+    ]
   }
 ]

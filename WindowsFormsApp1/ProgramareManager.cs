@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 
         public ProgramareManager(AbonatManager abonatManager)
         {
-            this.abonatManager = abonatManager; // Use the passed instance of AbonatManager
+            this.abonatManager = abonatManager;
 
             var incarcate = JSONHelper.LoadFromFile<List<Programare>>(CaleFisier);
             if (incarcate != null)
@@ -56,53 +56,44 @@ namespace WindowsFormsApp1
             JSONHelper.SaveToFile(CaleFisier, ListaProgramari);
         }
 
-        public void AdaugaProgramare(Programare programare, AbonatStandard abonatStandard)
+        public void AdaugaProgramare(Programare programare)
         {
-            if (abonatStandard == null)
-            {
-                MessageBox.Show
-                (
-                "Nu s-a gasit acest abonat.",
-                "Eroare",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-                );
-                return;
-            }
+            var abonatStandard = abonatManager.AbonatiStandard.FirstOrDefault(a => a.Username == programare.AbonatUsername);
+            var abonatPremium = abonatManager.AbonatiPremium.FirstOrDefault(a => a.Username == programare.AbonatUsername);
 
-            if (programare.AbonatUsername != abonatStandard.Username)
+            if (abonatStandard == null && abonatPremium == null)
             {
-                MessageBox.Show
-                (
-                "Abonatul specificat nu corespunde cu utilizatorul gasit.",
-                "Eroare",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-                );
+                MessageBox.Show(
+                    "Abonatul specificat nu a fost gasit.",
+                    "Eroare",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
             if (ListaProgramari.Contains(programare))
             {
-                MessageBox.Show
-                (
-                "Aceasta programare exista deja in sistem.",
-                "Eroare",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-                );
+                MessageBox.Show(
+                    "Aceasta programare exista deja in sistem.",
+                    "Eroare",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
             ListaProgramari.Add(programare);
+            ActualizeazaFisierJSON();
 
-            if (!abonatStandard.IstoricProgramari.Contains(programare))
+            if (abonatStandard != null)
             {
                 abonatStandard.IstoricProgramari.Add(programare);
                 abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
             }
-
-            ActualizeazaFisierJSON();
+            else if (abonatPremium != null)
+            {
+                abonatPremium.IstoricProgramari.Add(programare);
+                abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
+            }
         }
 
         public void ModificaProgramare(string username, int index, Programare programareNoua)
@@ -115,94 +106,76 @@ namespace WindowsFormsApp1
                 ListaProgramari.Add(programareNoua);
                 ActualizeazaFisierJSON();
 
-                var abonatStandard = GasesteAbonatDupaUsername(username);
+                var abonatStandard = abonatManager.AbonatiStandard.FirstOrDefault(a => a.Username == username);
+                var abonatPremium = abonatManager.AbonatiPremium.FirstOrDefault(a => a.Username == username);
+
                 if (abonatStandard != null)
                 {
-                    abonatStandard.IstoricProgramari.Remove(programareExistenta);
-                    //cauta obiectul in functie de anumite campuri : data, nume abonat, antrenor etc.
-                    //cauta obiectul in lista la care ii dai remove (din abonatstandard istoric programari)
+                    abonatStandard.IstoricProgramari.RemoveAll(p =>
+                        p.AbonatUsername == programareExistenta.AbonatUsername &&
+                        p.Data == programareExistenta.Data);
                     abonatStandard.IstoricProgramari.Add(programareNoua);
-                    abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
                 }
+                else if (abonatPremium != null)
+                {
+                    abonatPremium.IstoricProgramari.RemoveAll(p =>
+                        p.AbonatUsername == programareExistenta.AbonatUsername &&
+                        p.Data == programareExistenta.Data);
+                    abonatPremium.IstoricProgramari.Add(programareNoua);
+                }
+
+                abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
             }
             else
             {
-                MessageBox.Show
-                (
-                "Index invalid pentru programare.",
-                "Eroare",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-                );
+                MessageBox.Show(
+                    "Index invalid pentru programare.",
+                    "Eroare",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
-        public bool AnuleazaProgramare(string username, int index, AbonatStandard abonatStandard)
+        public bool AnuleazaProgramare(string username, int index)
         {
             var programariAbonat = ListaProgramari.Where(p => p.AbonatUsername == username).ToList();
             if (index >= 0 && index < programariAbonat.Count)
             {
                 var programareDeAnulat = programariAbonat[index];
-                if (programareDeAnulat.AbonatUsername != abonatStandard.Username)
+                ListaProgramari.Remove(programareDeAnulat);
+                ActualizeazaFisierJSON();
+
+                var abonatStandard = abonatManager.AbonatiStandard.FirstOrDefault(a => a.Username == username);
+                var abonatPremium = abonatManager.AbonatiPremium.FirstOrDefault(a => a.Username == username);
+
+                if (abonatStandard != null)
                 {
-                    MessageBox.Show
-                    (
-                    "Username-ul nu corespunde cu utilizatorul gasit.",
-                    "Eroare",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                    );
-                    return false;
+                    abonatStandard.IstoricProgramari.RemoveAll(p =>
+                        p.AbonatUsername == programareDeAnulat.AbonatUsername &&
+                        p.Data == programareDeAnulat.Data);
                 }
-                else
+                else if (abonatPremium != null)
                 {
-                    ListaProgramari.Remove(programareDeAnulat);
-                    ActualizeazaFisierJSON();
-
-                    abonatStandard.IstoricProgramari.Remove(programareDeAnulat);
-
-                    foreach (AbonatStandard abonatstd in abonatManager.AbonatiStandard)
-                    {
-                        if (abonatstd.Username == abonatStandard.Username)
-                        {
-                            abonatstd.IstoricProgramari.Remove(programareDeAnulat);
-                            abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
-                            break;
-                        }
-                    }
-
-                    foreach (AbonatPremium abonatprm in abonatManager.AbonatiPremium)
-                    {
-                        if (abonatprm.Username == abonatStandard.Username)
-                        {
-                            abonatprm.IstoricProgramari.Remove(programareDeAnulat);
-                            abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
-                            break;
-                        }
-                    }
-
-                    if ((programareDeAnulat.Data - DateTime.Now).TotalHours < 24)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    abonatPremium.IstoricProgramari.RemoveAll(p =>
+                        p.AbonatUsername == programareDeAnulat.AbonatUsername &&
+                        p.Data == programareDeAnulat.Data);
                 }
+
+                abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
+
+                return (programareDeAnulat.Data - DateTime.Now).TotalHours < 24;
             }
             else
             {
-                MessageBox.Show
-                (
-                "Index invalid pentru anulare programare.",
-                "Eroare",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-                );
+                MessageBox.Show(
+                    "Index invalid pentru anulare programare.",
+                    "Eroare",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
             return false;
         }
+
 
         public void ListeazaProgramariDupaNumeAntrenor()
         {
