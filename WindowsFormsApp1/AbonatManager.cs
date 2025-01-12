@@ -250,6 +250,8 @@ namespace WindowsFormsApp1
         //Metoda care recalculeaza pretul abonamentului in functie de programarile anulate
         public void RecalcularePret(string username, bool programareAnulata)
         {
+            //se aplica taxa daca abonatul rezerva in afara orelor de functionare a salii.
+            
             var abonatStandard = AbonatiStandard.FirstOrDefault(a => a.Username == username);
             var abonatPremium = AbonatiPremium.FirstOrDefault(a => a.Username == username);
             if (abonatStandard == null && abonatPremium == null)
@@ -279,10 +281,10 @@ namespace WindowsFormsApp1
 
         }
 
-        public void ActualizeazaAbonati()
+        public void ActualizeazaAbonati(List<AbonatStandard> liststd,List<AbonatPremium> listprm)
         {
-            JSONHelper.SaveToFile(standardFilePath, AbonatiStandard);
-            JSONHelper.SaveToFile(premiumFilePath, AbonatiPremium);
+            JSONHelper.SaveToFile(standardFilePath, liststd);
+            JSONHelper.SaveToFile(premiumFilePath, listprm);
         }
 
         }

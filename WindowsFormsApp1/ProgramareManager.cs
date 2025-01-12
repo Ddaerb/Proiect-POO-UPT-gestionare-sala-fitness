@@ -1,22 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-
     public class ProgramareManager
     {
         private string CaleFisier => FilePaths.GetFilePath("programari.json");
-        private string CaleFisierAbonatiStandard => FilePaths.GetFilePath("AbonatiStandard.json");
-        private string CaleFisierAbonatiPremium => FilePaths.GetFilePath("Abonati.json");
         public List<Programare> ListaProgramari { get; set; }
-        private AbonatManager abonatManager { get; set; } // Manager pentru gestionarea abonatilor
+        private AbonatManager abonatManager; // Manager pentru gestionarea abonatilor
 
-        public ProgramareManager()
+        public ProgramareManager(AbonatManager abonatManager)
         {
+            this.abonatManager = abonatManager; // Use the passed instance of AbonatManager
+
             var incarcate = JSONHelper.LoadFromFile<List<Programare>>(CaleFisier);
             if (incarcate != null)
             {
@@ -26,8 +24,6 @@ namespace WindowsFormsApp1
             {
                 ListaProgramari = new List<Programare>();
             }
-
-            abonatManager = new AbonatManager(); // Initializare manager abonati
         }
 
         private AbonatStandard GasesteAbonatDupaUsername(string username)
@@ -54,6 +50,7 @@ namespace WindowsFormsApp1
 
             return null; // Nu a fost gasit abonatul
         }
+
         private void ActualizeazaFisierJSON()
         {
             JSONHelper.SaveToFile(CaleFisier, ListaProgramari);
@@ -101,30 +98,8 @@ namespace WindowsFormsApp1
 
             if (!abonatStandard.IstoricProgramari.Contains(programare))
             {
-                abonatManager = new AbonatManager();
-                if(abonatStandard.TipAbonament=="standard")
-                {
-                    foreach(var abonat in abonatManager.AbonatiStandard)
-                    {
-                        if(abonat.Username==abonatStandard.Username)
-                        {
-                            abonat.IstoricProgramari.Add (programare);
-                            abonatManager.ActualizeazaAbonati();
-                        }
-                    }
-                }
-                else if (abonatStandard.TipAbonament=="premium")
-                {
-                    foreach (var abonat in abonatManager.AbonatiPremium)
-                    {
-                        if (abonat.Username == abonatStandard.Username)
-                        {
-                            abonat.IstoricProgramari.Add(programare);
-                            abonatManager.ActualizeazaAbonati();
-                        }
-                    }
-                }
-                //abonatStandard.IstoricProgramari.Add(programare);
+                abonatStandard.IstoricProgramari.Add(programare);
+                abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
             }
 
             ActualizeazaFisierJSON();
@@ -139,6 +114,16 @@ namespace WindowsFormsApp1
                 ListaProgramari.Remove(programareExistenta);
                 ListaProgramari.Add(programareNoua);
                 ActualizeazaFisierJSON();
+
+                var abonatStandard = GasesteAbonatDupaUsername(username);
+                if (abonatStandard != null)
+                {
+                    abonatStandard.IstoricProgramari.Remove(programareExistenta);
+                    //cauta obiectul in functie de anumite campuri : data, nume abonat, antrenor etc.
+                    //cauta obiectul in lista la care ii dai remove (din abonatstandard istoric programari)
+                    abonatStandard.IstoricProgramari.Add(programareNoua);
+                    abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
+                }
             }
             else
             {
@@ -173,6 +158,29 @@ namespace WindowsFormsApp1
                 {
                     ListaProgramari.Remove(programareDeAnulat);
                     ActualizeazaFisierJSON();
+
+                    abonatStandard.IstoricProgramari.Remove(programareDeAnulat);
+
+                    foreach (AbonatStandard abonatstd in abonatManager.AbonatiStandard)
+                    {
+                        if (abonatstd.Username == abonatStandard.Username)
+                        {
+                            abonatstd.IstoricProgramari.Remove(programareDeAnulat);
+                            abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
+                            break;
+                        }
+                    }
+
+                    foreach (AbonatPremium abonatprm in abonatManager.AbonatiPremium)
+                    {
+                        if (abonatprm.Username == abonatStandard.Username)
+                        {
+                            abonatprm.IstoricProgramari.Remove(programareDeAnulat);
+                            abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
+                            break;
+                        }
+                    }
+
                     if ((programareDeAnulat.Data - DateTime.Now).TotalHours < 24)
                     {
                         return true;
@@ -221,4 +229,3 @@ namespace WindowsFormsApp1
         }
     }
 }
-
