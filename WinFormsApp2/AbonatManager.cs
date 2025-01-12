@@ -246,7 +246,7 @@ namespace WinFormsApp2
         }
 
 
-
+        /*
         //Metoda care recalculeaza pretul abonamentului in functie de programarile anulate
         public void RecalcularePret(string username, bool programareAnulata)
         {
@@ -280,6 +280,7 @@ namespace WinFormsApp2
             }
 
         }
+        */
 
         public void ActualizeazaAbonati(List<AbonatStandard> liststd,List<AbonatPremium> listprm)
         {
