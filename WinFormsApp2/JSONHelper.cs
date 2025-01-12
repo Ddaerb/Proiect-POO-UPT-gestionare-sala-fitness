@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace WindowsFormsApp1
+namespace WinFormsApp2
 {
     public static class JSONHelper
     {

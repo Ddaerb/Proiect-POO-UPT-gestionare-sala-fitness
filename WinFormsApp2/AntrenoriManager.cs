@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace WindowsFormsApp1
+namespace WinFormsApp2
 {
 
 

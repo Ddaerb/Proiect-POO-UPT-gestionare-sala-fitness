@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace WindowsFormsApp1
+namespace WinFormsApp2
 {
     public static class FilePaths
     {
