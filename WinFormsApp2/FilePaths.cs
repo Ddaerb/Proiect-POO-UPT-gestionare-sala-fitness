@@ -9,7 +9,9 @@ namespace WinFormsApp2
 {
     public static class FilePaths
     {
-        public static readonly string JSONFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\JSONFiles");
+        public static readonly string JSONFolder = Path.Combine(
+            AppDomain.CurrentDomain.BaseDirectory,
+            "..\\..\\..\\JSONFiles");
 
         public static string GetFilePath(string fileName)
         {
