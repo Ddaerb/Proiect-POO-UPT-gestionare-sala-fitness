@@ -30,43 +30,36 @@ namespace WinFormsApp2
             this.salaFitness = salaFitness;
         }
 
-        private void RecalcularePretAbonament(AbonatStandard abonat, bool status, Programare programare)
+        private AbonatStandard RecalcularePretAbonament(AbonatStandard abonat, bool status, Programare programare)
         {
-            if (programare.StatusProgramare == "anulata.")
+            if (programare.StatusProgramare == "Valida." && !status)
+            {
+                return abonat;
+            }
+
+            MessageBox.Show($"RecalcularePretAbonament pentru {abonat.Username} cu statusul: {status} si statusul programarii: {programare.StatusProgramare}", "Debug Info");
+
+            if (programare.StatusProgramare == "anulata." || programare.StatusProgramare == "modificata.")
             {
                 if (status)
                 {
+                    MessageBox.Show($"Adaugam 10 in pretul abonamentului pentru {abonat.Username} deoarece {programare.StatusProgramare} < 24 ore.", "Debug Info");
                     abonat.PretAbonament += 10;
                 }
-                return;
-            }
-
-            if (programare.StatusProgramare == "modificata." && status)
-            {
-                abonat.PretAbonament += 10;
+                return abonat;
             }
 
             double oreDepasite = CalculareOreDepasite(programare, salaFitness);
+            MessageBox.Show($"Ore depasite pentru {abonat.Username}: {oreDepasite}", "Debug Info");
 
             if (oreDepasite > 0)
             {
-                int costOra = 0;
-
-                if (abonat.TipAbonament == "standard")
-                {
-                    costOra = 5;
-                }
-                else if (abonat.TipAbonament == "premium")
-                {
-                    costOra = 2;
-                }
-                else
-                {
-                    costOra = 0;
-                }
-
+                int costOra = abonat.TipAbonament == "standard" ? 5 : 2;
+                MessageBox.Show($"Adaugam {(int)Math.Ceiling(oreDepasite) * costOra} la PretAbonament pentru {abonat.Username}.", "Debug Info");
                 abonat.PretAbonament += (int)Math.Ceiling(oreDepasite) * costOra;
             }
+
+            return abonat;
         }
 
         private double CalculareOreDepasite(Programare programare, SalaFitness salaFitness)
@@ -88,6 +81,16 @@ namespace WinFormsApp2
             {
                 oreDepasite += (interval1end - interval2end).TotalHours;
             }
+            if (oreDepasite < 0)
+            {
+                oreDepasite = 0;
+            }
+            if (oreDepasite > programare.DurataProgramataOre)
+            {
+                oreDepasite = programare.DurataProgramataOre;
+            }
+
+            MessageBox.Show($"CalculareOreDepasite pentru {programare.AbonatUsername}. Interval1: {interval1start} - {interval1end}, Interval2: {interval2start} - {interval2end}, Ore depasite: {oreDepasite}", "Debug Info");
 
             return oreDepasite;
         }
@@ -139,7 +142,7 @@ namespace WinFormsApp2
                 return;
             }
 
-            if (ListaProgramari.Contains(programare))
+            if (ListaProgramari.Any(p => p.AbonatUsername == programare.AbonatUsername && p.Data == programare.Data && p.DurataProgramataOre == programare.DurataProgramataOre))
             {
                 MessageBox.Show(
                     "Aceasta programare exista deja in sistem.",
@@ -154,19 +157,18 @@ namespace WinFormsApp2
 
             if (abonatStandard != null)
             {
-                RecalcularePretAbonament(abonatStandard, false, programare);
-
+                abonatStandard = RecalcularePretAbonament(abonatStandard, false, programare);
                 abonatStandard.IstoricProgramari.Add(programare);
-                abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
             }
             else if (abonatPremium != null)
             {
-                RecalcularePretAbonament(abonatPremium, false, programare);
-
+                abonatPremium = (AbonatPremium)RecalcularePretAbonament(abonatPremium, false, programare);
                 abonatPremium.IstoricProgramari.Add(programare);
-                abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
             }
+
+            abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
         }
+
 
         public void ModificaProgramare(string username, int index, Programare programareNoua)
         {
@@ -190,7 +192,7 @@ namespace WinFormsApp2
                     abonatStandard.IstoricProgramari.Add(programareNoua);
 
                     var status = (programareNoua.Data - DateTime.Now).TotalHours < 24;
-                    RecalcularePretAbonament(abonatStandard, status, programareNoua);
+                    abonatStandard = RecalcularePretAbonament(abonatStandard, status, programareNoua);
                 }
                 else if (abonatPremium != null)
                 {
@@ -200,7 +202,7 @@ namespace WinFormsApp2
                     abonatPremium.IstoricProgramari.Add(programareNoua);
 
                     var status = (programareNoua.Data - DateTime.Now).TotalHours < 24;
-                    RecalcularePretAbonament(abonatPremium, status, programareNoua);
+                    abonatPremium = (AbonatPremium)RecalcularePretAbonament(abonatPremium, status, programareNoua);
                 }
 
                 abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
@@ -237,7 +239,7 @@ namespace WinFormsApp2
                     }
 
                     var status = (programareDeAnulat.Data - DateTime.Now).TotalHours < 24;
-                    RecalcularePretAbonament(abonatStandard, status, programareDeAnulat);
+                    abonatStandard = RecalcularePretAbonament(abonatStandard, status, programareDeAnulat);
                 }
                 else if (abonatPremium != null)
                 {
@@ -249,7 +251,7 @@ namespace WinFormsApp2
                     }
 
                     var status = (programareDeAnulat.Data - DateTime.Now).TotalHours < 24;
-                    RecalcularePretAbonament(abonatPremium, status, programareDeAnulat);
+                    abonatPremium = (AbonatPremium)RecalcularePretAbonament(abonatPremium, status, programareDeAnulat);
                 }
 
                 abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);

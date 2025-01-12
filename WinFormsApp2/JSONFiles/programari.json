@@ -10,23 +10,8 @@
         "OraSfarsit": "16:00:00"
       }
     },
-    "Data": "2025-01-14T21:11:08.7641951+03:00",
+    "Data": "2025-01-14T23:43:26.8918157+03:00",
     "DurataProgramataOre": 1,
-    "StatusProgramare": "Valida."
-  },
-  {
-    "AbonatUsername": "george.vasilescu",
-    "Antrenor": {
-      "NumeComplet": "Vlad Ionescu",
-      "Specializare": "Culturism",
-      "NumarMaximClienti": 6,
-      "OrarPrestabilit": {
-        "OraInceput": "10:00:00",
-        "OraSfarsit": "18:00:00"
-      }
-    },
-    "Data": "2025-01-15T21:11:08.7641991+03:00",
-    "DurataProgramataOre": 3,
     "StatusProgramare": "Valida."
   },
   {
@@ -40,38 +25,8 @@
         "OraSfarsit": "16:00:00"
       }
     },
-    "Data": "2025-01-16T21:11:08.7641993+03:00",
+    "Data": "2025-01-16T23:43:26.8918231+03:00",
     "DurataProgramataOre": 1,
-    "StatusProgramare": "Valida."
-  },
-  {
-    "AbonatUsername": "maria.ionescu",
-    "Antrenor": {
-      "NumeComplet": "Alex Stan",
-      "Specializare": "Fitness",
-      "NumarMaximClienti": 9,
-      "OrarPrestabilit": {
-        "OraInceput": "09:00:00",
-        "OraSfarsit": "17:00:00"
-      }
-    },
-    "Data": "2025-01-17T21:11:08.7641993+03:00",
-    "DurataProgramataOre": 2,
-    "StatusProgramare": "Valida."
-  },
-  {
-    "AbonatUsername": "george.gheorghe",
-    "Antrenor": {
-      "NumeComplet": "Diana Pop",
-      "Specializare": "Yoga",
-      "NumarMaximClienti": 8,
-      "OrarPrestabilit": {
-        "OraInceput": "08:00:00",
-        "OraSfarsit": "16:00:00"
-      }
-    },
-    "Data": "2025-01-11T00:00:00",
-    "DurataProgramataOre": 5,
     "StatusProgramare": "Valida."
   },
   {
@@ -100,8 +55,113 @@
         "OraSfarsit": "16:00:00"
       }
     },
-    "Data": "2025-01-10T00:00:00",
+    "Data": "2025-01-20T00:00:00",
     "DurataProgramataOre": 4,
     "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "george.gheorghe",
+    "Antrenor": {
+      "NumeComplet": "Diana Pop",
+      "Specializare": "Yoga",
+      "NumarMaximClienti": 8,
+      "OrarPrestabilit": {
+        "OraInceput": "08:00:00",
+        "OraSfarsit": "16:00:00"
+      }
+    },
+    "Data": "2025-01-14T00:00:00",
+    "DurataProgramataOre": 5,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.popescu",
+    "Antrenor": {
+      "NumeComplet": "Alex Stan",
+      "Specializare": "Fitness",
+      "NumarMaximClienti": 9,
+      "OrarPrestabilit": {
+        "OraInceput": "09:00:00",
+        "OraSfarsit": "17:00:00"
+      }
+    },
+    "Data": "2025-01-13T05:50:18.1537165+03:00",
+    "DurataProgramataOre": 2,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "maria.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Diana Pop",
+      "Specializare": "Yoga",
+      "NumarMaximClienti": 8,
+      "OrarPrestabilit": {
+        "OraInceput": "08:00:00",
+        "OraSfarsit": "16:00:00"
+      }
+    },
+    "Data": "2025-01-14T23:50:18.1539569+03:00",
+    "DurataProgramataOre": 1,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "george.vasilescu",
+    "Antrenor": {
+      "NumeComplet": "Vlad Ionescu",
+      "Specializare": "Culturism",
+      "NumarMaximClienti": 6,
+      "OrarPrestabilit": {
+        "OraInceput": "10:00:00",
+        "OraSfarsit": "18:00:00"
+      }
+    },
+    "Data": "2025-01-15T23:50:18.1539621+03:00",
+    "DurataProgramataOre": 3,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.popescu",
+    "Antrenor": {
+      "NumeComplet": "Diana Pop",
+      "Specializare": "Yoga",
+      "NumarMaximClienti": 8,
+      "OrarPrestabilit": {
+        "OraInceput": "08:00:00",
+        "OraSfarsit": "16:00:00"
+      }
+    },
+    "Data": "2025-01-16T23:50:18.1539622+03:00",
+    "DurataProgramataOre": 1,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "maria.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Alex Stan",
+      "Specializare": "Fitness",
+      "NumarMaximClienti": 9,
+      "OrarPrestabilit": {
+        "OraInceput": "09:00:00",
+        "OraSfarsit": "17:00:00"
+      }
+    },
+    "Data": "2025-01-17T23:50:18.1539623+03:00",
+    "DurataProgramataOre": 2,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.popescu",
+    "Antrenor": {
+      "NumeComplet": "Diana Pop",
+      "Specializare": "Yoga",
+      "NumarMaximClienti": 8,
+      "OrarPrestabilit": {
+        "OraInceput": "08:00:00",
+        "OraSfarsit": "16:00:00"
+      }
+    },
+    "Data": "2025-01-18T23:51:21.0054654+03:00",
+    "DurataProgramataOre": 6,
+    "StatusProgramare": "modificata."
   }
 ]

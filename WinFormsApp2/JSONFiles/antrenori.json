@@ -25,5 +25,113 @@
       "OraInceput": "10:00:00",
       "OraSfarsit": "18:00:00"
     }
+  },
+  {
+    "NumeComplet": "Alex Stan",
+    "Specializare": "Fitness",
+    "NumarMaximClienti": 9,
+    "OrarPrestabilit": {
+      "OraInceput": "09:00:00",
+      "OraSfarsit": "17:00:00"
+    }
+  },
+  {
+    "NumeComplet": "Diana Pop",
+    "Specializare": "Yoga",
+    "NumarMaximClienti": 8,
+    "OrarPrestabilit": {
+      "OraInceput": "08:00:00",
+      "OraSfarsit": "16:00:00"
+    }
+  },
+  {
+    "NumeComplet": "Vlad Ionescu",
+    "Specializare": "Culturism",
+    "NumarMaximClienti": 6,
+    "OrarPrestabilit": {
+      "OraInceput": "10:00:00",
+      "OraSfarsit": "18:00:00"
+    }
+  },
+  {
+    "NumeComplet": "Alex Stan",
+    "Specializare": "Fitness",
+    "NumarMaximClienti": 9,
+    "OrarPrestabilit": {
+      "OraInceput": "09:00:00",
+      "OraSfarsit": "17:00:00"
+    }
+  },
+  {
+    "NumeComplet": "Diana Pop",
+    "Specializare": "Yoga",
+    "NumarMaximClienti": 8,
+    "OrarPrestabilit": {
+      "OraInceput": "08:00:00",
+      "OraSfarsit": "16:00:00"
+    }
+  },
+  {
+    "NumeComplet": "Vlad Ionescu",
+    "Specializare": "Culturism",
+    "NumarMaximClienti": 6,
+    "OrarPrestabilit": {
+      "OraInceput": "10:00:00",
+      "OraSfarsit": "18:00:00"
+    }
+  },
+  {
+    "NumeComplet": "Alex Stan",
+    "Specializare": "Fitness",
+    "NumarMaximClienti": 9,
+    "OrarPrestabilit": {
+      "OraInceput": "09:00:00",
+      "OraSfarsit": "17:00:00"
+    }
+  },
+  {
+    "NumeComplet": "Diana Pop",
+    "Specializare": "Yoga",
+    "NumarMaximClienti": 8,
+    "OrarPrestabilit": {
+      "OraInceput": "08:00:00",
+      "OraSfarsit": "16:00:00"
+    }
+  },
+  {
+    "NumeComplet": "Vlad Ionescu",
+    "Specializare": "Culturism",
+    "NumarMaximClienti": 6,
+    "OrarPrestabilit": {
+      "OraInceput": "10:00:00",
+      "OraSfarsit": "18:00:00"
+    }
+  },
+  {
+    "NumeComplet": "Alex Stan",
+    "Specializare": "Fitness",
+    "NumarMaximClienti": 9,
+    "OrarPrestabilit": {
+      "OraInceput": "09:00:00",
+      "OraSfarsit": "17:00:00"
+    }
+  },
+  {
+    "NumeComplet": "Diana Pop",
+    "Specializare": "Yoga",
+    "NumarMaximClienti": 8,
+    "OrarPrestabilit": {
+      "OraInceput": "08:00:00",
+      "OraSfarsit": "16:00:00"
+    }
+  },
+  {
+    "NumeComplet": "Vlad Ionescu",
+    "Specializare": "Culturism",
+    "NumarMaximClienti": 6,
+    "OrarPrestabilit": {
+      "OraInceput": "10:00:00",
+      "OraSfarsit": "18:00:00"
+    }
   }
 ]
