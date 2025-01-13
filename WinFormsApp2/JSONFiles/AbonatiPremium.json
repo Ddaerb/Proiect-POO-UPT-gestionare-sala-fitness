@@ -6,24 +6,8 @@
     "CNP": "3234327890123",
     "Username": "george.gheorghe",
     "Password": "parola749",
-    "PretAbonament": 160,
-    "IstoricProgramari": [
-      {
-        "AbonatUsername": "george.gheorghe",
-        "Antrenor": {
-          "NumeComplet": "Diana Pop",
-          "Specializare": "Yoga",
-          "NumarMaximClienti": 8,
-          "OrarPrestabilit": {
-            "OraInceput": "08:00:00",
-            "OraSfarsit": "16:00:00"
-          }
-        },
-        "Data": "2025-01-14T00:00:00",
-        "DurataProgramataOre": 5,
-        "StatusProgramare": "Valida."
-      }
-    ]
+    "PretAbonament": 150,
+    "IstoricProgramari": []
   },
   {
     "TipAbonament": "premium",
@@ -32,23 +16,7 @@
     "CNP": "3234127890123",
     "Username": "ana.popescu",
     "Password": "parola2349",
-    "PretAbonament": 158,
-    "IstoricProgramari": [
-      {
-        "AbonatUsername": "ana.popescu",
-        "Antrenor": {
-          "NumeComplet": "Diana Pop",
-          "Specializare": "Yoga",
-          "NumarMaximClienti": 8,
-          "OrarPrestabilit": {
-            "OraInceput": "08:00:00",
-            "OraSfarsit": "16:00:00"
-          }
-        },
-        "Data": "2025-01-20T00:00:00",
-        "DurataProgramataOre": 4,
-        "StatusProgramare": "Valida."
-      }
-    ]
+    "PretAbonament": 150,
+    "IstoricProgramari": []
   }
 ]

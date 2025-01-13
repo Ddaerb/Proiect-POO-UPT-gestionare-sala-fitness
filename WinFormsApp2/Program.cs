@@ -30,11 +30,11 @@ namespace WinFormsApp2
             var abonat4 = new AbonatPremium("George Gheorghe", "3234327890123", "george.gheorghe", "parola749");
             var abonat5 = new AbonatPremium("Ana Popescu", "3234127890123", "ana.popescu", "parola2349");
 
-            abonatmanager.AdaugaAbonatStandard(abonat1, "ion.popescu");
+            /*abonatmanager.AdaugaAbonatStandard(abonat1, "ion.popescu");
             abonatmanager.AdaugaAbonatStandard(abonat2, "maria.ionescu");
             abonatmanager.AdaugaAbonatStandard(abonat3, "george.vasilescu");
             abonatmanager.AdaugaAbonatPremium(abonat4, "george.gheorghe");
-            abonatmanager.AdaugaAbonatPremium(abonat5, "ana.popescu");
+            abonatmanager.AdaugaAbonatPremium(abonat5, "ana.popescu");*/
 
 
             // Adaugare antrenori
@@ -42,9 +42,9 @@ namespace WinFormsApp2
             var antrenor2 = new Antrenor("Diana Pop", "Yoga", 8, TimeSpan.FromHours(8), TimeSpan.FromHours(16));
             var antrenor3 = new Antrenor("Vlad Ionescu", "Culturism", 6, TimeSpan.FromHours(10), TimeSpan.FromHours(18));
 
-            antrenormanager.AdaugaAntrenor(antrenor1);
+            /*antrenormanager.AdaugaAntrenor(antrenor1);
             antrenormanager.AdaugaAntrenor(antrenor2);
-            antrenormanager.AdaugaAntrenor(antrenor3);
+            antrenormanager.AdaugaAntrenor(antrenor3);*/
 
             // Creare programari
             var programare1 = new Programare("ion.popescu", antrenor1, DateTime.Now.AddHours(6), 2);
@@ -56,14 +56,16 @@ namespace WinFormsApp2
             var programare7 = new Programare("ana.popescu", antrenor2, DateTime.Parse("2025/1/20"), 4);
             var programare8 = new Programare("george.gheorghe", antrenor2, DateTime.Parse("2025/1/14"), 5);
 
-            programaremanager.AdaugaProgramare(programare1);
+            /*programaremanager.AdaugaProgramare(programare1);
             programaremanager.AdaugaProgramare(programare2);
             programaremanager.AdaugaProgramare(programare3);
             programaremanager.AdaugaProgramare(programare4);
             programaremanager.AdaugaProgramare(programare5);
             programaremanager.AdaugaProgramare(programare6);
             programaremanager.AdaugaProgramare(programare7);
-            programaremanager.AdaugaProgramare(programare8);
+            programaremanager.AdaugaProgramare(programare8);*/
+
+
 
             // Test modificare programare
             //var programarenoua1 = new Programare("ion.popescu", antrenor2, DateTime.Now.AddDays(6), 6);

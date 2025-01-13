@@ -32,25 +32,21 @@ namespace WinFormsApp2
 
         private AbonatStandard RecalcularePretAbonament(AbonatStandard abonat, bool status, Programare programare)
         {
-            MessageBox.Show($"RecalcularePretAbonament pentru {abonat.Username} cu statusul: {status} si statusul programarii: {programare.StatusProgramare}", "Debug Info");
 
             if (programare.StatusProgramare == "anulata." || programare.StatusProgramare == "modificata.")
             {
                 if (status)
                 {
-                    MessageBox.Show($"Adaugam 10 in pretul abonamentului pentru {abonat.Username} deoarece {programare.StatusProgramare} < 24 ore.", "Debug Info");
                     abonat.PretAbonament += 10;
                 }
                 return abonat;
             }
 
             double oreDepasite = CalculareOreDepasite(programare, salaFitness);
-            MessageBox.Show($"Ore depasite pentru {abonat.Username}: {oreDepasite}", "Debug Info");
 
             if (oreDepasite > 0)
             {
                 int costOra = abonat.TipAbonament == "standard" ? 5 : 2;
-                MessageBox.Show($"Adaugam {(int)Math.Ceiling(oreDepasite) * costOra} la PretAbonament pentru {abonat.Username}.", "Debug Info");
                 abonat.PretAbonament += (int)Math.Ceiling(oreDepasite) * costOra;
             }
 
@@ -85,7 +81,6 @@ namespace WinFormsApp2
                 oreDepasite = programare.DurataProgramataOre;
             }
 
-            MessageBox.Show($"CalculareOreDepasite pentru {programare.AbonatUsername}. Interval1: {interval1start} - {interval1end}, Interval2: {interval2start} - {interval2end}, Ore depasite: {oreDepasite}", "Debug Info");
 
             return oreDepasite;
         }
@@ -153,20 +148,16 @@ namespace WinFormsApp2
             if (abonatStandard != null)
             {
 
-                MessageBox.Show("Recalculating PretAbonament for AbonatStandard", "Debug Info");
                 abonatStandard = RecalcularePretAbonament(abonatStandard, false, programare);
                 abonatStandard.IstoricProgramari.Add(programare);
             }
             else if (abonatPremium != null)
             {
-                MessageBox.Show("Recalculating PretAbonament for AbonatPremium", "Debug Info");
                 abonatPremium = (AbonatPremium)RecalcularePretAbonament(abonatPremium, false, programare);
                 abonatPremium.IstoricProgramari.Add(programare);
             }
 
-            MessageBox.Show("Updating abonati", "Debug Info");
             abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
-            MessageBox.Show("AdaugaProgramare completed", "Debug Info");
         }
 
 
