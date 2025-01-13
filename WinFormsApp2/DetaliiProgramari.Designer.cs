@@ -35,15 +35,21 @@
             button3 = new Button();
             button4 = new Button();
             listView1 = new ListView();
+            Antrenor = new ColumnHeader();
+            Specializare = new ColumnHeader();
+            Data = new ColumnHeader();
+            Ore = new ColumnHeader();
+            Status = new ColumnHeader();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = Color.MediumSlateBlue;
-            button1.Font = new Font("Century", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(54, 49);
+            button1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(62, 65);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(192, 43);
+            button1.Size = new Size(219, 57);
             button1.TabIndex = 0;
             button1.Text = "Adauga Programare";
             button1.UseVisualStyleBackColor = false;
@@ -52,10 +58,11 @@
             // button2
             // 
             button2.BackColor = Color.CornflowerBlue;
-            button2.Font = new Font("Century", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(54, 312);
+            button2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(62, 416);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(115, 38);
+            button2.Size = new Size(131, 51);
             button2.TabIndex = 14;
             button2.Text = "Inapoi";
             button2.UseVisualStyleBackColor = false;
@@ -65,32 +72,34 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Century", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Red;
-            label1.Location = new Point(220, 384);
+            label1.Location = new Point(251, 512);
             label1.Name = "label1";
-            label1.Size = new Size(530, 46);
+            label1.Size = new Size(623, 58);
             label1.TabIndex = 15;
             label1.Text = "Daca depasiti orele [din cod], se adauga o \r\n                              taxa de penalizare de x RON/ora!!!";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Red;
-            label2.Location = new Point(54, 384);
+            label2.Location = new Point(62, 512);
             label2.Name = "label2";
-            label2.Size = new Size(125, 25);
+            label2.Size = new Size(146, 31);
             label2.TabIndex = 16;
             label2.Text = "ATENTIE!";
             // 
             // button3
             // 
             button3.BackColor = Color.LightCoral;
-            button3.Font = new Font("Century", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(54, 206);
+            button3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(62, 275);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(192, 43);
+            button3.Size = new Size(219, 57);
             button3.TabIndex = 17;
             button3.Text = "Anuleaza Programare";
             button3.UseVisualStyleBackColor = false;
@@ -99,10 +108,11 @@
             // button4
             // 
             button4.BackColor = Color.Orchid;
-            button4.Font = new Font("Century", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(54, 126);
+            button4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.Location = new Point(62, 168);
+            button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(192, 43);
+            button4.Size = new Size(219, 57);
             button4.TabIndex = 18;
             button4.Text = "Modifica Programare";
             button4.UseVisualStyleBackColor = false;
@@ -110,17 +120,46 @@
             // 
             // listView1
             // 
-            listView1.Location = new Point(339, 49);
+            listView1.Columns.AddRange(new ColumnHeader[] { Antrenor, Specializare, Data, Ore, Status });
+            listView1.FullRowSelect = true;
+            listView1.Location = new Point(325, 65);
+            listView1.Margin = new Padding(3, 4, 3, 4);
             listView1.Name = "listView1";
-            listView1.Size = new Size(411, 301);
+            listView1.Size = new Size(564, 400);
             listView1.TabIndex = 19;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // Antrenor
+            // 
+            Antrenor.Text = "Antrenor";
+            Antrenor.Width = 110;
+            // 
+            // Specializare
+            // 
+            Specializare.Text = "Specializare";
+            Specializare.Width = 100;
+            // 
+            // Data
+            // 
+            Data.Text = "Data";
+            Data.Width = 150;
+            // 
+            // Ore
+            // 
+            Ore.Text = "Ore";
+            Ore.Width = 40;
+            // 
+            // Status
+            // 
+            Status.Text = "Status";
+            Status.Width = 80;
             // 
             // DetaliiProgramari
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(listView1);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -128,8 +167,10 @@
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "DetaliiProgramari";
             Text = "DetaliiProgramari";
+            Load += DetaliiProgramari_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,5 +184,10 @@
         private Button button3;
         private Button button4;
         private ListView listView1;
+        private ColumnHeader Antrenor;
+        private ColumnHeader Specializare;
+        private ColumnHeader Data;
+        private ColumnHeader Ore;
+        private ColumnHeader Status;
     }
 }

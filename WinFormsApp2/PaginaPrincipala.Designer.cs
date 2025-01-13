@@ -109,6 +109,7 @@
             Controls.Add(ToLoginButton);
             Name = "PaginaPrincipala";
             Text = "PaginaPrincipala";
+            Load += PaginaPrincipala_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

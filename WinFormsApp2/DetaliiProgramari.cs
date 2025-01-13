@@ -13,12 +13,42 @@ namespace WinFormsApp2
 {
     public partial class DetaliiProgramari : Form
     {
+        private readonly AbonatManager _abonatManager;
         private readonly IServiceProvider _serviceProvider;
-        public DetaliiProgramari(IServiceProvider serviceProvider)
+        private readonly ProgramareManager _programareManager;
+        private readonly SalaFitness _salaFitness;
+        private AbonatStandard _abonat;
+        public DetaliiProgramari(AbonatManager abonatManager, IServiceProvider serviceProvider, ProgramareManager programareManager, SalaFitness salaFitness)
         {
-       
+
+            _abonatManager = abonatManager;
             _serviceProvider = serviceProvider;
+            _programareManager = programareManager;
+            _salaFitness = salaFitness;
             InitializeComponent();
+        }
+
+        public void InitializeIstoricList()
+        {
+
+            var istoricProgramari = _abonat.IstoricProgramari;
+
+            foreach (var programare in istoricProgramari)
+            {
+                var item = new ListViewItem(new string[]
+                {
+                    programare.Antrenor.NumeComplet.ToString(),
+                    programare.Antrenor.Specializare.ToString(),
+                    programare.Data.ToString(),
+                    programare.DurataProgramataOre.ToString(),
+                    programare.StatusProgramare.ToString()
+                });
+                listView1.Items.Add(item);
+            }
+        }
+        public void InitializeUser(AbonatStandard abonat)
+        {
+            _abonat = abonat;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -26,7 +56,7 @@ namespace WinFormsApp2
             this.Hide();
 
             var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
-            contAbonat.ShowDialog();
+            contAbonat.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,18 +64,41 @@ namespace WinFormsApp2
             this.Hide();
 
             var adaugaProgramare = _serviceProvider.GetRequiredService<AdaugaProgramare>();
+            adaugaProgramare.InitializeUser(_abonat);
             adaugaProgramare.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
-            
+
             var modificareProgramare = _serviceProvider.GetRequiredService<ModificareProgramare>();
+            modificareProgramare.InitializeUser(_abonat);
             modificareProgramare.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                int index = listView1.SelectedItems[0].Index;
+
+                listView1.SelectedItems[0].SubItems[4].Text = "anulata.";
+
+                _programareManager.AnuleazaProgramare(_abonat.Username, index);
+            }
+            else
+            {
+                MessageBox.Show("Te rog selecteaza o programare pentru a o anula.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DetaliiProgramari_Load(object sender, EventArgs e)
+        {
+            label1.Text = $"Daca depasiti orele [{_salaFitness.OraInceput:hh\\:mm},{_salaFitness.OraSfarsit:hh\\:mm}], se adauga o \r\n                              taxa de penalizare de {_abonat.TaxaDepasireDurataProgramari} RON/ora!!!";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

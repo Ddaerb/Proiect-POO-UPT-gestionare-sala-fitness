@@ -20,8 +20,8 @@ namespace WinFormsApp2
         {
             Nume = nume;
             Adresa = adresa;
-            oraInceput = OraInceput;
-            oraSfarsit = OraSfarsit;
+            OraInceput = oraInceput;
+            OraSfarsit = oraSfarsit;
         }
 
     }

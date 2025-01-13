@@ -15,7 +15,7 @@ namespace WinFormsApp2
     {
         private readonly AbonatManager _abonatManager;
         private readonly IServiceProvider _serviceProvider;
-        private AbonatStandard _abonat;  
+        private AbonatStandard _abonat;
 
         public DetaliiCont(AbonatManager abonatManager, IServiceProvider serviceProvider)
         {
@@ -55,6 +55,11 @@ namespace WinFormsApp2
 
             var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
             contAbonat.Show();
+        }
+
+        private void DetaliiCont_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

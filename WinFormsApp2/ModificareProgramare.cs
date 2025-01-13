@@ -13,12 +13,24 @@ namespace WinFormsApp2
 {
     public partial class ModificareProgramare : Form
     {
+        private readonly AbonatManager _abonatManager;
         private readonly IServiceProvider _serviceProvider;
-        public ModificareProgramare(IServiceProvider serviceProvider)
+        private readonly ProgramareManager _programareManager;
+        private readonly SalaFitness _salaFitness;
+        private AbonatStandard _abonat;
+        public ModificareProgramare(AbonatManager abonatManager, IServiceProvider serviceProvider, ProgramareManager programareManager, SalaFitness salaFitness)
         {
 
+            _abonatManager = abonatManager;
             _serviceProvider = serviceProvider;
+            _programareManager = programareManager;
+            _salaFitness = salaFitness;
             InitializeComponent();
+        }
+
+        public void InitializeUser(AbonatStandard abonat)
+        {
+            _abonat = abonat;
         }
 
         private void ModificareProgramare_Load(object sender, EventArgs e)
@@ -31,12 +43,16 @@ namespace WinFormsApp2
             this.Hide();
 
             var detaliiProgramari = _serviceProvider.GetRequiredService<ContAbonat>();
-            detaliiProgramari.ShowDialog();
+            detaliiProgramari.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Hide();
             
+            var detaliiProgramari = _serviceProvider.GetRequiredService<ContAbonat>();
+            detaliiProgramari.InitializeUser(_abonat);
+            detaliiProgramari.ShowDialog();
         }
     }
 }

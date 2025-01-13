@@ -250,7 +250,7 @@ namespace WinFormsApp2
             else
             {
                 MessageBox.Show(
-                    "Index invalid pentru anulare programare.",
+                    "Programarea a fost deja anulata.",
                     "Eroare",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);

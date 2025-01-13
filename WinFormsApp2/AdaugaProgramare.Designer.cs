@@ -37,12 +37,14 @@
             comboBox1 = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
             textBox1 = new TextBox();
+            dateTimePicker2 = new DateTimePicker();
+            textBox2 = new TextBox();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = Color.CornflowerBlue;
-            button1.Font = new Font("Century", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(35, 521);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
@@ -55,7 +57,7 @@
             // button2
             // 
             button2.BackColor = Color.MediumPurple;
-            button2.Font = new Font("Century", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(746, 521);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
@@ -111,34 +113,44 @@
             comboBox1.Location = new Point(393, 69);
             comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(212, 28);
+            comboBox1.Size = new Size(250, 28);
             comboBox1.TabIndex = 6;
             // 
             // dateTimePicker1
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(393, 232);
-            comboBox2.Margin = new Padding(3, 4, 3, 4);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(212, 28);
-            comboBox2.TabIndex = 7;
+            dateTimePicker1.Location = new Point(0, 0);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 27);
+            dateTimePicker1.TabIndex = 0;
             // 
             // textBox1
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(393, 151);
-            comboBox3.Margin = new Padding(3, 4, 3, 4);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(212, 28);
-            comboBox3.TabIndex = 8;
+            textBox1.Location = new Point(0, 0);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 27);
+            textBox1.TabIndex = 0;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(393, 174);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(250, 27);
+            dateTimePicker2.TabIndex = 7;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(393, 234);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(250, 27);
+            textBox2.TabIndex = 8;
             // 
             // AdaugaProgramare
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
+            Controls.Add(textBox2);
+            Controls.Add(dateTimePicker2);
             Controls.Add(comboBox1);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -149,6 +161,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "AdaugaProgramare";
             Text = "AdaugaProgramare";
+            Load += AdaugaProgramare_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,5 +177,7 @@
         private ComboBox comboBox1;
         private DateTimePicker dateTimePicker1;
         private TextBox textBox1;
+        private DateTimePicker dateTimePicker2;
+        private TextBox textBox2;
     }
 }

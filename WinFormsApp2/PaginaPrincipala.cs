@@ -44,5 +44,10 @@ namespace WinFormsApp2
         {
             this.Close();
         }
+
+        private void PaginaPrincipala_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

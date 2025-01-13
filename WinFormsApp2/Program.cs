@@ -17,11 +17,11 @@ namespace WinFormsApp2
 
             TimeSpan oraInceput = new TimeSpan(8, 0, 0);
             TimeSpan oraSfarsit = new TimeSpan(20, 0, 0);
-            var salafitness = new SalaFitness("AbcdFitness", "Ioan Cuza nr.10", oraInceput, oraSfarsit);
+            //var salafitness = new SalaFitness("AbcdFitness", "Ioan Cuza nr.10", oraInceput, oraSfarsit);
 
-            var abonatmanager = new AbonatManager();
-            var antrenormanager = new AntrenorManager();
-            var programaremanager = new ProgramareManager(abonatmanager, salafitness);
+            //var abonatmanager = new AbonatManager();
+            //var antrenormanager = new AntrenorManager();
+            //var programaremanager = new ProgramareManager(abonatmanager, salafitness);
 
             // Adaugare abonati
             var abonat1 = new AbonatStandard("Ion Popescu", "1234567890123", "ion.popescu", "parola123");
@@ -96,6 +96,7 @@ namespace WinFormsApp2
                     services.AddSingleton<AbonatManager>();
                     services.AddSingleton<AntrenorManager>();
                     services.AddSingleton<ProgramareManager>();
+                    services.AddSingleton<SalaFitness>(provider => new SalaFitness("AbcdFitness", "Ioan Cuza nr.10", new TimeSpan(8, 0, 0), new TimeSpan(20, 0, 0)));
                 })
                 .ConfigureLogging(logging =>
                 {

@@ -41,10 +41,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Algerian", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(301, 40);
             label1.Name = "label1";
-            label1.Size = new Size(329, 34);
+            label1.Size = new Size(343, 36);
             label1.TabIndex = 0;
             label1.Text = "BINE AI VENIT, USER!!!";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -103,7 +103,7 @@
             // button1
             // 
             button1.BackColor = Color.CornflowerBlue;
-            button1.Font = new Font("Century", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(29, 524);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
@@ -116,7 +116,7 @@
             // button2
             // 
             button2.BackColor = Color.Navy;
-            button2.Font = new Font("Century", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.Transparent;
             button2.Location = new Point(330, 389);
             button2.Margin = new Padding(3, 4, 3, 4);
@@ -142,6 +142,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "DetaliiCont";
             Text = "DetaliiCont";
+            Load += DetaliiCont_Load;
             ResumeLayout(false);
             PerformLayout();
         }

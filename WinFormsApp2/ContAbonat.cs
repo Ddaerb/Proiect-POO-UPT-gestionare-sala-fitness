@@ -15,12 +15,16 @@ namespace WinFormsApp2
     {
         private readonly AbonatManager _abonatManager;
         private readonly IServiceProvider _serviceProvider;
-        private AbonatStandard _abonat; 
+        private readonly ProgramareManager _programareManager;
+        private readonly SalaFitness _salaFitness;
+        private AbonatStandard _abonat;
 
-        public ContAbonat(AbonatManager abonatManager, IServiceProvider serviceProvider)
+        public ContAbonat(AbonatManager abonatManager, IServiceProvider serviceProvider, ProgramareManager programareManager, SalaFitness salaFitness)
         {
             _abonatManager = abonatManager;
             _serviceProvider = serviceProvider;
+            _programareManager = programareManager;
+            _salaFitness = salaFitness;
             InitializeComponent();
         }
 
@@ -28,6 +32,8 @@ namespace WinFormsApp2
         {
             _abonat = abonat;
         }
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -56,7 +62,14 @@ namespace WinFormsApp2
             this.Hide();
 
             var detaliiProgramari = _serviceProvider.GetRequiredService<DetaliiProgramari>();
+            detaliiProgramari.InitializeUser(_abonat);
+            detaliiProgramari.InitializeIstoricList();
             detaliiProgramari.ShowDialog();
+        }
+
+        private void ContAbonat_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

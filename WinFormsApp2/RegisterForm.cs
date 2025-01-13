@@ -40,13 +40,13 @@ namespace WinFormsApp2
             AbonatStandard abonatStandard;
             AbonatPremium abonatPremium;
 
-            if (name == null || name == "") 
+            if (name == null || name == "")
             {
                 MessageBox.Show("Campul pentru nume trebuie completat");
                 return;
             }
-   
-            string numeNou= validare.ValideazaNumeComplet(name);
+
+            string numeNou = validare.ValideazaNumeComplet(name);
             txtNume.Text = numeNou;
 
             if (cnp == null || cnp == "")
@@ -55,7 +55,7 @@ namespace WinFormsApp2
                 return;
             }
 
-            string cnpNou= validare.VerificareCNP(cnp);
+            string cnpNou = validare.VerificareCNP(cnp);
             txtCNP.Text = cnpNou;
 
             if (username == null || username == "")
@@ -69,14 +69,14 @@ namespace WinFormsApp2
                 MessageBox.Show("Campul pentru parola treuie completat");
                 return;
             }
-            
+
             if (confirmPassword == null || confirmPassword == "")
             {
                 MessageBox.Show("Campul pentru confirmarea parolei treuie completat");
                 return;
             }
 
-            if (password != confirmPassword) 
+            if (password != confirmPassword)
             {
                 MessageBox.Show("Parolele nu se potrivesc");
                 return;
@@ -88,16 +88,19 @@ namespace WinFormsApp2
                 return;
             }
 
+            var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
 
             if (subscriptionType == "Standard - 100 RON")
             {
                 abonatStandard = new AbonatStandard(name, cnp, username, password);
-                _abonatManager.AdaugaAbonatStandard(abonatStandard,username);
+                contAbonat.InitializeUser(abonatStandard);
+                _abonatManager.AdaugaAbonatStandard(abonatStandard, username);
             }
             else if (subscriptionType == "Premium - 150 RON")
             {
                 abonatPremium = new AbonatPremium(name, cnp, username, password);
-                _abonatManager.AdaugaAbonatPremium(abonatPremium,username);
+                contAbonat.InitializeUser(abonatPremium);
+                _abonatManager.AdaugaAbonatPremium(abonatPremium, username);
             }
 
             txtNume.Clear();
@@ -110,8 +113,12 @@ namespace WinFormsApp2
             MessageBox.Show("Utilizatorul a fost adaugat cu succes");
             this.Hide();
 
-            var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
             contAbonat.ShowDialog();
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
