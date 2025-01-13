@@ -21,5 +21,26 @@ namespace WinFormsApp2
         {
 
         }
+
+        private void ToLoginButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Form1 loginForm = new Form1();
+            loginForm.ShowDialog();
+        }
+
+        private void ToRegisterButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

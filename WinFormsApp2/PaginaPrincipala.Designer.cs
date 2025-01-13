@@ -48,6 +48,7 @@
             ToLoginButton.TabIndex = 0;
             ToLoginButton.Text = "Login";
             ToLoginButton.UseVisualStyleBackColor = false;
+            ToLoginButton.Click += ToLoginButton_Click;
             // 
             // ToRegisterButton
             // 
@@ -60,6 +61,7 @@
             ToRegisterButton.TabIndex = 1;
             ToRegisterButton.Text = "Register";
             ToRegisterButton.UseVisualStyleBackColor = false;
+            ToRegisterButton.Click += ToRegisterButton_Click;
             // 
             // ExitButton
             // 
@@ -72,6 +74,7 @@
             ExitButton.TabIndex = 2;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = false;
+            ExitButton.Click += ExitButton_Click;
             // 
             // label1
             // 

@@ -13,7 +13,7 @@ namespace WinFormsApp2
         {
             var host = CreateHostBuilder().Build();
 
-            var form1 = host.Services.GetRequiredService<Form1>();
+            var paginaPrincipala = host.Services.GetRequiredService<PaginaPrincipala>();
 
             TimeSpan oraInceput = new TimeSpan(8, 0, 0);
             TimeSpan oraSfarsit = new TimeSpan(20, 0, 0);
@@ -75,7 +75,7 @@ namespace WinFormsApp2
             //programaremanager.AnuleazaProgramare("ion.popescu", 1);
             //programaremanager.AnuleazaProgramare("george.vasilescu", 0);
 
-            Application.Run(form1);
+            Application.Run(paginaPrincipala);
         }
 
         static IHostBuilder CreateHostBuilder()
@@ -84,7 +84,7 @@ namespace WinFormsApp2
                 .ConfigureServices((context, services) =>
                 {
 
-                    services.AddSingleton<Form1>();
+                    services.AddSingleton<PaginaPrincipala>();
                     services.AddSingleton<IMyService, MyService>();
                 })
                 .ConfigureLogging(logging =>
@@ -99,9 +99,9 @@ namespace WinFormsApp2
     public partial class Form1 : Form
     {
         private readonly IMyService _myService;
-        private readonly ILogger<Form1> _logger;
+        private readonly ILogger<PaginaPrincipala> _logger;
 
-        public Form1(IMyService myService, ILogger<Form1> logger)
+        public Form1(IMyService myService, ILogger<PaginaPrincipala> logger)
         {
             _myService = myService;
             _logger = logger;
