@@ -132,7 +132,8 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(393, 174);
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.Location = new Point(393, 149);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(250, 27);
             dateTimePicker2.TabIndex = 7;

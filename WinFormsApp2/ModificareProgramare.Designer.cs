@@ -116,10 +116,12 @@
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.Location = new Point(393, 149);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 16;
+            dateTimePicker1.Value = new DateTime(2025, 1, 14, 1, 37, 6, 0);
             // 
             // textBox1
             // 

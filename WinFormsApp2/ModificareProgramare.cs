@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinFormsApp2
 {
@@ -18,13 +19,15 @@ namespace WinFormsApp2
         private readonly ProgramareManager _programareManager;
         private readonly SalaFitness _salaFitness;
         private AbonatStandard _abonat;
-        public ModificareProgramare(AbonatManager abonatManager, IServiceProvider serviceProvider, ProgramareManager programareManager, SalaFitness salaFitness)
+        private readonly AntrenorManager _antrenorManager;
+        public ModificareProgramare(AbonatManager abonatManager, IServiceProvider serviceProvider, ProgramareManager programareManager, SalaFitness salaFitness, AntrenorManager antrenorManager)
         {
 
             _abonatManager = abonatManager;
             _serviceProvider = serviceProvider;
             _programareManager = programareManager;
             _salaFitness = salaFitness;
+            _antrenorManager = antrenorManager;
             InitializeComponent();
         }
 
@@ -35,14 +38,17 @@ namespace WinFormsApp2
 
         private void ModificareProgramare_Load(object sender, EventArgs e)
         {
-
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker1.MinDate = DateTime.Now;
+            _antrenorManager.ListaAntrenori.ForEach(antrenor => comboBox3.Items.Add(antrenor.NumeComplet + ", " + antrenor.Specializare));
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
 
-            var detaliiProgramari = _serviceProvider.GetRequiredService<ContAbonat>();
+            var detaliiProgramari = _serviceProvider.GetRequiredService<DetaliiProgramari>();
             detaliiProgramari.Show();
         }
 
@@ -50,8 +56,9 @@ namespace WinFormsApp2
         {
             this.Hide();
             
-            var detaliiProgramari = _serviceProvider.GetRequiredService<ContAbonat>();
+            var detaliiProgramari = _serviceProvider.GetRequiredService<DetaliiProgramari>();
             detaliiProgramari.InitializeUser(_abonat);
+            detaliiProgramari.InitializeIstoricList();
             detaliiProgramari.ShowDialog();
         }
     }
