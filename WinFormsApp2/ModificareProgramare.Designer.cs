@@ -92,7 +92,6 @@
             label3.Size = new Size(129, 20);
             label3.TabIndex = 12;
             label3.Text = "(si ora de inceput)";
-            label3.Click += this.label3_Click;
             // 
             // button1
             // 
@@ -104,6 +103,7 @@
             button1.TabIndex = 13;
             button1.Text = "Inapoi";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -115,6 +115,7 @@
             button2.TabIndex = 14;
             button2.Text = "Adauga";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label4
             // 

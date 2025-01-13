@@ -16,5 +16,34 @@ namespace WinFormsApp2
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            PaginaPrincipala paginaPrincipala = new PaginaPrincipala();
+            paginaPrincipala.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            DetaliiCont detaliiCont = new DetaliiCont();
+            detaliiCont.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            DetaliiProgramari detaliiProgramari = new DetaliiProgramari();
+            detaliiProgramari.ShowDialog();
+        }
     }
 }

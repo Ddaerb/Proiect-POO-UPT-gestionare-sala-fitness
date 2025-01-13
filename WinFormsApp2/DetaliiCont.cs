@@ -21,5 +21,13 @@ namespace WinFormsApp2
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            ContAbonat contAbonat = new ContAbonat();
+            contAbonat.ShowDialog();
+        }
     }
 }

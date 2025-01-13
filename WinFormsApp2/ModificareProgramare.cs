@@ -21,5 +21,21 @@ namespace WinFormsApp2
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            DetaliiProgramari detaliiProgramari = new DetaliiProgramari();
+            detaliiProgramari.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            DetaliiProgramari detaliiProgramari = new DetaliiProgramari();
+            detaliiProgramari.ShowDialog();
+        }
     }
 }

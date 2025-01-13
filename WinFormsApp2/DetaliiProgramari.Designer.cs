@@ -47,6 +47,7 @@
             button1.TabIndex = 0;
             button1.Text = "Adauga Programare";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -58,6 +59,7 @@
             button2.TabIndex = 14;
             button2.Text = "Inapoi";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label1
             // 
@@ -92,6 +94,7 @@
             button3.TabIndex = 17;
             button3.Text = "Anuleaza Programare";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -103,6 +106,7 @@
             button4.TabIndex = 18;
             button4.Text = "Modifica Programare";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // listView1
             // 

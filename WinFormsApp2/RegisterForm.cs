@@ -103,7 +103,10 @@ namespace WinFormsApp2
             cmbSub.SelectedIndex = -1;
 
             MessageBox.Show("Utilizatorul a fost adaugat cu succes");
+            this.Hide();
 
+            ContAbonat contAbonat = new ContAbonat();
+            contAbonat.ShowDialog();
         }
     }
 }

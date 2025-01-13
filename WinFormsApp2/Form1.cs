@@ -32,6 +32,10 @@ namespace WinFormsApp2
                 return;
             }
             MessageBox.Show($"Buna ziua, {abonat.NumeComplet}");
+            this.Hide();
+
+            ContAbonat contAbonat = new ContAbonat();
+            contAbonat.ShowDialog();
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)

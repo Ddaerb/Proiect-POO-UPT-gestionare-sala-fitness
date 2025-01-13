@@ -28,5 +28,15 @@
     "Password": "ioana",
     "PretAbonament": 150,
     "IstoricProgramari": []
+  },
+  {
+    "TipAbonament": "premium",
+    "TaxaDepasireDurataProgramari": 2,
+    "NumeComplet": "abcd",
+    "CNP": "1234567890123",
+    "Username": "djgirjgjfg",
+    "Password": "uubhurb",
+    "PretAbonament": 150,
+    "IstoricProgramari": []
   }
 ]
