@@ -30,7 +30,32 @@ namespace WinFormsApp2
         }
 
         public void AdaugaAntrenor(Antrenor antrenor)
-        {
+        { 
+            if(antrenor==null)
+            {
+                MessageBox.Show
+                (
+                "Antrenorul nu poate fi null.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
+                return;
+            }
+
+            if (ListaAntrenori.Any(a => a.NumeComplet == antrenor.NumeComplet && a.Specializare == antrenor.Specializare))
+            {
+                MessageBox.Show
+                (
+                $"Antrenorul cu numele '{antrenor.NumeComplet}' si specializarea '{antrenor.Specializare}' exista deja in lista.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
+                return;
+            }
+
+
             ListaAntrenori.Add(antrenor);
             ActualizeazaFisierJSON();
         }
