@@ -19,7 +19,7 @@
             "OraSfarsit": "17:00:00"
           }
         },
-        "Data": "2025-01-13T20:14:15.4680978+03:00",
+        "Data": "2025-01-13T19:14:15.4680978+02:00",
         "DurataProgramataOre": 2,
         "StatusProgramare": "Valida."
       },
@@ -34,7 +34,7 @@
             "OraSfarsit": "16:00:00"
           }
         },
-        "Data": "2025-01-17T14:14:15.469762+03:00",
+        "Data": "2025-01-17T13:14:15.469762+02:00",
         "DurataProgramataOre": 1,
         "StatusProgramare": "Valida."
       }
@@ -60,7 +60,7 @@
             "OraSfarsit": "16:00:00"
           }
         },
-        "Data": "2025-01-15T14:14:15.4697547+03:00",
+        "Data": "2025-01-15T13:14:15.4697547+02:00",
         "DurataProgramataOre": 1,
         "StatusProgramare": "Valida."
       }
@@ -86,10 +86,20 @@
             "OraSfarsit": "18:00:00"
           }
         },
-        "Data": "2025-01-16T14:14:15.4697618+03:00",
+        "Data": "2025-01-16T13:14:15.4697618+02:00",
         "DurataProgramataOre": 3,
         "StatusProgramare": "Valida."
       }
     ]
+  },
+  {
+    "NumeComplet": "Ionescu Denisa",
+    "CNP": "1234567890123",
+    "Username": "denisa.ionescu",
+    "Password": "1234",
+    "PretAbonament": 100,
+    "TipAbonament": "standard",
+    "TaxaDepasireDurataProgramari": 5,
+    "IstoricProgramari": []
   }
 ]

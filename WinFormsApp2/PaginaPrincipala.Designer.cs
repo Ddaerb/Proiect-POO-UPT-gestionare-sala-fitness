@@ -42,11 +42,11 @@
             ToLoginButton.BackColor = Color.Navy;
             ToLoginButton.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ToLoginButton.ForeColor = SystemColors.ButtonFace;
-            ToLoginButton.Location = new Point(323, 217);
+            ToLoginButton.Location = new Point(335, 217);
             ToLoginButton.Name = "ToLoginButton";
-            ToLoginButton.Size = new Size(136, 47);
+            ToLoginButton.Size = new Size(152, 47);
             ToLoginButton.TabIndex = 0;
-            ToLoginButton.Text = "Login";
+            ToLoginButton.Text = "Autentificare";
             ToLoginButton.UseVisualStyleBackColor = false;
             ToLoginButton.Click += ToLoginButton_Click;
             // 
@@ -55,11 +55,11 @@
             ToRegisterButton.BackColor = Color.Navy;
             ToRegisterButton.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
             ToRegisterButton.ForeColor = SystemColors.ButtonFace;
-            ToRegisterButton.Location = new Point(322, 270);
+            ToRegisterButton.Location = new Point(335, 270);
             ToRegisterButton.Name = "ToRegisterButton";
-            ToRegisterButton.Size = new Size(136, 50);
+            ToRegisterButton.Size = new Size(152, 50);
             ToRegisterButton.TabIndex = 1;
-            ToRegisterButton.Text = "Register";
+            ToRegisterButton.Text = "Inregistrare";
             ToRegisterButton.UseVisualStyleBackColor = false;
             ToRegisterButton.Click += ToRegisterButton_Click;
             // 
@@ -68,11 +68,11 @@
             ExitButton.BackColor = Color.Navy;
             ExitButton.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ExitButton.ForeColor = SystemColors.ButtonHighlight;
-            ExitButton.Location = new Point(323, 326);
+            ExitButton.Location = new Point(347, 326);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(136, 46);
+            ExitButton.Size = new Size(124, 46);
             ExitButton.TabIndex = 2;
-            ExitButton.Text = "Exit";
+            ExitButton.Text = "Iesire";
             ExitButton.UseVisualStyleBackColor = false;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -80,7 +80,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Ink Free", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(297, 177);
+            label1.Location = new Point(314, 177);
             label1.Name = "label1";
             label1.Size = new Size(200, 37);
             label1.TabIndex = 3;
@@ -90,7 +90,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(323, 46);
+            pictureBox1.Location = new Point(347, 45);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(135, 119);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;

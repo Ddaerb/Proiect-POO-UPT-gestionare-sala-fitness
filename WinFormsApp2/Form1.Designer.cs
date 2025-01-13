@@ -44,9 +44,9 @@
             Username.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Username.Location = new Point(324, 72);
             Username.Name = "Username";
-            Username.Size = new Size(99, 28);
+            Username.Size = new Size(178, 28);
             Username.TabIndex = 0;
-            Username.Text = "Username";
+            Username.Text = "Nume de Utilizator";
             // 
             // txtUsername
             // 
@@ -70,20 +70,20 @@
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(324, 161);
             label1.Name = "label1";
-            label1.Size = new Size(93, 28);
+            label1.Size = new Size(66, 28);
             label1.TabIndex = 2;
-            label1.Text = "Password";
+            label1.Text = "Parola";
             // 
             // LoginButton
             // 
             LoginButton.BackColor = Color.Navy;
-            LoginButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LoginButton.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LoginButton.ForeColor = SystemColors.ButtonHighlight;
-            LoginButton.Location = new Point(331, 279);
+            LoginButton.Location = new Point(331, 261);
             LoginButton.Name = "LoginButton";
-            LoginButton.Size = new Size(109, 41);
+            LoginButton.Size = new Size(117, 41);
             LoginButton.TabIndex = 4;
-            LoginButton.Text = "Login";
+            LoginButton.Text = "Autentificare";
             LoginButton.UseVisualStyleBackColor = false;
             LoginButton.Click += LoginButton_Click_1;
             // 
@@ -92,22 +92,22 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Navy;
-            label2.Location = new Point(324, 335);
+            label2.Location = new Point(331, 326);
             label2.Name = "label2";
-            label2.Size = new Size(143, 17);
+            label2.Size = new Size(96, 17);
             label2.TabIndex = 5;
-            label2.Text = "Don't have an account?";
+            label2.Text = "*Nu aveti cont?";
             // 
             // RegisterButton
             // 
             RegisterButton.BackColor = Color.Navy;
             RegisterButton.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             RegisterButton.ForeColor = SystemColors.ButtonHighlight;
-            RegisterButton.Location = new Point(345, 355);
+            RegisterButton.Location = new Point(331, 346);
             RegisterButton.Name = "RegisterButton";
-            RegisterButton.Size = new Size(78, 37);
+            RegisterButton.Size = new Size(96, 34);
             RegisterButton.TabIndex = 6;
-            RegisterButton.Text = "Register";
+            RegisterButton.Text = "Inregistrare";
             RegisterButton.UseVisualStyleBackColor = false;
             RegisterButton.Click += RegisterButton_Click;
             // 

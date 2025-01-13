@@ -18,5 +18,15 @@
     "Password": "parola2349",
     "PretAbonament": 150,
     "IstoricProgramari": []
+  },
+  {
+    "TipAbonament": "premium",
+    "TaxaDepasireDurataProgramari": 2,
+    "NumeComplet": "Popa Ioana",
+    "CNP": "9876453201467",
+    "Username": "ioana.popa",
+    "Password": "ioana",
+    "PretAbonament": 150,
+    "IstoricProgramari": []
   }
 ]

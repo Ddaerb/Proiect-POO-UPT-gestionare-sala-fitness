@@ -14,13 +14,13 @@ namespace WinFormsApp2
 
             if (username == null || username == "")
             {
-                MessageBox.Show("Username is required");
+                MessageBox.Show("Campul pentru numele de utilizator trebuie completat");
                 return;
             }
 
             if (password == null || password == "")
             {
-                MessageBox.Show("Password is required");
+                MessageBox.Show("Campul pentru parola trebuie completat");
                 return;
             }
 
@@ -28,10 +28,10 @@ namespace WinFormsApp2
             AbonatStandard abonat = abonatManager.GasesteAbonatDupaUsername(username);
             if (abonat == null || abonat.Password != password)
             {
-                MessageBox.Show("Invalid username or password, please try again");
+                MessageBox.Show("Nume de utilizator sau parola incorecte, incercati din nou");
                 return;
             }
-            MessageBox.Show($"Hello, {abonat.NumeComplet}");
+            MessageBox.Show($"Buna ziua, {abonat.NumeComplet}");
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)

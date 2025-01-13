@@ -28,13 +28,17 @@ namespace WinFormsApp2
             string cnp = txtCNP.Text;
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            string confirmPassword = txtConfirmPassword.Text;
+            string confirmPassword = textBox1.Text;
             string subscriptionType = cmbSub.Text;
             Validare validare = new Validare();
+            AbonatManager abonatManager = new AbonatManager();
+            AbonatStandard abonatStandard;
+            AbonatPremium abonatPremium;
 
             if (name == null || name == "") 
             {
-                MessageBox.Show("Name Field is required");
+                MessageBox.Show("Campul pentru nume trebuie completat");
+                return;
             }
    
             string numeNou= validare.ValideazaNumeComplet(name);
@@ -42,7 +46,8 @@ namespace WinFormsApp2
 
             if (cnp == null || cnp == "")
             {
-                MessageBox.Show("CNP Field is required");
+                MessageBox.Show("Campul pentru CNP treuie completat");
+                return;
             }
 
             string cnpNou= validare.VerificareCNP(cnp);
@@ -50,28 +55,54 @@ namespace WinFormsApp2
 
             if (username == null || username == "")
             {
-                MessageBox.Show("Username Field is required");
+                MessageBox.Show("Campul pentru numele de utilizator treuie completat");
+                return;
             }
 
             if (password == null || password == "")
             {
-                MessageBox.Show("Password Field is required");
+                MessageBox.Show("Campul pentru parola treuie completat");
+                return;
             }
-
+            
             if (confirmPassword == null || confirmPassword == "")
             {
-                MessageBox.Show("Confirm Password Field is required");
+                MessageBox.Show("Campul pentru confirmarea parolei treuie completat");
+                return;
             }
 
-            if (password == confirmPassword) 
+            if (password != confirmPassword) 
             {
-                MessageBox.Show("Passwords doesn't match");
+                MessageBox.Show("Parolele nu se potrivesc");
+                return;
             }
 
             if (subscriptionType == null || subscriptionType == "")
             {
-                MessageBox.Show("Type of Subscription Field is required");
+                MessageBox.Show("Campul pentru tipul abonamentului treuie completat");
+                return;
             }
+
+
+            if (subscriptionType == "Standard - 100 RON")
+            {
+                abonatStandard = new AbonatStandard(name, cnp, username, password);
+                abonatManager.AdaugaAbonatStandard(abonatStandard,username);
+            }
+            else if (subscriptionType == "Premium - 150 RON")
+            {
+                abonatPremium = new AbonatPremium(name, cnp, username, password);
+                abonatManager.AdaugaAbonatPremium(abonatPremium,username);
+            }
+
+            txtNume.Clear();
+            txtCNP.Clear();
+            txtUsername.Clear();
+            txtPassword.Clear();
+            textBox1.Clear();
+            cmbSub.SelectedIndex = -1;
+
+            MessageBox.Show("Utilizatorul a fost adaugat cu succes");
 
         }
     }

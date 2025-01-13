@@ -49,9 +49,9 @@
             name.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             name.Location = new Point(308, 37);
             name.Name = "name";
-            name.Size = new Size(68, 28);
+            name.Size = new Size(154, 28);
             name.TabIndex = 0;
-            name.Text = "Name";
+            name.Text = "Nume Complet";
             // 
             // txtNume
             // 
@@ -93,9 +93,9 @@
             Password.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Password.Location = new Point(308, 280);
             Password.Name = "Password";
-            Password.Size = new Size(101, 28);
+            Password.Size = new Size(72, 28);
             Password.TabIndex = 6;
-            Password.Text = "Password";
+            Password.Text = "Parola";
             // 
             // txtUsername
             // 
@@ -112,9 +112,9 @@
             username.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             username.Location = new Point(308, 200);
             username.Name = "username";
-            username.Size = new Size(106, 28);
+            username.Size = new Size(193, 28);
             username.TabIndex = 4;
-            username.Text = "Username";
+            username.Text = "Nume de Utilizator";
             // 
             // Subscription
             // 
@@ -122,9 +122,9 @@
             Subscription.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Subscription.Location = new Point(308, 433);
             Subscription.Name = "Subscription";
-            Subscription.Size = new Size(205, 28);
+            Subscription.Size = new Size(212, 28);
             Subscription.TabIndex = 8;
-            Subscription.Text = "Type of subscription";
+            Subscription.Text = "Tipul Abonamentului";
             // 
             // cmbSub
             // 
@@ -149,9 +149,9 @@
             txtConfirmPassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtConfirmPassword.Location = new Point(308, 354);
             txtConfirmPassword.Name = "txtConfirmPassword";
-            txtConfirmPassword.Size = new Size(183, 28);
+            txtConfirmPassword.Size = new Size(165, 28);
             txtConfirmPassword.TabIndex = 10;
-            txtConfirmPassword.Text = "Confirm Password";
+            txtConfirmPassword.Text = "Confirma Parola";
             // 
             // RegisterButton
             // 
@@ -162,7 +162,7 @@
             RegisterButton.Name = "RegisterButton";
             RegisterButton.Size = new Size(137, 37);
             RegisterButton.TabIndex = 12;
-            RegisterButton.Text = "Register";
+            RegisterButton.Text = "Inregistrare";
             RegisterButton.UseVisualStyleBackColor = false;
             RegisterButton.Click += RegisterButton_Click;
             // 
