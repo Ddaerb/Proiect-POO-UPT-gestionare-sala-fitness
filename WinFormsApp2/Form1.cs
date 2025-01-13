@@ -15,12 +15,16 @@ namespace WinFormsApp2
             if (username == null || username == "")
             {
                 MessageBox.Show("Username is required");
+                return;
             }
 
             if (password == null || password == "")
             {
                 MessageBox.Show("Password is required");
+                return;
             }
+            AbonatManager abonatManager = new AbonatManager();
+            AbonatStandard abonat = abonatManager.GasesteAbonatDupaUsername(username);
         }
     }
 }

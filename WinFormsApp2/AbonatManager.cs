@@ -245,42 +245,30 @@ namespace WinFormsApp2
             }
         }
 
-
-        /*
-        //Metoda care recalculeaza pretul abonamentului in functie de programarile anulate
-        public void RecalcularePret(string username, bool programareAnulata)
+        public AbonatStandard GasesteAbonatDupaUsername(string username)
         {
-            //se aplica taxa daca abonatul rezerva in afara orelor de functionare a salii.
-            
+            // Cautare în abonati standard
             var abonatStandard = AbonatiStandard.FirstOrDefault(a => a.Username == username);
+            if (abonatStandard != null)
+            {
+                return abonatStandard;
+            }
+
+            // Cautare în abonati premium
             var abonatPremium = AbonatiPremium.FirstOrDefault(a => a.Username == username);
-            if (abonatStandard == null && abonatPremium == null)
+            if (abonatPremium != null)
             {
-                MessageBox.Show
-                (
-                "Abonatul specificat nu a fost gasit.",
-                "Eroare",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
+                // Transformam abonatul premium intr-unul standard pentru procesare uniforma
+                return new AbonatStandard(
+                    abonatPremium.NumeComplet,
+                    abonatPremium.CNP,
+                    abonatPremium.Username,
+                    abonatPremium.Password
                 );
-
-                return;
             }
 
-            if (abonatStandard != null && programareAnulata)
-            {
-                abonatStandard.PretAbonament += 10;
-                JSONHelper.SaveToFile(standardFilePath, AbonatiStandard);
-            }
-
-            else if (abonatPremium != null && programareAnulata)
-            {
-                abonatPremium.PretAbonament += 10;
-                JSONHelper.SaveToFile(premiumFilePath, AbonatiPremium);
-            }
-
+            return null; // Nu a fost gasit abonatul
         }
-        */
 
         public void ActualizeazaAbonati(List<AbonatStandard> liststd,List<AbonatPremium> listprm)
         {
