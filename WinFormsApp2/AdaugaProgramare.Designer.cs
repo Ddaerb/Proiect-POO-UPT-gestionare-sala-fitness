@@ -35,8 +35,8 @@
             label3 = new Label();
             label4 = new Label();
             comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
+            dateTimePicker1 = new DateTimePicker();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // button1
@@ -114,7 +114,7 @@
             comboBox1.Size = new Size(212, 28);
             comboBox1.TabIndex = 6;
             // 
-            // comboBox2
+            // dateTimePicker1
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(393, 232);
@@ -123,7 +123,7 @@
             comboBox2.Size = new Size(212, 28);
             comboBox2.TabIndex = 7;
             // 
-            // comboBox3
+            // textBox1
             // 
             comboBox3.FormattingEnabled = true;
             comboBox3.Location = new Point(393, 151);
@@ -162,7 +162,7 @@
         private Label label3;
         private Label label4;
         private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
+        private DateTimePicker dateTimePicker1;
+        private TextBox textBox1;
     }
 }
