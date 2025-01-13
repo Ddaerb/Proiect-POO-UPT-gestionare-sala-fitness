@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,27 @@ namespace WinFormsApp2
 {
     public partial class ContAbonat : Form
     {
-        public ContAbonat()
+        private readonly AbonatManager _abonatManager;
+        private readonly IServiceProvider _serviceProvider;
+        private AbonatStandard _abonat; 
+
+        public ContAbonat(AbonatManager abonatManager, IServiceProvider serviceProvider)
         {
+            _abonatManager = abonatManager;
+            _serviceProvider = serviceProvider;
             InitializeComponent();
+        }
+
+        public void InitializeUser(AbonatStandard abonat)
+        {
+            _abonat = abonat;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
 
-            PaginaPrincipala paginaPrincipala = new PaginaPrincipala();
+            var paginaPrincipala = _serviceProvider.GetRequiredService<PaginaPrincipala>();
             paginaPrincipala.ShowDialog();
         }
 
@@ -34,7 +46,8 @@ namespace WinFormsApp2
         {
             this.Hide();
 
-            DetaliiCont detaliiCont = new DetaliiCont();
+            var detaliiCont = _serviceProvider.GetRequiredService<DetaliiCont>();
+            detaliiCont.InitializeUser(_abonat);
             detaliiCont.ShowDialog();
         }
 
@@ -42,7 +55,7 @@ namespace WinFormsApp2
         {
             this.Hide();
 
-            DetaliiProgramari detaliiProgramari = new DetaliiProgramari();
+            var detaliiProgramari = _serviceProvider.GetRequiredService<DetaliiProgramari>();
             detaliiProgramari.ShowDialog();
         }
     }

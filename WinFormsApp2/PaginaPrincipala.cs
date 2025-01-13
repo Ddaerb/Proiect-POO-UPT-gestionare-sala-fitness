@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,11 @@ namespace WinFormsApp2
 {
     public partial class PaginaPrincipala : Form
     {
-        public PaginaPrincipala()
+        private readonly IServiceProvider _serviceProvider;
+
+        public PaginaPrincipala(IServiceProvider serviceProvider)
         {
+            _serviceProvider = serviceProvider;
             InitializeComponent();
         }
 
@@ -25,16 +29,14 @@ namespace WinFormsApp2
         private void ToLoginButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-
-            Form1 loginForm = new Form1();
-            loginForm.ShowDialog();
+            var login = _serviceProvider.GetRequiredService<Form1>();
+            login.ShowDialog();
         }
 
         private void ToRegisterButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-
-            RegisterForm registerForm = new RegisterForm();
+            var registerForm = _serviceProvider.GetRequiredService<RegisterForm>();
             registerForm.ShowDialog();
         }
 

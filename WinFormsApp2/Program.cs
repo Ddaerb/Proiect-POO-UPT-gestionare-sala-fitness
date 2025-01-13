@@ -85,7 +85,17 @@ namespace WinFormsApp2
                 {
 
                     services.AddSingleton<PaginaPrincipala>();
+                    services.AddTransient<Form1>();
+                    services.AddTransient<RegisterForm>();
+                    services.AddSingleton<ContAbonat>();         
+                    services.AddSingleton<DetaliiCont>();      
+                    services.AddSingleton<DetaliiProgramari>();
+                    services.AddSingleton<AdaugaProgramare>();
+                    services.AddSingleton<ModificareProgramare>();
                     services.AddSingleton<IMyService, MyService>();
+                    services.AddSingleton<AbonatManager>();
+                    services.AddSingleton<AntrenorManager>();
+                    services.AddSingleton<ProgramareManager>();
                 })
                 .ConfigureLogging(logging =>
                 {
@@ -96,23 +106,5 @@ namespace WinFormsApp2
 
         }
     }
-    public partial class Form1 : Form
-    {
-        private readonly IMyService _myService;
-        private readonly ILogger<PaginaPrincipala> _logger;
-
-        public Form1(IMyService myService, ILogger<PaginaPrincipala> logger)
-        {
-            _myService = myService;
-            _logger = logger;
-            InitializeComponent();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            _logger.LogInformation("Form1 is loading...");
-            _myService.DoSomething();
-            _logger.LogInformation("Service action completed in Form1.");
-        }
-    }
+    
 }

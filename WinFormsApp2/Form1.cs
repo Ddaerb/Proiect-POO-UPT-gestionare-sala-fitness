@@ -1,11 +1,19 @@
+using Microsoft.Extensions.DependencyInjection;
+
 namespace WinFormsApp2
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private readonly AbonatManager _abonatManager;
+        private readonly IServiceProvider _serviceProvider;
+
+        public Form1(AbonatManager abonatManager, IServiceProvider serviceProvider)
         {
+            _abonatManager = abonatManager;
+            _serviceProvider = serviceProvider;
             InitializeComponent();
         }
+
 
         private void LoginButton_Click_1(object sender, EventArgs e)
         {
@@ -24,8 +32,8 @@ namespace WinFormsApp2
                 return;
             }
 
-            AbonatManager abonatManager = new AbonatManager();
-            AbonatStandard abonat = abonatManager.GasesteAbonatDupaUsername(username);
+            
+            AbonatStandard abonat = _abonatManager.GasesteAbonatDupaUsername(username);
             if (abonat == null || abonat.Password != password)
             {
                 MessageBox.Show("Nume de utilizator sau parola incorecte, incercati din nou");
@@ -34,7 +42,8 @@ namespace WinFormsApp2
             MessageBox.Show($"Buna ziua, {abonat.NumeComplet}");
             this.Hide();
 
-            ContAbonat contAbonat = new ContAbonat();
+            var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
+            contAbonat.InitializeUser(abonat); 
             contAbonat.ShowDialog();
         }
 
@@ -46,8 +55,7 @@ namespace WinFormsApp2
         private void ShowRegisterForm()
         {
             this.Hide();
-
-            RegisterForm registerForm = new RegisterForm();
+            var registerForm = _serviceProvider.GetRequiredService<RegisterForm>();
             registerForm.ShowDialog();
         }
     }

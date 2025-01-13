@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,11 @@ namespace WinFormsApp2
 {
     public partial class ModificareProgramare : Form
     {
-        public ModificareProgramare()
+        private readonly IServiceProvider _serviceProvider;
+        public ModificareProgramare(IServiceProvider serviceProvider)
         {
+
+            _serviceProvider = serviceProvider;
             InitializeComponent();
         }
 
@@ -26,16 +30,13 @@ namespace WinFormsApp2
         {
             this.Hide();
 
-            DetaliiProgramari detaliiProgramari = new DetaliiProgramari();
+            var detaliiProgramari = _serviceProvider.GetRequiredService<ContAbonat>();
             detaliiProgramari.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
-            DetaliiProgramari detaliiProgramari = new DetaliiProgramari();
-            detaliiProgramari.ShowDialog();
+            
         }
     }
 }

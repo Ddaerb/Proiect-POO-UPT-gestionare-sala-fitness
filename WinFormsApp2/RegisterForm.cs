@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,13 @@ namespace WinFormsApp2
 {
     public partial class RegisterForm : Form
     {
-        public RegisterForm()
+        private readonly AbonatManager _abonatManager;
+        private readonly IServiceProvider _serviceProvider;
+
+        public RegisterForm(AbonatManager abonatManager, IServiceProvider serviceProvider)
         {
+            _abonatManager = abonatManager;
+            _serviceProvider = serviceProvider;
             InitializeComponent();
         }
 
@@ -31,7 +37,6 @@ namespace WinFormsApp2
             string confirmPassword = textBox1.Text;
             string subscriptionType = cmbSub.Text;
             Validare validare = new Validare();
-            AbonatManager abonatManager = new AbonatManager();
             AbonatStandard abonatStandard;
             AbonatPremium abonatPremium;
 
@@ -87,12 +92,12 @@ namespace WinFormsApp2
             if (subscriptionType == "Standard - 100 RON")
             {
                 abonatStandard = new AbonatStandard(name, cnp, username, password);
-                abonatManager.AdaugaAbonatStandard(abonatStandard,username);
+                _abonatManager.AdaugaAbonatStandard(abonatStandard,username);
             }
             else if (subscriptionType == "Premium - 150 RON")
             {
                 abonatPremium = new AbonatPremium(name, cnp, username, password);
-                abonatManager.AdaugaAbonatPremium(abonatPremium,username);
+                _abonatManager.AdaugaAbonatPremium(abonatPremium,username);
             }
 
             txtNume.Clear();
@@ -105,7 +110,7 @@ namespace WinFormsApp2
             MessageBox.Show("Utilizatorul a fost adaugat cu succes");
             this.Hide();
 
-            ContAbonat contAbonat = new ContAbonat();
+            var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
             contAbonat.ShowDialog();
         }
     }
