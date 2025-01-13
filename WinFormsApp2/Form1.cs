@@ -23,8 +23,15 @@ namespace WinFormsApp2
                 MessageBox.Show("Password is required");
                 return;
             }
+
             AbonatManager abonatManager = new AbonatManager();
             AbonatStandard abonat = abonatManager.GasesteAbonatDupaUsername(username);
+            if (abonat == null || abonat.Password != password) 
+            {
+                MessageBox.Show("Invalid username or password, please try again");
+                return;
+            }
+            MessageBox.Show($"Hello, {abonat.NumeComplet}");
         }
     }
 }
