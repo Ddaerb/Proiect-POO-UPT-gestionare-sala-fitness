@@ -26,12 +26,25 @@ namespace WinFormsApp2
 
             AbonatManager abonatManager = new AbonatManager();
             AbonatStandard abonat = abonatManager.GasesteAbonatDupaUsername(username);
-            if (abonat == null || abonat.Password != password) 
+            if (abonat == null || abonat.Password != password)
             {
                 MessageBox.Show("Invalid username or password, please try again");
                 return;
             }
             MessageBox.Show($"Hello, {abonat.NumeComplet}");
+        }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            this.ShowRegisterForm();
+        }
+
+        private void ShowRegisterForm()
+        {
+            this.Hide();
+
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
         }
     }
 }
