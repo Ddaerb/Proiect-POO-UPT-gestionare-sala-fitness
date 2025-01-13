@@ -32,11 +32,6 @@ namespace WinFormsApp2
 
         private AbonatStandard RecalcularePretAbonament(AbonatStandard abonat, bool status, Programare programare)
         {
-            if (programare.StatusProgramare == "Valida." && !status)
-            {
-                return abonat;
-            }
-
             MessageBox.Show($"RecalcularePretAbonament pentru {abonat.Username} cu statusul: {status} si statusul programarii: {programare.StatusProgramare}", "Debug Info");
 
             if (programare.StatusProgramare == "anulata." || programare.StatusProgramare == "modificata.")
@@ -142,7 +137,7 @@ namespace WinFormsApp2
                 return;
             }
 
-            if (ListaProgramari.Any(p => p.AbonatUsername == programare.AbonatUsername && p.Data == programare.Data && p.DurataProgramataOre == programare.DurataProgramataOre))
+            if (ListaProgramari.Any(p =>p.AbonatUsername == programare.AbonatUsername &&p.Data.Date == programare.Data.Date &&p.DurataProgramataOre == programare.DurataProgramataOre))
             {
                 MessageBox.Show(
                     "Aceasta programare exista deja in sistem.",
@@ -157,16 +152,21 @@ namespace WinFormsApp2
 
             if (abonatStandard != null)
             {
+
+                MessageBox.Show("Recalculating PretAbonament for AbonatStandard", "Debug Info");
                 abonatStandard = RecalcularePretAbonament(abonatStandard, false, programare);
                 abonatStandard.IstoricProgramari.Add(programare);
             }
             else if (abonatPremium != null)
             {
+                MessageBox.Show("Recalculating PretAbonament for AbonatPremium", "Debug Info");
                 abonatPremium = (AbonatPremium)RecalcularePretAbonament(abonatPremium, false, programare);
                 abonatPremium.IstoricProgramari.Add(programare);
             }
 
+            MessageBox.Show("Updating abonati", "Debug Info");
             abonatManager.ActualizeazaAbonati(abonatManager.AbonatiStandard, abonatManager.AbonatiPremium);
+            MessageBox.Show("AdaugaProgramare completed", "Debug Info");
         }
 
 
