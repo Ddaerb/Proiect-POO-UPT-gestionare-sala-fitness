@@ -30,6 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             listView1 = new ListView();
+            NumeComplet = new ColumnHeader();
+            Specializare = new ColumnHeader();
+            NrMaxClienti = new ColumnHeader();
+            OrarPrestabilit = new ColumnHeader();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -40,11 +44,34 @@
             // 
             // listView1
             // 
+            listView1.Columns.AddRange(new ColumnHeader[] { NumeComplet, Specializare, NrMaxClienti, OrarPrestabilit });
+            listView1.FullRowSelect = true;
             listView1.Location = new Point(252, 21);
             listView1.Name = "listView1";
             listView1.Size = new Size(510, 402);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // NumeComplet
+            // 
+            NumeComplet.Text = "Nume Complet";
+            NumeComplet.Width = 150;
+            // 
+            // Specializare
+            // 
+            Specializare.Text = "Specializare";
+            Specializare.Width = 120;
+            // 
+            // NrMaxClienti
+            // 
+            NrMaxClienti.Text = "Nr. Max. Clienti";
+            NrMaxClienti.Width = 120;
+            // 
+            // OrarPrestabilit
+            // 
+            OrarPrestabilit.Text = "Orar";
+            OrarPrestabilit.Width = 100;
             // 
             // button1
             // 
@@ -57,6 +84,7 @@
             button1.TabIndex = 1;
             button1.Text = "Adauga Antrenor";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -81,6 +109,7 @@
             button3.TabIndex = 3;
             button3.Text = "Inapoi";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -106,6 +135,7 @@
             Controls.Add(listView1);
             Name = "DetaliiAntrenoriAdmin";
             Text = "DetaliiAntrenoriAdmin";
+            Load += DetaliiAntrenoriAdmin_Load;
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
         }
@@ -118,5 +148,9 @@
         private Button button3;
         private BindingSource bindingSource1;
         private Button button4;
+        private ColumnHeader NumeComplet;
+        private ColumnHeader Specializare;
+        private ColumnHeader NrMaxClienti;
+        private ColumnHeader OrarPrestabilit;
     }
 }

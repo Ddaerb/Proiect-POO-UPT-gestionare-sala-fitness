@@ -31,6 +31,11 @@
             button3 = new Button();
             button2 = new Button();
             listView1 = new ListView();
+            Username = new ColumnHeader();
+            Antrenor = new ColumnHeader();
+            Data = new ColumnHeader();
+            DurataOre = new ColumnHeader();
+            Status = new ColumnHeader();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             groupBox1 = new GroupBox();
@@ -49,6 +54,7 @@
             button3.TabIndex = 7;
             button3.Text = "Inapoi";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -65,11 +71,38 @@
             // 
             // listView1
             // 
+            listView1.Columns.AddRange(new ColumnHeader[] { Username, Antrenor, Data, DurataOre, Status });
+            listView1.FullRowSelect = true;
             listView1.Location = new Point(283, 24);
             listView1.Name = "listView1";
             listView1.Size = new Size(496, 402);
             listView1.TabIndex = 4;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // Username
+            // 
+            Username.Text = "Username";
+            Username.Width = 120;
+            // 
+            // Antrenor
+            // 
+            Antrenor.Text = "Antrenor";
+            Antrenor.Width = 120;
+            // 
+            // Data
+            // 
+            Data.Text = "Data";
+            // 
+            // DurataOre
+            // 
+            DurataOre.Text = "Durata Ore";
+            DurataOre.Width = 90;
+            // 
+            // Status
+            // 
+            Status.Text = "Status";
+            Status.Width = 80;
             // 
             // radioButton1
             // 
@@ -125,6 +158,7 @@
             Controls.Add(listView1);
             Name = "DetaliiProgramariAdmin";
             Text = "DetaliiProgramariAdmin";
+            Load += DetaliiProgramariAdmin_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -139,5 +173,10 @@
         private RadioButton radioButton2;
         private GroupBox groupBox1;
         private Label label1;
+        private ColumnHeader Username;
+        private ColumnHeader Antrenor;
+        private ColumnHeader Data;
+        private ColumnHeader DurataOre;
+        private ColumnHeader Status;
     }
 }
