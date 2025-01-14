@@ -42,9 +42,9 @@
             ToLoginButton.BackColor = Color.Navy;
             ToLoginButton.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ToLoginButton.ForeColor = SystemColors.ButtonFace;
-            ToLoginButton.Location = new Point(335, 217);
+            ToLoginButton.Location = new Point(318, 224);
             ToLoginButton.Name = "ToLoginButton";
-            ToLoginButton.Size = new Size(152, 47);
+            ToLoginButton.Size = new Size(152, 43);
             ToLoginButton.TabIndex = 0;
             ToLoginButton.Text = "Autentificare";
             ToLoginButton.UseVisualStyleBackColor = false;
@@ -55,9 +55,9 @@
             ToRegisterButton.BackColor = Color.Navy;
             ToRegisterButton.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
             ToRegisterButton.ForeColor = SystemColors.ButtonFace;
-            ToRegisterButton.Location = new Point(335, 270);
+            ToRegisterButton.Location = new Point(318, 277);
             ToRegisterButton.Name = "ToRegisterButton";
-            ToRegisterButton.Size = new Size(152, 50);
+            ToRegisterButton.Size = new Size(152, 46);
             ToRegisterButton.TabIndex = 1;
             ToRegisterButton.Text = "Inregistrare";
             ToRegisterButton.UseVisualStyleBackColor = false;
@@ -65,12 +65,12 @@
             // 
             // ExitButton
             // 
-            ExitButton.BackColor = Color.Navy;
+            ExitButton.BackColor = Color.Indigo;
             ExitButton.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ExitButton.ForeColor = SystemColors.ButtonHighlight;
-            ExitButton.Location = new Point(347, 326);
+            ExitButton.Location = new Point(318, 333);
             ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(124, 46);
+            ExitButton.Size = new Size(152, 42);
             ExitButton.TabIndex = 2;
             ExitButton.Text = "Iesire";
             ExitButton.UseVisualStyleBackColor = false;
@@ -80,7 +80,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Ink Free", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(314, 177);
+            label1.Location = new Point(295, 175);
             label1.Name = "label1";
             label1.Size = new Size(200, 37);
             label1.TabIndex = 3;
@@ -90,9 +90,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(347, 45);
+            pictureBox1.Location = new Point(318, 31);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(135, 119);
+            pictureBox1.Size = new Size(152, 129);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;

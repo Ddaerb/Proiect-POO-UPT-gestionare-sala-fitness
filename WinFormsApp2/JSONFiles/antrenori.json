@@ -27,12 +27,21 @@
     }
   },
   {
-    "NumeComplet": "Flo Glo",
+    "NumeComplet": "Ion Ionescu",
     "Specializare": "Inot",
-    "NumarMaximClienti": 4,
+    "NumarMaximClienti": 5,
     "OrarPrestabilit": {
-      "OraInceput": "16:15:12",
-      "OraSfarsit": "20:15:12"
+      "OraInceput": "19:32:56",
+      "OraSfarsit": "22:32:56"
+    }
+  },
+  {
+    "NumeComplet": "Pop Popescu",
+    "Specializare": "Pilates",
+    "NumarMaximClienti": 6,
+    "OrarPrestabilit": {
+      "OraInceput": "10:32:56",
+      "OraSfarsit": "22:32:56"
     }
   }
 ]

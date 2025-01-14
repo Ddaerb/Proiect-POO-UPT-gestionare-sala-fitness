@@ -1,20 +1,5 @@
 [
   {
-    "AbonatUsername": "maria.ionescu",
-    "Antrenor": {
-      "NumeComplet": "Diana Pop",
-      "Specializare": "Yoga",
-      "NumarMaximClienti": 8,
-      "OrarPrestabilit": {
-        "OraInceput": "08:00:00",
-        "OraSfarsit": "16:00:00"
-      }
-    },
-    "Data": "2025-01-15T14:14:15.4697547+03:00",
-    "DurataProgramataOre": 1,
-    "StatusProgramare": "Valida."
-  },
-  {
     "AbonatUsername": "george.vasilescu",
     "Antrenor": {
       "NumeComplet": "Vlad Ionescu",
@@ -43,36 +28,6 @@
     "Data": "2025-01-22T03:13:54.659",
     "DurataProgramataOre": 5,
     "StatusProgramare": "modificata."
-  },
-  {
-    "AbonatUsername": "idk.idk",
-    "Antrenor": {
-      "NumeComplet": "Vlad Ionescu",
-      "Specializare": "Culturism",
-      "NumarMaximClienti": 6,
-      "OrarPrestabilit": {
-        "OraInceput": "10:00:00",
-        "OraSfarsit": "18:00:00"
-      }
-    },
-    "Data": "2025-02-07T18:30:54.324",
-    "DurataProgramataOre": 2,
-    "StatusProgramare": "Valida."
-  },
-  {
-    "AbonatUsername": "idk.idk",
-    "Antrenor": {
-      "NumeComplet": "Alex Stan",
-      "Specializare": "Fitness",
-      "NumarMaximClienti": 9,
-      "OrarPrestabilit": {
-        "OraInceput": "09:00:00",
-        "OraSfarsit": "17:00:00"
-      }
-    },
-    "Data": "2025-02-05T20:30:54.324",
-    "DurataProgramataOre": 4,
-    "StatusProgramare": "Valida."
   },
   {
     "AbonatUsername": "ana.popescu",
@@ -107,16 +62,31 @@
   {
     "AbonatUsername": "idk.idk",
     "Antrenor": {
-      "NumeComplet": "Diana Pop",
-      "Specializare": "Yoga",
-      "NumarMaximClienti": 8,
+      "NumeComplet": "Alex Stan",
+      "Specializare": "Fitness",
+      "NumarMaximClienti": 9,
       "OrarPrestabilit": {
-        "OraInceput": "08:00:00",
-        "OraSfarsit": "16:00:00"
+        "OraInceput": "09:00:00",
+        "OraSfarsit": "17:00:00"
       }
     },
-    "Data": "2025-01-16T04:42:46.412",
-    "DurataProgramataOre": 6,
-    "StatusProgramare": "Valida."
+    "Data": "2025-01-16T19:31:21.074",
+    "DurataProgramataOre": 5,
+    "StatusProgramare": "modificata."
+  },
+  {
+    "AbonatUsername": "idk.idk",
+    "Antrenor": {
+      "NumeComplet": "Vlad Ionescu",
+      "Specializare": "Culturism",
+      "NumarMaximClienti": 6,
+      "OrarPrestabilit": {
+        "OraInceput": "10:00:00",
+        "OraSfarsit": "18:00:00"
+      }
+    },
+    "Data": "2025-01-17T19:31:21.074",
+    "DurataProgramataOre": 8,
+    "StatusProgramare": "modificata."
   }
 ]

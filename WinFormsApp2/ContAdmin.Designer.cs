@@ -40,7 +40,7 @@
             button1.BackColor = Color.Navy;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(313, 111);
+            button1.Location = new Point(302, 111);
             button1.Name = "button1";
             button1.Size = new Size(201, 49);
             button1.TabIndex = 0;
@@ -53,7 +53,7 @@
             button2.BackColor = Color.Navy;
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(313, 166);
+            button2.Location = new Point(302, 166);
             button2.Name = "button2";
             button2.Size = new Size(201, 49);
             button2.TabIndex = 1;
@@ -66,7 +66,7 @@
             button3.BackColor = Color.Navy;
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(313, 221);
+            button3.Location = new Point(302, 221);
             button3.Name = "button3";
             button3.Size = new Size(201, 50);
             button3.TabIndex = 2;

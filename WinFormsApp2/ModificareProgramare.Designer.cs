@@ -31,7 +31,6 @@
             comboBox3 = new ComboBox();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             button1 = new Button();
             button2 = new Button();
             label4 = new Label();
@@ -42,7 +41,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(393, 69);
+            comboBox3.Location = new Point(442, 187);
             comboBox3.Margin = new Padding(3, 4, 3, 4);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(250, 28);
@@ -51,37 +50,28 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(71, 79);
+            label1.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(189, 190);
             label1.Name = "label1";
-            label1.Size = new Size(91, 25);
+            label1.Size = new Size(87, 25);
             label1.TabIndex = 10;
             label1.Text = "Antrenor:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(71, 149);
+            label2.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.Location = new Point(189, 263);
             label2.Name = "label2";
-            label2.Size = new Size(55, 25);
+            label2.Size = new Size(199, 25);
             label2.TabIndex = 11;
-            label2.Text = "Data:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(71, 176);
-            label3.Name = "label3";
-            label3.Size = new Size(164, 25);
-            label3.TabIndex = 12;
-            label3.Text = "(si ora de inceput)";
+            label2.Text = "Data(si ora de inceput):";
             // 
             // button1
             // 
-            button1.BackColor = Color.CornflowerBlue;
+            button1.BackColor = Color.Navy;
             button1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ButtonHighlight;
             button1.Location = new Point(33, 520);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
@@ -93,8 +83,9 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.MediumPurple;
+            button2.BackColor = Color.Indigo;
             button2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = SystemColors.ButtonFace;
             button2.Location = new Point(754, 520);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
@@ -107,17 +98,17 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(71, 236);
+            label4.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.Location = new Point(189, 328);
             label4.Name = "label4";
-            label4.Size = new Size(218, 25);
+            label4.Size = new Size(212, 25);
             label4.TabIndex = 15;
             label4.Text = "Durata Programare(ore):";
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(393, 149);
+            dateTimePicker1.Location = new Point(442, 262);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 16;
@@ -125,7 +116,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(393, 234);
+            textBox1.Location = new Point(442, 326);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(250, 27);
             textBox1.TabIndex = 17;
@@ -140,7 +131,6 @@
             Controls.Add(label4);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(comboBox3);
@@ -156,7 +146,6 @@
         private ComboBox comboBox3;
         private Label label1;
         private Label label2;
-        private Label label3;
         private Button button1;
         private Button button2;
         private Label label4;

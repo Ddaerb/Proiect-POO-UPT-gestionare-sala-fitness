@@ -147,18 +147,20 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(205, 24);
             label1.Name = "label1";
-            label1.Size = new Size(129, 20);
+            label1.Size = new Size(140, 20);
             label1.TabIndex = 9;
             label1.Text = "Abonati Standard:";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.Location = new Point(205, 218);
             label2.Name = "label2";
-            label2.Size = new Size(128, 20);
+            label2.Size = new Size(140, 20);
             label2.TabIndex = 10;
             label2.Text = "Abonati Premium:";
             // 

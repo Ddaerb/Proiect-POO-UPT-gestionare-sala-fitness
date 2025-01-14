@@ -44,12 +44,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(301, 40);
+            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(337, 46);
             label1.Name = "label1";
-            label1.Size = new Size(343, 36);
+            label1.Size = new Size(199, 36);
             label1.TabIndex = 0;
-            label1.Text = "BINE AI VENIT, USER!!!";
+            label1.Text = "Bine ai venit!";
             label1.TextAlign = ContentAlignment.TopCenter;
             label1.Click += label1_Click;
             // 
@@ -57,7 +57,7 @@
             // 
             txtNumeComplet.AutoSize = true;
             txtNumeComplet.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNumeComplet.Location = new Point(48, 135);
+            txtNumeComplet.Location = new Point(75, 156);
             txtNumeComplet.Name = "txtNumeComplet";
             txtNumeComplet.Size = new Size(143, 25);
             txtNumeComplet.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             txtNumeUtilizator.AutoSize = true;
             txtNumeUtilizator.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNumeUtilizator.Location = new Point(48, 167);
+            txtNumeUtilizator.Location = new Point(75, 188);
             txtNumeUtilizator.Name = "txtNumeUtilizator";
             txtNumeUtilizator.Size = new Size(175, 25);
             txtNumeUtilizator.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             txtCNP.AutoSize = true;
             txtCNP.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCNP.Location = new Point(48, 199);
+            txtCNP.Location = new Point(75, 220);
             txtCNP.Name = "txtCNP";
             txtCNP.Size = new Size(53, 25);
             txtCNP.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             txtTipAbonament.AutoSize = true;
             txtTipAbonament.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTipAbonament.Location = new Point(48, 232);
+            txtTipAbonament.Location = new Point(75, 253);
             txtTipAbonament.Name = "txtTipAbonament";
             txtTipAbonament.Size = new Size(145, 25);
             txtTipAbonament.TabIndex = 4;
@@ -97,7 +97,7 @@
             // 
             txtPretAbonament.AutoSize = true;
             txtPretAbonament.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPretAbonament.Location = new Point(48, 265);
+            txtPretAbonament.Location = new Point(75, 286);
             txtPretAbonament.Name = "txtPretAbonament";
             txtPretAbonament.Size = new Size(153, 25);
             txtPretAbonament.TabIndex = 5;
@@ -105,8 +105,9 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.CornflowerBlue;
+            button1.BackColor = Color.Indigo;
             button1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ButtonFace;
             button1.Location = new Point(29, 524);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
@@ -160,7 +161,7 @@
             // 
             // btnStergereCont
             // 
-            btnStergereCont.BackColor = Color.Navy;
+            btnStergereCont.BackColor = Color.DarkMagenta;
             btnStergereCont.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnStergereCont.ForeColor = Color.Transparent;
             btnStergereCont.Location = new Point(596, 393);

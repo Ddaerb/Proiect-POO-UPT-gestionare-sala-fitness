@@ -37,12 +37,12 @@
             // button1
             // 
             button1.BackColor = Color.Navy;
-            button1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Transparent;
-            button1.Location = new Point(344, 184);
+            button1.Location = new Point(337, 187);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(206, 53);
+            button1.Size = new Size(213, 67);
             button1.TabIndex = 0;
             button1.Text = "Detalii cont";
             button1.UseVisualStyleBackColor = false;
@@ -51,12 +51,12 @@
             // button2
             // 
             button2.BackColor = Color.Navy;
-            button2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.Transparent;
-            button2.Location = new Point(344, 276);
+            button2.Location = new Point(337, 262);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(206, 53);
+            button2.Size = new Size(213, 64);
             button2.TabIndex = 1;
             button2.Text = "Detalii programari\r\n";
             button2.UseVisualStyleBackColor = false;
@@ -64,7 +64,7 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.CornflowerBlue;
+            button3.BackColor = Color.LightSteelBlue;
             button3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.Location = new Point(26, 516);
             button3.Margin = new Padding(3, 4, 3, 4);
@@ -77,7 +77,7 @@
             // 
             // button4
             // 
-            button4.BackColor = Color.CornflowerBlue;
+            button4.BackColor = Color.LightSteelBlue;
             button4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.Location = new Point(741, 516);
             button4.Margin = new Padding(3, 4, 3, 4);

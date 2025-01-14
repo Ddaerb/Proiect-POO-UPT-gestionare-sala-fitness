@@ -26,7 +26,7 @@ namespace WinFormsApp2
             if (username == null || username == "")
             {
                 MessageBox.Show("Campul pentru numele de utilizator trebuie completat");
-                Log.Error("Campul pentru numele de utilizator trebuie completat."); 
+                Log.Error("Campul pentru numele de utilizator trebuie completat.");
                 return;
             }
 
@@ -88,6 +88,11 @@ namespace WinFormsApp2
 
             var paginaPrincipala = _serviceProvider.GetRequiredService<PaginaPrincipala>();
             paginaPrincipala.Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

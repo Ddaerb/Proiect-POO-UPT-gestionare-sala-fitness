@@ -44,12 +44,13 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.MediumSlateBlue;
+            button1.BackColor = Color.Navy;
             button1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ButtonFace;
             button1.Location = new Point(62, 65);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(219, 57);
+            button1.Size = new Size(219, 65);
             button1.TabIndex = 0;
             button1.Text = "Adauga Programare";
             button1.UseVisualStyleBackColor = false;
@@ -57,9 +58,10 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.CornflowerBlue;
+            button2.BackColor = Color.MediumSlateBlue;
             button2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(62, 416);
+            button2.ForeColor = SystemColors.ButtonFace;
+            button2.Location = new Point(21, 523);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(131, 51);
@@ -72,11 +74,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Red;
-            label1.Location = new Point(251, 512);
+            label1.Location = new Point(342, 503);
             label1.Name = "label1";
-            label1.Size = new Size(623, 58);
+            label1.Size = new Size(527, 50);
             label1.TabIndex = 15;
             label1.Text = "Daca depasiti orele [din cod], se adauga o \r\n                              taxa de penalizare de x RON/ora!!!";
             label1.Click += label1_Click;
@@ -84,22 +86,23 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Impact", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Red;
-            label2.Location = new Point(62, 512);
+            label2.Location = new Point(220, 495);
             label2.Name = "label2";
-            label2.Size = new Size(146, 31);
+            label2.Size = new Size(116, 35);
             label2.TabIndex = 16;
             label2.Text = "ATENTIE!";
             // 
             // button3
             // 
-            button3.BackColor = Color.LightCoral;
+            button3.BackColor = Color.DarkViolet;
             button3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(62, 275);
+            button3.ForeColor = SystemColors.ButtonFace;
+            button3.Location = new Point(62, 264);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(219, 57);
+            button3.Size = new Size(219, 67);
             button3.TabIndex = 17;
             button3.Text = "Anuleaza Programare";
             button3.UseVisualStyleBackColor = false;
@@ -107,12 +110,13 @@
             // 
             // button4
             // 
-            button4.BackColor = Color.Orchid;
+            button4.BackColor = Color.Indigo;
             button4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.ForeColor = SystemColors.ButtonHighlight;
             button4.Location = new Point(62, 168);
             button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(219, 57);
+            button4.Size = new Size(219, 61);
             button4.TabIndex = 18;
             button4.Text = "Modifica Programare";
             button4.UseVisualStyleBackColor = false;

@@ -53,82 +53,31 @@
   {
     "TipAbonament": "premium",
     "TaxaDepasireDurataProgramari": 2,
-    "NumeComplet": "abcd",
+    "NumeComplet": "Ion Popescu",
     "CNP": "1234567890123",
-    "Username": "djgirjgjfg",
-    "Password": "uubhurb",
+    "Username": "ion.popescu",
+    "Password": "parola123",
     "PretAbonament": 150,
     "IstoricProgramari": []
   },
   {
     "TipAbonament": "premium",
     "TaxaDepasireDurataProgramari": 2,
-    "NumeComplet": "Idk Idk",
+    "NumeComplet": "Ionescu Denisa",
     "CNP": "1234567890123",
-    "Username": "idk.idk",
-    "Password": "idk",
-    "PretAbonament": 176,
-    "IstoricProgramari": [
-      {
-        "AbonatUsername": "idk.idk",
-        "Antrenor": {
-          "NumeComplet": "Vlad Ionescu",
-          "Specializare": "Culturism",
-          "NumarMaximClienti": 6,
-          "OrarPrestabilit": {
-            "OraInceput": "10:00:00",
-            "OraSfarsit": "18:00:00"
-          }
-        },
-        "Data": "2025-02-06T16:30:54.324",
-        "DurataProgramataOre": 5,
-        "StatusProgramare": "anulata."
-      },
-      {
-        "AbonatUsername": "idk.idk",
-        "Antrenor": {
-          "NumeComplet": "Vlad Ionescu",
-          "Specializare": "Culturism",
-          "NumarMaximClienti": 6,
-          "OrarPrestabilit": {
-            "OraInceput": "10:00:00",
-            "OraSfarsit": "18:00:00"
-          }
-        },
-        "Data": "2025-02-07T18:30:54.324",
-        "DurataProgramataOre": 2,
-        "StatusProgramare": "Valida."
-      },
-      {
-        "AbonatUsername": "idk.idk",
-        "Antrenor": {
-          "NumeComplet": "Alex Stan",
-          "Specializare": "Fitness",
-          "NumarMaximClienti": 9,
-          "OrarPrestabilit": {
-            "OraInceput": "09:00:00",
-            "OraSfarsit": "17:00:00"
-          }
-        },
-        "Data": "2025-02-05T20:30:54.324",
-        "DurataProgramataOre": 4,
-        "StatusProgramare": "Valida."
-      },
-      {
-        "AbonatUsername": "idk.idk",
-        "Antrenor": {
-          "NumeComplet": "Diana Pop",
-          "Specializare": "Yoga",
-          "NumarMaximClienti": 8,
-          "OrarPrestabilit": {
-            "OraInceput": "08:00:00",
-            "OraSfarsit": "16:00:00"
-          }
-        },
-        "Data": "2025-01-16T04:42:46.412",
-        "DurataProgramataOre": 6,
-        "StatusProgramare": "Valida."
-      }
-    ]
+    "Username": "denisa.ionescu",
+    "Password": "1234",
+    "PretAbonament": 150,
+    "IstoricProgramari": []
+  },
+  {
+    "TipAbonament": "premium",
+    "TaxaDepasireDurataProgramari": 2,
+    "NumeComplet": "gogg",
+    "CNP": "1234567890123",
+    "Username": "gogg.g",
+    "Password": "123",
+    "PretAbonament": 150,
+    "IstoricProgramari": []
   }
 ]
