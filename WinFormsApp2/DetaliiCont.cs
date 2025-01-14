@@ -42,6 +42,17 @@ namespace WinFormsApp2
             txtPretAbonament.Text = "Pret Abonament:  ";
             txtPretAbonament.Text += $" {_abonat.PretAbonament}";
 
+            if (_abonat.TipAbonament == "standard")
+            {
+                btnStandard.Visible = true;
+                btbPremium.Visible = false;
+            }
+            else if (_abonat.TipAbonament == "premium")
+            {
+                btnStandard.Visible = false;
+                btbPremium.Visible = true;
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -60,14 +71,19 @@ namespace WinFormsApp2
 
         private void DetaliiCont_Load(object sender, EventArgs e)
         {
-
+           
         }
 
 
         private void button2_Click(object sender, EventArgs e)
         {
             string parolaNoua = PromptForInput("Introduceti parola noua:");
-            _abonatManager.SchimbareParola(_abonat.Username,_abonat.Password, parolaNoua);
+            while (_abonat.Password == parolaNoua)
+            {
+                MessageBox.Show("Noua parola nu poate fi la fel cu cea veche!");
+                parolaNoua = PromptForInput("Introduceti parola noua:");
+            }
+            _abonatManager.SchimbareParola(_abonat.Username, _abonat.Password, parolaNoua);
         }
 
         private string PromptForInput(string message)
@@ -89,6 +105,22 @@ namespace WinFormsApp2
 
                 return prompt.ShowDialog() == DialogResult.OK ? inputBox.Text : string.Empty;
             }
+        }
+
+        private void btnStandard_Click(object sender, EventArgs e)
+        {
+            _abonatManager.PromoveazaAbonatStandard(_abonat.CNP);
+            _abonat = _abonatManager.GasesteAbonatDupaUsername(_abonat.Username);
+            InitializeUser(_abonat);
+            MessageBox.Show("Abonament promovat cu succes!");
+        }
+
+        private void btbPremium_Click(object sender, EventArgs e)
+        {
+            _abonatManager.RetrogradeazaAbonatPremium(_abonat.CNP);
+            _abonat = _abonatManager.GasesteAbonatDupaUsername(_abonat.Username);
+            InitializeUser(_abonat);
+            MessageBox.Show("Abonament retogradat cu succes!");
         }
     }
 }
