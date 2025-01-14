@@ -247,27 +247,21 @@ namespace WinFormsApp2
 
         public AbonatStandard GasesteAbonatDupaUsername(string username)
         {
-            // Cautare în abonati standard
+            // Cautam in lista de abonati standard
             var abonatStandard = AbonatiStandard.FirstOrDefault(a => a.Username == username);
             if (abonatStandard != null)
             {
-                return abonatStandard;
+                return abonatStandard; // Returnnam userul standard gasit
             }
 
-            // Cautare în abonati premium
+            // Cautam in lista de abonati premium
             var abonatPremium = AbonatiPremium.FirstOrDefault(a => a.Username == username);
             if (abonatPremium != null)
             {
-                // Transformam abonatul premium intr-unul standard pentru procesare uniforma
-                return new AbonatStandard(
-                    abonatPremium.NumeComplet,
-                    abonatPremium.CNP,
-                    abonatPremium.Username,
-                    abonatPremium.Password
-                );
+                return abonatPremium; // Returnam userul premium gasit
             }
 
-            return null; // Nu a fost gasit abonatul
+            return null; //Nu s-a gasit
         }
 
         public void ActualizeazaAbonati(List<AbonatStandard> liststd,List<AbonatPremium> listprm)

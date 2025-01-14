@@ -32,7 +32,7 @@ namespace WinFormsApp2
                 return;
             }
 
-            
+
             AbonatStandard abonat = _abonatManager.GasesteAbonatDupaUsername(username);
             if (abonat == null || abonat.Password != password)
             {
@@ -43,8 +43,8 @@ namespace WinFormsApp2
             this.Hide();
 
             var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
-            contAbonat.InitializeUser(abonat); 
-            contAbonat.ShowDialog();
+            contAbonat.InitializeUser(abonat);
+            contAbonat.Show();
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -56,7 +56,12 @@ namespace WinFormsApp2
         {
             this.Hide();
             var registerForm = _serviceProvider.GetRequiredService<RegisterForm>();
-            registerForm.ShowDialog();
+            registerForm.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

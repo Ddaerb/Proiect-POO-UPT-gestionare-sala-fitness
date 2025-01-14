@@ -38,5 +38,15 @@
     "Password": "uubhurb",
     "PretAbonament": 150,
     "IstoricProgramari": []
+  },
+  {
+    "TipAbonament": "premium",
+    "TaxaDepasireDurataProgramari": 2,
+    "NumeComplet": "Idk Idk",
+    "CNP": "1234567890123",
+    "Username": "idk.idk",
+    "Password": "idk",
+    "PretAbonament": 150,
+    "IstoricProgramari": []
   }
 ]
