@@ -97,6 +97,11 @@ namespace WinFormsApp2
                     services.AddSingleton<AntrenorManager>();
                     services.AddSingleton<ProgramareManager>();
                     services.AddSingleton<SalaFitness>(provider => new SalaFitness("AbcdFitness", "Ioan Cuza nr.10", new TimeSpan(8, 0, 0), new TimeSpan(20, 0, 0)));
+                    services.AddTransient<ContAdmin>();
+                    services.AddSingleton<DetaliiProgramariAdmin>();
+                    services.AddSingleton<DetaliiAntrenoriAdmin>();
+                    services.AddSingleton<DetaliiAbonatiAdmin>();
+                    services.AddSingleton<AdaugaAntrenorAdmin>();
                 })
                 .ConfigureLogging(logging =>
                 {
