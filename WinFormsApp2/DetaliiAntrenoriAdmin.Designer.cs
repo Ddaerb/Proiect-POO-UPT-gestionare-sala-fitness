@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             listView1 = new ListView();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            bindingSource1 = new BindingSource(components);
+            button4 = new Button();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             SuspendLayout();
             // 
             // listView1
@@ -78,17 +82,31 @@
             button3.Text = "Inapoi";
             button3.UseVisualStyleBackColor = false;
             // 
+            // button4
+            // 
+            button4.BackColor = Color.Indigo;
+            button4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.ForeColor = SystemColors.ButtonHighlight;
+            button4.Location = new Point(40, 115);
+            button4.Name = "button4";
+            button4.Size = new Size(181, 41);
+            button4.TabIndex = 4;
+            button4.Text = "Cauta Antrenor";
+            button4.UseVisualStyleBackColor = false;
+            // 
             // DetaliiAntrenoriAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(listView1);
             Name = "DetaliiAntrenoriAdmin";
             Text = "DetaliiAntrenoriAdmin";
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ResumeLayout(false);
         }
 
@@ -98,5 +116,7 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private BindingSource bindingSource1;
+        private Button button4;
     }
 }
