@@ -149,6 +149,7 @@ namespace WinFormsApp2
                     abonatPremium.CNP,
                     abonatPremium.Username,
                     abonatPremium.Password);
+                abonatStandard.IstoricProgramari = abonatPremium.IstoricProgramari;
 
                 AbonatiPremium.Remove(abonatPremium);
                 AbonatiStandard.Add(abonatStandard);
@@ -179,7 +180,7 @@ namespace WinFormsApp2
                     abonatStandard.CNP,
                     abonatStandard.Username,
                     abonatStandard.Password);
-
+                abonatPremium.IstoricProgramari = abonatStandard.IstoricProgramari;
                 AbonatiStandard.Remove(abonatStandard);
                 AbonatiPremium.Add(abonatPremium);
 

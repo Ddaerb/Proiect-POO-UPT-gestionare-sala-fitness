@@ -2,81 +2,10 @@
   {
     "TipAbonament": "premium",
     "TaxaDepasireDurataProgramari": 2,
-    "NumeComplet": "George Gheorghe",
-    "CNP": "3234327890123",
-    "Username": "george.gheorghe",
-    "Password": "parola749",
-    "PretAbonament": 150,
-    "IstoricProgramari": []
-  },
-  {
-    "TipAbonament": "premium",
-    "TaxaDepasireDurataProgramari": 2,
-    "NumeComplet": "Ana Popescu",
-    "CNP": "3234127890123",
-    "Username": "ana.popescu",
-    "Password": "parola2349",
-    "PretAbonament": 158,
-    "IstoricProgramari": [
-      {
-        "AbonatUsername": "ana.popescu",
-        "Antrenor": {
-          "NumeComplet": "Diana Pop",
-          "Specializare": "Yoga",
-          "NumarMaximClienti": 8,
-          "OrarPrestabilit": {
-            "OraInceput": "08:00:00",
-            "OraSfarsit": "16:00:00"
-          }
-        },
-        "Data": "2025-01-15T14:00:57.418",
-        "DurataProgramataOre": 6,
-        "StatusProgramare": "Valida."
-      },
-      {
-        "AbonatUsername": "ana.popescu",
-        "Antrenor": {
-          "NumeComplet": "Alex Stan",
-          "Specializare": "Fitness",
-          "NumarMaximClienti": 9,
-          "OrarPrestabilit": {
-            "OraInceput": "09:00:00",
-            "OraSfarsit": "17:00:00"
-          }
-        },
-        "Data": "2025-01-16T22:34:04.721",
-        "DurataProgramataOre": 4,
-        "StatusProgramare": "Valida."
-      }
-    ]
-  },
-  {
-    "TipAbonament": "premium",
-    "TaxaDepasireDurataProgramari": 2,
-    "NumeComplet": "Ion Popescu",
-    "CNP": "1234567890123",
-    "Username": "ion.popescu",
-    "Password": "parola123",
-    "PretAbonament": 150,
-    "IstoricProgramari": []
-  },
-  {
-    "TipAbonament": "premium",
-    "TaxaDepasireDurataProgramari": 2,
-    "NumeComplet": "Ionescu Denisa",
-    "CNP": "1234567890123",
-    "Username": "denisa.ionescu",
-    "Password": "1234",
-    "PretAbonament": 150,
-    "IstoricProgramari": []
-  },
-  {
-    "TipAbonament": "premium",
-    "TaxaDepasireDurataProgramari": 2,
-    "NumeComplet": "gogg",
-    "CNP": "1234567890123",
-    "Username": "gogg.g",
-    "Password": "123",
+    "NumeComplet": "George George",
+    "CNP": "5678904321345",
+    "Username": "george.george",
+    "Password": "george",
     "PretAbonament": 150,
     "IstoricProgramari": []
   }

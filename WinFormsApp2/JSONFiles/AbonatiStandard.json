@@ -1,119 +1,77 @@
 [
   {
-    "NumeComplet": "Maria Ionescu",
-    "CNP": "2234567890123",
-    "Username": "maria.ionescu",
-    "Password": "parola456",
-    "PretAbonament": 105,
-    "TipAbonament": "standard",
-    "TaxaDepasireDurataProgramari": 5,
-    "IstoricProgramari": [
-      {
-        "AbonatUsername": "maria.ionescu",
-        "Antrenor": {
-          "NumeComplet": "Diana Pop",
-          "Specializare": "Yoga",
-          "NumarMaximClienti": 8,
-          "OrarPrestabilit": {
-            "OraInceput": "08:00:00",
-            "OraSfarsit": "16:00:00"
-          }
-        },
-        "Data": "2025-01-15T14:14:15.4697547+03:00",
-        "DurataProgramataOre": 1,
-        "StatusProgramare": "anulata."
-      }
-    ]
-  },
-  {
-    "NumeComplet": "George Vasilescu",
-    "CNP": "3234567890123",
-    "Username": "george.vasilescu",
-    "Password": "parola789",
-    "PretAbonament": 115,
-    "TipAbonament": "standard",
-    "TaxaDepasireDurataProgramari": 5,
-    "IstoricProgramari": [
-      {
-        "AbonatUsername": "george.vasilescu",
-        "Antrenor": {
-          "NumeComplet": "Vlad Ionescu",
-          "Specializare": "Culturism",
-          "NumarMaximClienti": 6,
-          "OrarPrestabilit": {
-            "OraInceput": "10:00:00",
-            "OraSfarsit": "18:00:00"
-          }
-        },
-        "Data": "2025-01-16T14:14:15.4697618+03:00",
-        "DurataProgramataOre": 3,
-        "StatusProgramare": "Valida."
-      }
-    ]
-  },
-  {
-    "NumeComplet": "Popa Ioana",
-    "CNP": "9876453201467",
-    "Username": "ioana.popa",
-    "Password": "ioana",
+    "NumeComplet": "Diana Ionescu",
+    "CNP": "2345678901234",
+    "Username": "diana.ionesu",
+    "Password": "diana",
     "PretAbonament": 100,
     "TipAbonament": "standard",
     "TaxaDepasireDurataProgramari": 5,
     "IstoricProgramari": []
   },
   {
-    "NumeComplet": "Idk Idk",
+    "NumeComplet": "Pop Popescu",
     "CNP": "1234567890123",
-    "Username": "idk.idk",
-    "Password": "idkk",
-    "PretAbonament": 170,
+    "Username": "pop.popescu",
+    "Password": "pop",
+    "PretAbonament": 100,
+    "TipAbonament": "standard",
+    "TaxaDepasireDurataProgramari": 5,
+    "IstoricProgramari": []
+  },
+  {
+    "NumeComplet": "Ion Ionescu",
+    "CNP": "4567890234567",
+    "Username": "ion.ionescu",
+    "Password": "ion",
+    "PretAbonament": 110,
     "TipAbonament": "standard",
     "TaxaDepasireDurataProgramari": 5,
     "IstoricProgramari": [
       {
-        "AbonatUsername": "idk.idk",
-        "Antrenor": {
-          "NumeComplet": "Diana Pop",
-          "Specializare": "Yoga",
-          "NumarMaximClienti": 8,
-          "OrarPrestabilit": {
-            "OraInceput": "08:00:00",
-            "OraSfarsit": "16:00:00"
-          }
-        },
-        "Data": "2025-01-16T20:30:34.103",
-        "DurataProgramataOre": 2,
-        "StatusProgramare": "anulata."
-      },
-      {
-        "AbonatUsername": "idk.idk",
+        "AbonatUsername": "ion.ionescu",
         "Antrenor": {
           "NumeComplet": "Alex Stan",
-          "Specializare": "Fitness",
-          "NumarMaximClienti": 9,
+          "Specializare": "Culturism",
+          "NumarMaximClienti": 5,
           "OrarPrestabilit": {
-            "OraInceput": "09:00:00",
-            "OraSfarsit": "17:00:00"
+            "OraInceput": "06:00:00",
+            "OraSfarsit": "14:00:00"
           }
         },
-        "Data": "2025-01-16T19:31:21.074",
-        "DurataProgramataOre": 5,
-        "StatusProgramare": "modificata."
+        "Data": "2025-01-16T19:05:38.663",
+        "DurataProgramataOre": 3,
+        "StatusProgramare": "Valida."
       },
       {
-        "AbonatUsername": "idk.idk",
+        "AbonatUsername": "ion.ionescu",
         "Antrenor": {
-          "NumeComplet": "Vlad Ionescu",
-          "Specializare": "Culturism",
+          "NumeComplet": "Vlad Stanescu",
+          "Specializare": "Fitness",
           "NumarMaximClienti": 6,
           "OrarPrestabilit": {
-            "OraInceput": "10:00:00",
-            "OraSfarsit": "18:00:00"
+            "OraInceput": "14:00:00",
+            "OraSfarsit": "20:00:00"
           }
         },
-        "Data": "2025-01-17T19:31:21.074",
-        "DurataProgramataOre": 8,
-        "StatusProgramare": "modificata."
+        "Data": "2025-01-17T19:05:38.663",
+        "DurataProgramataOre": 2,
+        "StatusProgramare": "Valida."
+      },
+      {
+        "AbonatUsername": "ion.ionescu",
+        "Antrenor": {
+          "NumeComplet": "Ioan Branza",
+          "Specializare": "Pilates",
+          "NumarMaximClienti": 3,
+          "OrarPrestabilit": {
+            "OraInceput": "10:00:00",
+            "OraSfarsit": "22:00:00"
+          }
+        },
+        "Data": "2025-01-18T19:05:38.663",
+        "DurataProgramataOre": 2,
+        "StatusProgramare": "Valida."
       }
     ]
   }

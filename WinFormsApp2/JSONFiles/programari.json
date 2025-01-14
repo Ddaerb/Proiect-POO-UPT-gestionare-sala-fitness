@@ -1,92 +1,182 @@
 [
   {
-    "AbonatUsername": "george.vasilescu",
+    "AbonatUsername": "pop.popescu",
     "Antrenor": {
-      "NumeComplet": "Vlad Ionescu",
-      "Specializare": "Culturism",
-      "NumarMaximClienti": 6,
+      "NumeComplet": "Diana Gheorghe",
+      "Specializare": "Yoga",
+      "NumarMaximClienti": 8,
       "OrarPrestabilit": {
-        "OraInceput": "10:00:00",
+        "OraInceput": "12:00:00",
         "OraSfarsit": "18:00:00"
       }
     },
-    "Data": "2025-01-16T14:14:15.4697618+03:00",
+    "Data": "2025-01-16T18:52:44.513",
     "DurataProgramataOre": 3,
     "StatusProgramare": "Valida."
   },
   {
-    "AbonatUsername": "ion.popescu",
+    "AbonatUsername": "pop.popescu",
     "Antrenor": {
-      "NumeComplet": "Alex Stan",
+      "NumeComplet": "Vlad Stanescu",
       "Specializare": "Fitness",
-      "NumarMaximClienti": 9,
+      "NumarMaximClienti": 6,
       "OrarPrestabilit": {
-        "OraInceput": "09:00:00",
-        "OraSfarsit": "17:00:00"
+        "OraInceput": "14:00:00",
+        "OraSfarsit": "20:00:00"
       }
     },
-    "Data": "2025-01-22T03:13:54.659",
-    "DurataProgramataOre": 5,
-    "StatusProgramare": "modificata."
+    "Data": "2025-01-17T18:52:44.513",
+    "DurataProgramataOre": 2,
+    "StatusProgramare": "Valida."
   },
   {
-    "AbonatUsername": "ana.popescu",
+    "AbonatUsername": "ion.ionescu",
     "Antrenor": {
-      "NumeComplet": "Diana Pop",
+      "NumeComplet": "Diana Gheorghe",
       "Specializare": "Yoga",
       "NumarMaximClienti": 8,
       "OrarPrestabilit": {
-        "OraInceput": "08:00:00",
-        "OraSfarsit": "16:00:00"
+        "OraInceput": "12:00:00",
+        "OraSfarsit": "18:00:00"
       }
     },
-    "Data": "2025-01-15T14:00:57.418",
+    "Data": "2025-01-15T18:58:16.393",
+    "DurataProgramataOre": 2,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Vlad Stanescu",
+      "Specializare": "Fitness",
+      "NumarMaximClienti": 6,
+      "OrarPrestabilit": {
+        "OraInceput": "14:00:00",
+        "OraSfarsit": "20:00:00"
+      }
+    },
+    "Data": "2025-01-17T14:00:00.393",
     "DurataProgramataOre": 6,
     "StatusProgramare": "Valida."
   },
   {
-    "AbonatUsername": "ana.popescu",
+    "AbonatUsername": "ion.ionescu",
     "Antrenor": {
-      "NumeComplet": "Alex Stan",
-      "Specializare": "Fitness",
-      "NumarMaximClienti": 9,
+      "NumeComplet": "Diana Gheorghe",
+      "Specializare": "Yoga",
+      "NumarMaximClienti": 8,
       "OrarPrestabilit": {
-        "OraInceput": "09:00:00",
-        "OraSfarsit": "17:00:00"
-      }
-    },
-    "Data": "2025-01-16T22:34:04.721",
-    "DurataProgramataOre": 4,
-    "StatusProgramare": "Valida."
-  },
-  {
-    "AbonatUsername": "idk.idk",
-    "Antrenor": {
-      "NumeComplet": "Alex Stan",
-      "Specializare": "Fitness",
-      "NumarMaximClienti": 9,
-      "OrarPrestabilit": {
-        "OraInceput": "09:00:00",
-        "OraSfarsit": "17:00:00"
-      }
-    },
-    "Data": "2025-01-16T19:31:21.074",
-    "DurataProgramataOre": 5,
-    "StatusProgramare": "modificata."
-  },
-  {
-    "AbonatUsername": "idk.idk",
-    "Antrenor": {
-      "NumeComplet": "Vlad Ionescu",
-      "Specializare": "Culturism",
-      "NumarMaximClienti": 6,
-      "OrarPrestabilit": {
-        "OraInceput": "10:00:00",
+        "OraInceput": "12:00:00",
         "OraSfarsit": "18:00:00"
       }
     },
-    "Data": "2025-01-17T19:31:21.074",
-    "DurataProgramataOre": 8,
-    "StatusProgramare": "modificata."
+    "Data": "2025-01-18T14:00:00.393",
+    "DurataProgramataOre": 3,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Ioan Branza",
+      "Specializare": "Pilates",
+      "NumarMaximClienti": 3,
+      "OrarPrestabilit": {
+        "OraInceput": "10:00:00",
+        "OraSfarsit": "22:00:00"
+      }
+    },
+    "Data": "2025-01-19T20:00:00.393",
+    "DurataProgramataOre": 3,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Alex Stan",
+      "Specializare": "Culturism",
+      "NumarMaximClienti": 5,
+      "OrarPrestabilit": {
+        "OraInceput": "06:00:00",
+        "OraSfarsit": "14:00:00"
+      }
+    },
+    "Data": "2025-01-15T19:03:20.792",
+    "DurataProgramataOre": 3,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Vlad Stanescu",
+      "Specializare": "Fitness",
+      "NumarMaximClienti": 6,
+      "OrarPrestabilit": {
+        "OraInceput": "14:00:00",
+        "OraSfarsit": "20:00:00"
+      }
+    },
+    "Data": "2025-01-16T19:03:20.792",
+    "DurataProgramataOre": 6,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Ioan Branza",
+      "Specializare": "Pilates",
+      "NumarMaximClienti": 3,
+      "OrarPrestabilit": {
+        "OraInceput": "10:00:00",
+        "OraSfarsit": "22:00:00"
+      }
+    },
+    "Data": "2025-01-18T19:03:20.792",
+    "DurataProgramataOre": 1,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Alex Stan",
+      "Specializare": "Culturism",
+      "NumarMaximClienti": 5,
+      "OrarPrestabilit": {
+        "OraInceput": "06:00:00",
+        "OraSfarsit": "14:00:00"
+      }
+    },
+    "Data": "2025-01-16T19:05:38.663",
+    "DurataProgramataOre": 3,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Vlad Stanescu",
+      "Specializare": "Fitness",
+      "NumarMaximClienti": 6,
+      "OrarPrestabilit": {
+        "OraInceput": "14:00:00",
+        "OraSfarsit": "20:00:00"
+      }
+    },
+    "Data": "2025-01-17T19:05:38.663",
+    "DurataProgramataOre": 2,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.ionescu",
+    "Antrenor": {
+      "NumeComplet": "Ioan Branza",
+      "Specializare": "Pilates",
+      "NumarMaximClienti": 3,
+      "OrarPrestabilit": {
+        "OraInceput": "10:00:00",
+        "OraSfarsit": "22:00:00"
+      }
+    },
+    "Data": "2025-01-18T19:05:38.663",
+    "DurataProgramataOre": 2,
+    "StatusProgramare": "Valida."
   }
 ]
