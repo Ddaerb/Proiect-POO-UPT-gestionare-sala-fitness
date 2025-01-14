@@ -58,7 +58,7 @@ namespace WinFormsApp2
         private void ModificareProgramare_Load(object sender, EventArgs e)
         {
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
             dateTimePicker1.MinDate = DateTime.Now;
             _antrenorManager.ListaAntrenori.ForEach(antrenor => comboBox3.Items.Add(antrenor.NumeComplet + ", " + antrenor.Specializare));
         }

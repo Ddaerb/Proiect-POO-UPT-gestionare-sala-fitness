@@ -71,29 +71,29 @@ namespace WinFormsApp2
 
             durata = validare.VerificareOreProgramare(durata);
 
-            if (antrenor==null)
+            if (antrenor == null)
             {
-                MessageBox.Show("Selectati un antrenor.","Eroare",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Selectati un antrenor.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
 
-            if(data==null)
+            if (data == null)
             {
                 MessageBox.Show("Selectati o data.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if(durata==null)
+            if (durata == null)
             {
                 MessageBox.Show("Introduceti durata programarii.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            int durataNoua= validare.VerificareOreProgramare(durata);
+            int durataNoua = validare.VerificareOreProgramare(durata);
             textBox2.Text = durataNoua.ToString();
 
-            Programare programare = new Programare(_abonat.Username,antrenor, data, durataNoua);
+            Programare programare = new Programare(_abonat.Username, antrenor, data, durataNoua);
             _programareManager.AdaugaProgramare(programare);
             MessageBox.Show("Programarea a fost adaugata cu succes.");
 
@@ -108,13 +108,18 @@ namespace WinFormsApp2
         private void AdaugaProgramare_Load(object sender, EventArgs e)
         {
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker2.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
             dateTimePicker2.MinDate = DateTime.Now;
             _antrenorManager.ListaAntrenori.ForEach(antrenor => comboBox1.Items.Add(antrenor.NumeComplet + ", " + antrenor.Specializare));
             //comboBox1.Items.Add();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
         }

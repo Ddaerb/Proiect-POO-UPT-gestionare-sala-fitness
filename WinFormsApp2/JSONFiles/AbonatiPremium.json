@@ -67,7 +67,7 @@
     "CNP": "1234567890123",
     "Username": "idk.idk",
     "Password": "idk",
-    "PretAbonament": 168,
+    "PretAbonament": 176,
     "IstoricProgramari": [
       {
         "AbonatUsername": "idk.idk",
@@ -112,6 +112,21 @@
         },
         "Data": "2025-02-05T20:30:54.324",
         "DurataProgramataOre": 4,
+        "StatusProgramare": "Valida."
+      },
+      {
+        "AbonatUsername": "idk.idk",
+        "Antrenor": {
+          "NumeComplet": "Diana Pop",
+          "Specializare": "Yoga",
+          "NumarMaximClienti": 8,
+          "OrarPrestabilit": {
+            "OraInceput": "08:00:00",
+            "OraSfarsit": "16:00:00"
+          }
+        },
+        "Data": "2025-01-16T04:42:46.412",
+        "DurataProgramataOre": 6,
         "StatusProgramare": "Valida."
       }
     ]

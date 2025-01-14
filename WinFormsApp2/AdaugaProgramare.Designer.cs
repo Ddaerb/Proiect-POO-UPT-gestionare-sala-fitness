@@ -138,6 +138,7 @@
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(250, 27);
             dateTimePicker2.TabIndex = 7;
+            dateTimePicker2.ValueChanged += dateTimePicker2_ValueChanged;
             // 
             // textBox2
             // 
