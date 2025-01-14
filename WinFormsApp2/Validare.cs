@@ -114,5 +114,19 @@ namespace WinFormsApp2
                 return prompt.ShowDialog() == DialogResult.OK ? inputBox.Text : string.Empty;
             }
         }
+        public int VerificareOreProgramare(int oreProgramare)
+        {
+            while (oreProgramare < 1 || oreProgramare > 24)
+            {
+                MessageBox.Show("Numarul de ore pentru programare trebuie sa fie intre 1 si 24.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string input = PromptForInput("Introduceti un numar valid de ore (1-24):");
+                while (!int.TryParse(input, out oreProgramare))
+                {
+                    MessageBox.Show("Introduceti un numar valid.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    input = PromptForInput("Introduceti un numar valid de ore (1-24):");
+                }
+            }
+            return oreProgramare;
+        }
     }
 }

@@ -28,5 +28,35 @@
     "Data": "2025-01-16T14:14:15.4697618+03:00",
     "DurataProgramataOre": 3,
     "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.popescu",
+    "Antrenor": {
+      "NumeComplet": "Vlad Ionescu",
+      "Specializare": "Culturism",
+      "NumarMaximClienti": 6,
+      "OrarPrestabilit": {
+        "OraInceput": "10:00:00",
+        "OraSfarsit": "18:00:00"
+      }
+    },
+    "Data": "2025-01-17T08:52:09.119",
+    "DurataProgramataOre": 4,
+    "StatusProgramare": "Valida."
+  },
+  {
+    "AbonatUsername": "ion.popescu",
+    "Antrenor": {
+      "NumeComplet": "Alex Stan",
+      "Specializare": "Fitness",
+      "NumarMaximClienti": 9,
+      "OrarPrestabilit": {
+        "OraInceput": "09:00:00",
+        "OraSfarsit": "17:00:00"
+      }
+    },
+    "Data": "2025-01-22T03:13:54.659",
+    "DurataProgramataOre": 5,
+    "StatusProgramare": "modificata."
   }
 ]

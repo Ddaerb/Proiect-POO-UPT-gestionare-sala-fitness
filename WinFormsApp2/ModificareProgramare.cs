@@ -20,6 +20,8 @@ namespace WinFormsApp2
         private readonly SalaFitness _salaFitness;
         private AbonatStandard _abonat;
         private readonly AntrenorManager _antrenorManager;
+        private Validare validare = new Validare();
+        private Programare _programare;
         public ModificareProgramare(AbonatManager abonatManager, IServiceProvider serviceProvider, ProgramareManager programareManager, SalaFitness salaFitness, AntrenorManager antrenorManager)
         {
 
@@ -29,6 +31,23 @@ namespace WinFormsApp2
             _salaFitness = salaFitness;
             _antrenorManager = antrenorManager;
             InitializeComponent();
+        }
+
+        public void InitializeProgramare(Programare programare)
+        {
+            _programare = programare;
+
+            comboBox3.Items.Clear();
+            foreach (var antrenor in _antrenorManager.ListaAntrenori)
+            {
+                comboBox3.Items.Add(antrenor.NumeComplet);
+            }
+
+            comboBox3.SelectedItem = programare.Antrenor.NumeComplet;
+
+            dateTimePicker1.Value = programare.Data;
+
+            textBox1.Text = programare.DurataProgramataOre.ToString();
         }
 
         public void InitializeUser(AbonatStandard abonat)
@@ -54,12 +73,63 @@ namespace WinFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (comboBox3.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selectati un antrenor.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Antrenor antrenor = _antrenorManager.ListaAntrenori[comboBox3.SelectedIndex];
+            DateTime data = dateTimePicker1.Value;
+
+
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Introduceți durata programării.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!int.TryParse(textBox1.Text, out int durata))
+            {
+                MessageBox.Show("Durata trebuie să fie un număr întreg.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            durata = validare.VerificareOreProgramare(durata);
+
+            if (antrenor == null)
+            {
+                MessageBox.Show("Selectati un antrenor.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            if (data == null)
+            {
+                MessageBox.Show("Selectati o data.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (durata == null)
+            {
+                MessageBox.Show("Introduceti durata programarii.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int durataNoua = validare.VerificareOreProgramare(durata);
+            textBox1.Text = durataNoua.ToString();
+
+            Programare programare = new Programare(_abonat.Username, antrenor, data, durataNoua);
+            _programareManager.ModificaProgramare(_abonat.Username, comboBox3.SelectedIndex, programare);
+            MessageBox.Show("Programarea a fost modificata cu succes.");
+
+
             this.Hide();
             
             var detaliiProgramari = _serviceProvider.GetRequiredService<DetaliiProgramari>();
             detaliiProgramari.InitializeUser(_abonat);
             detaliiProgramari.InitializeIstoricList();
-            detaliiProgramari.ShowDialog();
+            detaliiProgramari.Show();
         }
     }
 }

@@ -30,7 +30,7 @@ namespace WinFormsApp2
 
         public void InitializeIstoricList()
         {
-
+            listView1.Items.Clear();
             var istoricProgramari = _abonat.IstoricProgramari;
 
             foreach (var programare in istoricProgramari)
@@ -70,6 +70,23 @@ namespace WinFormsApp2
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Te rog selecteaza o programare pentru a o modifica.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int selectedIndex = listView1.SelectedItems[0].Index;
+
+            var programareSelectata = _abonat.IstoricProgramari[selectedIndex];
+
+            if (programareSelectata.StatusProgramare == "anulata.")
+            {
+                MessageBox.Show("Nu poti modifica o programare anulata.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
             this.Hide();
 
             var modificareProgramare = _serviceProvider.GetRequiredService<ModificareProgramare>();

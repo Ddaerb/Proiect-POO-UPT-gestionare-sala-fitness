@@ -4,7 +4,7 @@
     "CNP": "1234567890123",
     "Username": "ion.popescu",
     "Password": "parola123",
-    "PretAbonament": 130,
+    "PretAbonament": 150,
     "TipAbonament": "standard",
     "TaxaDepasireDurataProgramari": 5,
     "IstoricProgramari": [
@@ -37,6 +37,36 @@
         "Data": "2025-01-17T14:14:15.469762+03:00",
         "DurataProgramataOre": 1,
         "StatusProgramare": "anulata."
+      },
+      {
+        "AbonatUsername": "ion.popescu",
+        "Antrenor": {
+          "NumeComplet": "Vlad Ionescu",
+          "Specializare": "Culturism",
+          "NumarMaximClienti": 6,
+          "OrarPrestabilit": {
+            "OraInceput": "10:00:00",
+            "OraSfarsit": "18:00:00"
+          }
+        },
+        "Data": "2025-01-17T08:52:09.119",
+        "DurataProgramataOre": 4,
+        "StatusProgramare": "Valida."
+      },
+      {
+        "AbonatUsername": "ion.popescu",
+        "Antrenor": {
+          "NumeComplet": "Alex Stan",
+          "Specializare": "Fitness",
+          "NumarMaximClienti": 9,
+          "OrarPrestabilit": {
+            "OraInceput": "09:00:00",
+            "OraSfarsit": "17:00:00"
+          }
+        },
+        "Data": "2025-01-22T03:13:54.659",
+        "DurataProgramataOre": 5,
+        "StatusProgramare": "modificata."
       }
     ]
   },
