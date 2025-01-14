@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace WinFormsApp2
 {
@@ -87,6 +88,35 @@ namespace WinFormsApp2
             {
                 MessageBox.Show("Te rog selecteaza un antrenor pentru a-l sterge.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string numeComplet = Microsoft.VisualBasic.Interaction.InputBox("Introduceti numele complet al antrenorului:", "Cautare Antrenor");
+            string specializare = Microsoft.VisualBasic.Interaction.InputBox("Introduceti specializarea antrenorului:", "Cautare Antrenor");
+
+            if (string.IsNullOrWhiteSpace(numeComplet) || string.IsNullOrWhiteSpace(specializare))
+            {
+                MessageBox.Show("Ambele campuri trebuie completate pentru a cauta un antrenor.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            foreach (ListViewItem item in listView1.Items)
+            {
+                string itemNumeComplet = item.SubItems[0].Text;
+                string itemSpecializare = item.SubItems[1].Text;
+
+                if (itemNumeComplet.Equals(numeComplet, StringComparison.OrdinalIgnoreCase) &&
+                    itemSpecializare.Equals(specializare, StringComparison.OrdinalIgnoreCase))
+                {
+                    listView1.SelectedItems.Clear();
+                    item.Selected = true;
+                    item.EnsureVisible();
+                    MessageBox.Show($"Antrenorul '{numeComplet}' cu specializarea '{specializare}' a fost gasit si selectat.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+            MessageBox.Show($"Antrenorul '{numeComplet}' cu specializarea '{specializare}' nu a fost gasit.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
         }
     }
 }

@@ -123,6 +123,7 @@
             button4.TabIndex = 4;
             button4.Text = "Cauta Antrenor";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // DetaliiAntrenoriAdmin
             // 
