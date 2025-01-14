@@ -71,5 +71,28 @@ namespace WinFormsApp2
             var contAdmin = _serviceProvider.GetRequiredService<ContAdmin>();
             contAdmin.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                var index = listView1.SelectedIndices[0]; 
+                _abonatManager.StergeAbonatStandard(index); 
+                InitializeProgramariList(); 
+                return;
+            }
+
+            if (listView2.SelectedItems.Count > 0)
+            {
+                var index = listView2.SelectedIndices[0]; 
+                _abonatManager.StergeAbonatPremium(index); 
+                InitializeProgramariList(); 
+                return;
+            }
+
+            MessageBox.Show("Va rugam sa selectati un abonat pentru a-l sterge.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        
+
     }
 }

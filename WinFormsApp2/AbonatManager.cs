@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -56,6 +57,38 @@ namespace WinFormsApp2
             JSONHelper.SaveToFile(premiumFilePath, AbonatiPremium);
 
             Console.WriteLine("Datele au fost resetate.");
+        }
+
+        //Metoda pentru stergerea unui abonat standard
+        public void StergeAbonatStandard(int index)
+        {
+            if (index >= 0 && index < AbonatiStandard.Count)
+            {
+                var abonatDeSters = AbonatiStandard[index];
+                AbonatiStandard.RemoveAt(index);
+                JSONHelper.SaveToFile(standardFilePath, AbonatiStandard);
+                MessageBox.Show($"Abonatul standard '{abonatDeSters.NumeComplet}' a fost sters cu succes.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Index invalid pentru lista de abonati standard.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Metoda pentru stergerea unui abonat premium
+        public void StergeAbonatPremium(int index)
+        {
+            if (index >= 0 && index < AbonatiPremium.Count)
+            {
+                var abonatDeSters = AbonatiPremium[index];
+                AbonatiPremium.RemoveAt(index);
+                JSONHelper.SaveToFile(premiumFilePath, AbonatiPremium);
+                MessageBox.Show($"Abonatul premium '{abonatDeSters.NumeComplet}' a fost sters cu succes.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Index invalid pentru lista de abonati premium.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // Adauga un nou abonat standard si actualizeaza fisierul JSON
