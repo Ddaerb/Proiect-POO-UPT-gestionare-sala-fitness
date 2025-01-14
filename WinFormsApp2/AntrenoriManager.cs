@@ -42,7 +42,7 @@ namespace WinFormsApp2
                 );
                 return;
             }
-
+            //Verificam daca antrenorul exista deja in lista
             if (ListaAntrenori.Any(a => a.NumeComplet == antrenor.NumeComplet && a.Specializare == antrenor.Specializare))
             {
                 MessageBox.Show
@@ -55,55 +55,9 @@ namespace WinFormsApp2
                 return;
             }
 
-
+            //Adaugam antrenorul in lista
             ListaAntrenori.Add(antrenor);
             ActualizeazaFisierJSON();
-        }
-
-        public void ListareAntrenori()
-        {
-            if (ListaAntrenori.Count == 0)
-            {
-                MessageBox.Show
-                (
-                "Nu exista antrenori în lista.",
-                "Eroare",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error
-                );
-                return;
-            }
-
-            Console.WriteLine("Lista antrenorilor:");
-            foreach (var antrenor in ListaAntrenori)
-            {
-                Console.WriteLine($"Nume: {antrenor.NumeComplet}");
-                Console.WriteLine($"Specializare: {antrenor.Specializare}");
-                Console.WriteLine($"Numar maxim clienti: {antrenor.NumarMaximClienti}");
-                Console.WriteLine($"Orar: {antrenor.OrarPrestabilit.OraInceput} - {antrenor.OrarPrestabilit.OraSfarsit}");
-                Console.WriteLine("-------------------");
-            }
-        }
-
-        public Antrenor CautareAntrenor(string nume, string specializare)
-        {
-            foreach (var antrenor in ListaAntrenori)
-            {
-                if (antrenor.NumeComplet.Equals(nume, StringComparison.OrdinalIgnoreCase) &&
-                    antrenor.Specializare.Equals(specializare, StringComparison.OrdinalIgnoreCase))
-                {
-                    return antrenor;
-                }
-            }
-
-            MessageBox.Show
-            (
-            $"Nu a fost gasit niciun antrenor cu numele '{nume}' si specializarea '{specializare}'.",
-            "Eroare",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Error
-            );
-            return null;
         }
 
         public void StergeAntrenor(Antrenor antrenor)
@@ -120,6 +74,7 @@ namespace WinFormsApp2
                 return;
             }
 
+            //Verificam daca antrenorul exista in lista
             var antrenorDeSters = ListaAntrenori.FirstOrDefault(a =>
                 a.NumeComplet == antrenor.NumeComplet &&
                 a.Specializare == antrenor.Specializare);
@@ -136,6 +91,7 @@ namespace WinFormsApp2
                 return;
             }
 
+            //Stergem antrenorul din lista
             ListaAntrenori.Remove(antrenorDeSters);
             ActualizeazaFisierJSON();
 

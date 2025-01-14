@@ -11,6 +11,8 @@ namespace WinFormsApp2
         {
             try
             {
+                // Serializam datele in format JSON si le scriem in fisier
+
                 var json = JsonConvert.SerializeObject(data, Formatting.Indented);
                 File.WriteAllText(filePath, json);
             }
@@ -24,8 +26,12 @@ namespace WinFormsApp2
         {
             try
             {
+                // Daca fisierul nu exista, returnam valoarea default
+
                 if (!File.Exists(filePath))
                     return default;
+
+                // Citim datele din fisier si le deserializam
 
                 var json = File.ReadAllText(filePath);
                 return JsonConvert.DeserializeObject<T>(json);

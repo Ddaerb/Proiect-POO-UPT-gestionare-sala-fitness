@@ -12,11 +12,13 @@ namespace WinFormsApp2
         [STAThread]
         static void Main()
         {
+            // Configuram Serilog
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.File("logs\\app.log", rollingInterval: RollingInterval.Month)
+                .WriteTo.File("logs\\app.log", rollingInterval: RollingInterval.Month) // creeaza un noi fisier de tip log doar o data pe luna
                 .CreateLogger();
             try
             {
+                // Crearea host-ului si rularea aplicatiei
                 var host = CreateHostBuilder().Build();
 
                 var paginaPrincipala = host.Services.GetRequiredService<PaginaPrincipala>();
@@ -36,6 +38,9 @@ namespace WinFormsApp2
 
         static IHostBuilder CreateHostBuilder()
         {
+
+            // Configurarea serviciilor
+
             return Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
@@ -48,7 +53,6 @@ namespace WinFormsApp2
                     services.AddSingleton<DetaliiProgramari>();
                     services.AddSingleton<AdaugaProgramare>();
                     services.AddSingleton<ModificareProgramare>();
-                    services.AddSingleton<IMyService, MyService>();
                     services.AddSingleton<AbonatManager>();
                     services.AddSingleton<AntrenorManager>();
                     services.AddSingleton<ProgramareManager>();

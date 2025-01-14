@@ -9,10 +9,13 @@ namespace WinFormsApp2
 {
     public static class FilePaths
     {
+        // Folderul in care se vor salva fisierele JSON
         public static readonly string JSONFolder = Path.Combine(
             AppDomain.CurrentDomain.BaseDirectory,
             "..\\..\\..\\JSONFiles");
 
+
+        // Metoda care returneaza calea completa a unui fisier JSON
         public static string GetFilePath(string fileName)
         {
             if (!Directory.Exists(JSONFolder))
