@@ -71,7 +71,7 @@ namespace WinFormsApp2
 
         private void DetaliiCont_Load(object sender, EventArgs e)
         {
-           
+
         }
 
 
@@ -122,5 +122,32 @@ namespace WinFormsApp2
             InitializeUser(_abonat);
             MessageBox.Show("Abonament retogradat cu succes!");
         }
+
+        private void btnStergereCont_Click(object sender, EventArgs e)
+        {
+            if (_abonat.TipAbonament == "standard")
+            {
+                _abonatManager.AbonatiStandard.Remove(_abonat);
+                JSONHelper.SaveToFile(_abonatManager.standardFilePath, _abonatManager.AbonatiStandard);
+                MessageBox.Show("Contul a fost sters cu succes!");
+
+            }
+            if (_abonat.TipAbonament == "premium")
+            {
+                var abonatPremium = _abonat as AbonatPremium;
+                if (abonatPremium != null)
+                {
+                    _abonatManager.AbonatiPremium.Remove(abonatPremium);
+                    JSONHelper.SaveToFile(_abonatManager.premiumFilePath, _abonatManager.AbonatiPremium);
+                    MessageBox.Show("Contul a fost sters cu succes!");
+                }
+
+            }
+            this.Close();
+
+            var paginaPrincipala = _serviceProvider.GetRequiredService<PaginaPrincipala>();
+            paginaPrincipala.Show();
+        }
+
     }
 }

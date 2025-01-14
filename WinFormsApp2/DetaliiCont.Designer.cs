@@ -38,6 +38,7 @@
             button2 = new Button();
             btnStandard = new Button();
             btbPremium = new Button();
+            btnStergereCont = new Button();
             SuspendLayout();
             // 
             // label1
@@ -120,7 +121,7 @@
             button2.BackColor = Color.Navy;
             button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.Transparent;
-            button2.Location = new Point(455, 389);
+            button2.Location = new Point(337, 393);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(235, 77);
@@ -134,7 +135,7 @@
             btnStandard.BackColor = Color.Navy;
             btnStandard.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnStandard.ForeColor = Color.Transparent;
-            btnStandard.Location = new Point(173, 389);
+            btnStandard.Location = new Point(75, 393);
             btnStandard.Margin = new Padding(3, 4, 3, 4);
             btnStandard.Name = "btnStandard";
             btnStandard.Size = new Size(235, 77);
@@ -148,7 +149,7 @@
             btbPremium.BackColor = Color.Navy;
             btbPremium.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btbPremium.ForeColor = Color.Transparent;
-            btbPremium.Location = new Point(173, 389);
+            btbPremium.Location = new Point(75, 393);
             btbPremium.Margin = new Padding(3, 4, 3, 4);
             btbPremium.Name = "btbPremium";
             btbPremium.Size = new Size(235, 77);
@@ -157,11 +158,26 @@
             btbPremium.UseVisualStyleBackColor = false;
             btbPremium.Click += btbPremium_Click;
             // 
+            // btnStergereCont
+            // 
+            btnStergereCont.BackColor = Color.Navy;
+            btnStergereCont.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnStergereCont.ForeColor = Color.Transparent;
+            btnStergereCont.Location = new Point(596, 393);
+            btnStergereCont.Margin = new Padding(3, 4, 3, 4);
+            btnStergereCont.Name = "btnStergereCont";
+            btnStergereCont.Size = new Size(235, 77);
+            btnStergereCont.TabIndex = 10;
+            btnStergereCont.Text = "Sterge Contul";
+            btnStergereCont.UseVisualStyleBackColor = false;
+            btnStergereCont.Click += btnStergereCont_Click;
+            // 
             // DetaliiCont
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(btnStergereCont);
             Controls.Add(btbPremium);
             Controls.Add(btnStandard);
             Controls.Add(button2);
@@ -192,5 +208,6 @@
         private Button button2;
         private Button btnStandard;
         private Button btbPremium;
+        private Button btnStergereCont;
     }
 }
