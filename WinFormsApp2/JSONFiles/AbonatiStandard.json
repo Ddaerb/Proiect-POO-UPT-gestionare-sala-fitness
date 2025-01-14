@@ -141,5 +141,15 @@
     "TipAbonament": "standard",
     "TaxaDepasireDurataProgramari": 5,
     "IstoricProgramari": []
+  },
+  {
+    "NumeComplet": "gogg",
+    "CNP": "1234567890123",
+    "Username": "gogg.g",
+    "Password": "123",
+    "PretAbonament": 100,
+    "TipAbonament": "standard",
+    "TaxaDepasireDurataProgramari": 5,
+    "IstoricProgramari": []
   }
 ]

@@ -30,14 +30,14 @@ namespace WinFormsApp2
         {
             this.Hide();
             var login = _serviceProvider.GetRequiredService<Form1>();
-            login.ShowDialog();
+            login.Show();
         }
 
         private void ToRegisterButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             var registerForm = _serviceProvider.GetRequiredService<RegisterForm>();
-            registerForm.ShowDialog();
+            registerForm.Show();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -47,7 +47,8 @@ namespace WinFormsApp2
 
         private void PaginaPrincipala_Load(object sender, EventArgs e)
         {
-
+            var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
+            contAbonat.FormClosed += (s, args) => this.Show();
         }
     }
 }

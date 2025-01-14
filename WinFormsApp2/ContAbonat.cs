@@ -37,10 +37,11 @@ namespace WinFormsApp2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
+            this.Close();
 
             var paginaPrincipala = _serviceProvider.GetRequiredService<PaginaPrincipala>();
-            paginaPrincipala.ShowDialog();
+            paginaPrincipala.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace WinFormsApp2
 
             var detaliiCont = _serviceProvider.GetRequiredService<DetaliiCont>();
             detaliiCont.InitializeUser(_abonat);
-            detaliiCont.ShowDialog();
+            detaliiCont.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace WinFormsApp2
             var detaliiProgramari = _serviceProvider.GetRequiredService<DetaliiProgramari>();
             detaliiProgramari.InitializeUser(_abonat);
             detaliiProgramari.InitializeIstoricList();
-            detaliiProgramari.ShowDialog();
+            detaliiProgramari.Show();
         }
 
         private void ContAbonat_Load(object sender, EventArgs e)

@@ -87,8 +87,8 @@ namespace WinFormsApp2
                     services.AddSingleton<PaginaPrincipala>();
                     services.AddTransient<Form1>();
                     services.AddTransient<RegisterForm>();
-                    services.AddSingleton<ContAbonat>();         
-                    services.AddSingleton<DetaliiCont>();      
+                    services.AddTransient<ContAbonat>();         
+                    services.AddTransient<DetaliiCont>();      
                     services.AddSingleton<DetaliiProgramari>();
                     services.AddSingleton<AdaugaProgramare>();
                     services.AddSingleton<ModificareProgramare>();

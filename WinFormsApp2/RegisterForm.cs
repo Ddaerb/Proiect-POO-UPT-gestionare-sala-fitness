@@ -113,7 +113,7 @@ namespace WinFormsApp2
             MessageBox.Show("Utilizatorul a fost adaugat cu succes");
             this.Hide();
 
-            contAbonat.ShowDialog();
+            contAbonat.Show();
         }
 
         private void RegisterForm_Load(object sender, EventArgs e)

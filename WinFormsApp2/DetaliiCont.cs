@@ -54,6 +54,7 @@ namespace WinFormsApp2
             this.Hide();
 
             var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
+            contAbonat.InitializeUser(_abonat);
             contAbonat.Show();
         }
 

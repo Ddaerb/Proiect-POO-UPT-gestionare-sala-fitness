@@ -56,6 +56,7 @@ namespace WinFormsApp2
             this.Hide();
 
             var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
+            contAbonat.InitializeUser(_abonat);
             contAbonat.Show();
         }
 
@@ -65,7 +66,7 @@ namespace WinFormsApp2
 
             var adaugaProgramare = _serviceProvider.GetRequiredService<AdaugaProgramare>();
             adaugaProgramare.InitializeUser(_abonat);
-            adaugaProgramare.ShowDialog();
+            adaugaProgramare.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -91,7 +92,7 @@ namespace WinFormsApp2
 
             var modificareProgramare = _serviceProvider.GetRequiredService<ModificareProgramare>();
             modificareProgramare.InitializeUser(_abonat);
-            modificareProgramare.ShowDialog();
+            modificareProgramare.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
