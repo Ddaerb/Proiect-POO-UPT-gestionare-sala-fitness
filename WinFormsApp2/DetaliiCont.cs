@@ -62,5 +62,33 @@ namespace WinFormsApp2
         {
 
         }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string parolaNoua = PromptForInput("Introduceti parola noua:");
+            _abonatManager.SchimbareParola(_abonat.Username,_abonat.Password, parolaNoua);
+        }
+
+        private string PromptForInput(string message)
+        {
+            using (var prompt = new Form())
+            {
+                prompt.Width = 400;
+                prompt.Height = 150;
+                prompt.Text = "Input";
+
+                Label textLabel = new Label() { Left = 10, Top = 20, Text = message, Width = 360 };
+                TextBox inputBox = new TextBox() { Left = 10, Top = 50, Width = 360 };
+                Button confirmation = new Button() { Text = "OK", Left = 150, Width = 100, Top = 80, DialogResult = DialogResult.OK };
+
+                prompt.Controls.Add(textLabel);
+                prompt.Controls.Add(inputBox);
+                prompt.Controls.Add(confirmation);
+                prompt.AcceptButton = confirmation;
+
+                return prompt.ShowDialog() == DialogResult.OK ? inputBox.Text : string.Empty;
+            }
+        }
     }
 }
