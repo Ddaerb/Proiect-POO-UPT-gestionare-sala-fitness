@@ -25,5 +25,14 @@
       "OraInceput": "10:00:00",
       "OraSfarsit": "18:00:00"
     }
+  },
+  {
+    "NumeComplet": "Flo Glo",
+    "Specializare": "Inot",
+    "NumarMaximClienti": 4,
+    "OrarPrestabilit": {
+      "OraInceput": "16:15:12",
+      "OraSfarsit": "20:15:12"
+    }
   }
 ]

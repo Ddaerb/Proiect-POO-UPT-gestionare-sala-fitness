@@ -120,5 +120,13 @@ namespace WinFormsApp2
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            var paginaPrincipala = _serviceProvider.GetRequiredService<PaginaPrincipala>();
+            paginaPrincipala.Show();
+        }
     }
 }

@@ -46,9 +46,9 @@
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { NumeComplet, Specializare, NrMaxClienti, OrarPrestabilit });
             listView1.FullRowSelect = true;
-            listView1.Location = new Point(252, 21);
+            listView1.Location = new Point(199, 21);
             listView1.Name = "listView1";
-            listView1.Size = new Size(510, 402);
+            listView1.Size = new Size(589, 402);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -71,14 +71,14 @@
             // OrarPrestabilit
             // 
             OrarPrestabilit.Text = "Orar";
-            OrarPrestabilit.Width = 100;
+            OrarPrestabilit.Width = 130;
             // 
             // button1
             // 
             button1.BackColor = Color.Indigo;
             button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(40, 21);
+            button1.Location = new Point(12, 21);
             button1.Name = "button1";
             button1.Size = new Size(181, 41);
             button1.TabIndex = 1;
@@ -91,7 +91,7 @@
             button2.BackColor = Color.MediumVioletRed;
             button2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(40, 68);
+            button2.Location = new Point(12, 68);
             button2.Name = "button2";
             button2.Size = new Size(181, 41);
             button2.TabIndex = 2;
@@ -104,7 +104,7 @@
             button3.BackColor = Color.Navy;
             button3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Location = new Point(40, 359);
+            button3.Location = new Point(12, 377);
             button3.Name = "button3";
             button3.Size = new Size(105, 46);
             button3.TabIndex = 3;
@@ -117,7 +117,7 @@
             button4.BackColor = Color.Indigo;
             button4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Location = new Point(40, 115);
+            button4.Location = new Point(12, 115);
             button4.Name = "button4";
             button4.Size = new Size(181, 41);
             button4.TabIndex = 4;

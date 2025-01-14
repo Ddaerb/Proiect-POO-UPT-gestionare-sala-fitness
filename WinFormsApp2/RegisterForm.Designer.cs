@@ -41,6 +41,7 @@
             textBox1 = new TextBox();
             txtConfirmPassword = new Label();
             RegisterButton = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // name
@@ -166,11 +167,25 @@
             RegisterButton.UseVisualStyleBackColor = false;
             RegisterButton.Click += RegisterButton_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.Navy;
+            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(24, 529);
+            button1.Name = "button1";
+            button1.Size = new Size(99, 40);
+            button1.TabIndex = 13;
+            button1.Text = "Inapoi";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // RegisterForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 593);
+            Controls.Add(button1);
             Controls.Add(RegisterButton);
             Controls.Add(textBox1);
             Controls.Add(txtConfirmPassword);
@@ -206,5 +221,6 @@
         private TextBox textBox1;
         private Label txtConfirmPassword;
         private Button RegisterButton;
+        private Button button1;
     }
 }

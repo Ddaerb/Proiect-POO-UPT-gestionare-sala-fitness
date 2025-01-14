@@ -36,7 +36,7 @@ namespace WinFormsApp2
                     antrenor.NumeComplet.ToString(),
                     antrenor.Specializare.ToString(),
                     antrenor.NumarMaximClienti.ToString(),
-                    antrenor.OrarPrestabilit.ToString()
+                    "["+antrenor.OrarPrestabilit.OraInceput.ToString()+"-"+antrenor.OrarPrestabilit.OraSfarsit.ToString()+"]"
 
                 });
                 listView1.Items.Add(item);

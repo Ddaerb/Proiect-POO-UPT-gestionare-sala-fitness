@@ -61,8 +61,8 @@ namespace WinFormsApp2
                 textBox1.Text = numeComplet;
                 string specializare = validare.ValideazaSpecializare(textBox2.Text);
                 textBox2.Text = specializare;
-                TimeSpan oraInceput = dateTimePicker1.Value.TimeOfDay;
-                TimeSpan oraSfarsit = dateTimePicker2.Value.TimeOfDay;
+                TimeSpan oraInceput = new TimeSpan(dateTimePicker1.Value.Hour, dateTimePicker1.Value.Minute, dateTimePicker1.Value.Second);
+                TimeSpan oraSfarsit = new TimeSpan(dateTimePicker2.Value.Hour, dateTimePicker2.Value.Minute, dateTimePicker2.Value.Second);
 
                 if (oraInceput > oraSfarsit)
                 {
