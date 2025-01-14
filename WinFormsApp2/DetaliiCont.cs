@@ -1,13 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Serilog;
 
 namespace WinFormsApp2
 {
@@ -71,7 +68,7 @@ namespace WinFormsApp2
 
         private void DetaliiCont_Load(object sender, EventArgs e)
         {
-
+            Log.Information("DetaliiCont incarcata cu succes.");
         }
 
 
@@ -81,9 +78,11 @@ namespace WinFormsApp2
             while (_abonat.Password == parolaNoua)
             {
                 MessageBox.Show("Noua parola nu poate fi la fel cu cea veche!");
+                Log.Error("Noua parola este la fel cu cea veche.");
                 parolaNoua = PromptForInput("Introduceti parola noua:");
             }
             _abonatManager.SchimbareParola(_abonat.Username, _abonat.Password, parolaNoua);
+            Log.Information("Parola schimbata cu succes.");
         }
 
         private string PromptForInput(string message)
@@ -113,6 +112,7 @@ namespace WinFormsApp2
             _abonat = _abonatManager.GasesteAbonatDupaUsername(_abonat.Username);
             InitializeUser(_abonat);
             MessageBox.Show("Abonament promovat cu succes!");
+            Log.Information("Abonament promovat cu succes.");
         }
 
         private void btbPremium_Click(object sender, EventArgs e)
@@ -121,6 +121,7 @@ namespace WinFormsApp2
             _abonat = _abonatManager.GasesteAbonatDupaUsername(_abonat.Username);
             InitializeUser(_abonat);
             MessageBox.Show("Abonament retogradat cu succes!");
+            Log.Information("Abonament retrogradat cu succes.");
         }
 
         private void btnStergereCont_Click(object sender, EventArgs e)
@@ -130,6 +131,7 @@ namespace WinFormsApp2
                 _abonatManager.AbonatiStandard.Remove(_abonat);
                 JSONHelper.SaveToFile(_abonatManager.standardFilePath, _abonatManager.AbonatiStandard);
                 MessageBox.Show("Contul a fost sters cu succes!");
+                Log.Information("Contul a fost sters cu succes.");
 
             }
             if (_abonat.TipAbonament == "premium")
@@ -140,6 +142,7 @@ namespace WinFormsApp2
                     _abonatManager.AbonatiPremium.Remove(abonatPremium);
                     JSONHelper.SaveToFile(_abonatManager.premiumFilePath, _abonatManager.AbonatiPremium);
                     MessageBox.Show("Contul a fost sters cu succes!");
+                    Log.Information("Contul a fost sters cu succes.");
                 }
 
             }

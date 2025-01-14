@@ -1,14 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Serilog;
 
 namespace WinFormsApp2
 {
@@ -57,6 +53,8 @@ namespace WinFormsApp2
 
         private void ModificareProgramare_Load(object sender, EventArgs e)
         {
+            Log.Information("ModificareProgramare incarcata cu succes.");
+
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
             dateTimePicker1.MinDate = DateTime.Now;
@@ -76,6 +74,7 @@ namespace WinFormsApp2
             if (comboBox3.SelectedIndex == -1)
             {
                 MessageBox.Show("Selectati un antrenor.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Nu a fost selectat un antrenor.");
                 return;
             }
 
@@ -86,12 +85,14 @@ namespace WinFormsApp2
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
                 MessageBox.Show("Introduceți durata programării.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Nu a fost introdusa durata programarii.");
                 return;
             }
 
             if (!int.TryParse(textBox1.Text, out int durata))
             {
-                MessageBox.Show("Durata trebuie să fie un număr întreg.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Durata trebuie sa fie un numar intreg.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Durata trebuie sa fie un numar intreg.");
                 return;
             }
 
@@ -101,6 +102,7 @@ namespace WinFormsApp2
             {
                 MessageBox.Show("Selectati un antrenor.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+                Log.Error("Nu a fost selectat un antrenor.");
             }
 
 
@@ -108,11 +110,13 @@ namespace WinFormsApp2
             {
                 MessageBox.Show("Selectati o data.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+                Log.Error("Nu a fost selectata o data.");
             }
 
             if (durata == null)
             {
                 MessageBox.Show("Introduceti durata programarii.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Nu a fost introdusa durata programarii.");
                 return;
             }
 
@@ -122,6 +126,7 @@ namespace WinFormsApp2
             Programare programare = new Programare(_abonat.Username, antrenor, data, durataNoua);
             _programareManager.ModificaProgramare(_abonat.Username, comboBox3.SelectedIndex, programare);
             MessageBox.Show("Programarea a fost modificata cu succes.");
+            Log.Information("Programarea a fost modificata cu succes.");
 
 
             this.Hide();

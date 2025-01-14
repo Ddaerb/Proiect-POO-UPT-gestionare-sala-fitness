@@ -1,15 +1,10 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Extensions.DependencyInjection;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Serilog;
 
 namespace WinFormsApp2
 {
@@ -55,6 +50,7 @@ namespace WinFormsApp2
             if (listView1.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Te rog selecteaza o programare pentru a o anula.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Nu a fost selectata nicio programare pentru anulare.");
                 return;
             }
 
@@ -81,15 +77,16 @@ namespace WinFormsApp2
                             break;
                         }
                     }
-                    MessageBox.Show($"Indexul programarii: {index}", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     if (index != -1)
                     {
                         _programareManager.AnuleazaProgramare(username, index);
                         listView1.Items.Remove(selectedItem);
+                        Log.Information("Programare anulata cu succes.");
                     }
                     else
                     {
                         MessageBox.Show("Indexul programării selectate nu a fost găsit în istoricul abonatului.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Log.Error("Indexul programarii selectate nu a fost gasit in istoricul abonatului.");
                     }
                     return;
                 }
@@ -114,22 +111,25 @@ namespace WinFormsApp2
                     {
                         _programareManager.AnuleazaProgramare(username, index);
                         listView1.Items.Remove(selectedItem);
+                        Log.Information("Programare anulata cu succes.");
                     }
                     else
                     {
                         MessageBox.Show("Indexul programării selectate nu a fost găsit în istoricul abonatului.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Log.Error("Indexul programarii selectate nu a fost gasit in istoricul abonatului.");
                     }
                     return;
                 }
             }
 
             MessageBox.Show("Abonatul sau programarea selectată nu au fost găsite.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Log.Error("Abonatul sau programarea selectata nu au fost gasite.");
 
         }
 
         private void DetaliiProgramariAdmin_Load(object sender, EventArgs e)
         {
-
+            Log.Information("DetaliiProgramariAdmin incarcata cu succes.");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -158,6 +158,7 @@ namespace WinFormsApp2
                 });
                 listView1.Items.Add(item);
             }
+            Log.Information("Programarile au fost sortate dupa numele antrenorului.");
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -178,6 +179,7 @@ namespace WinFormsApp2
                 });
                 listView1.Items.Add(item);
             }
+            Log.Information("Programarile au fost sortate dupa durata programarii.");
         }
     }
 }

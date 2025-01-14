@@ -1,13 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Serilog;
 
 namespace WinFormsApp2
 {
@@ -43,6 +39,7 @@ namespace WinFormsApp2
             if (name == null || name == "")
             {
                 MessageBox.Show("Campul pentru nume trebuie completat");
+                Log.Error("Campul pentru nume trebuie completat.");
                 return;
             }
 
@@ -51,7 +48,8 @@ namespace WinFormsApp2
 
             if (cnp == null || cnp == "")
             {
-                MessageBox.Show("Campul pentru CNP treuie completat");
+                MessageBox.Show("Campul pentru CNP trebuie completat");
+                Log.Error("Campul pentru CNP trebuie completat.");
                 return;
             }
 
@@ -60,31 +58,36 @@ namespace WinFormsApp2
 
             if (username == null || username == "")
             {
-                MessageBox.Show("Campul pentru numele de utilizator treuie completat");
+                MessageBox.Show("Campul pentru numele de utilizator trebuie completat");
+                Log.Error("Campul pentru numele de utilizator trebuie completat.");
                 return;
             }
 
             if (password == null || password == "")
             {
-                MessageBox.Show("Campul pentru parola treuie completat");
+                MessageBox.Show("Campul pentru parola trebuie completat");
+                Log.Error("Campul pentru parola trebuie completat.");
                 return;
             }
 
             if (confirmPassword == null || confirmPassword == "")
             {
-                MessageBox.Show("Campul pentru confirmarea parolei treuie completat");
+                MessageBox.Show("Campul pentru confirmarea parolei trebuie completat");
+                Log.Error("Campul pentru confirmarea parolei trebuie completat.");
                 return;
             }
 
             if (password != confirmPassword)
             {
                 MessageBox.Show("Parolele nu se potrivesc");
+                Log.Error("Parolele nu se potrivesc.");
                 return;
             }
 
             if (subscriptionType == null || subscriptionType == "")
             {
-                MessageBox.Show("Campul pentru tipul abonamentului treuie completat");
+                MessageBox.Show("Campul pentru tipul abonamentului trebuie completat");
+                Log.Error("Campul pentru tipul abonamentului trebuie completat.");
                 return;
             }
 
@@ -111,6 +114,7 @@ namespace WinFormsApp2
             cmbSub.SelectedIndex = -1;
 
             MessageBox.Show("Utilizatorul a fost adaugat cu succes");
+            Log.Information("Utilizator adaugat cu succes.");
             this.Hide();
 
             contAbonat.Show();
@@ -118,7 +122,7 @@ namespace WinFormsApp2
 
         private void RegisterForm_Load(object sender, EventArgs e)
         {
-
+            Log.Information("RegisterForm incarcata cu succes.");
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace WinFormsApp2
 {
@@ -25,18 +26,21 @@ namespace WinFormsApp2
             if (username == null || username == "")
             {
                 MessageBox.Show("Campul pentru numele de utilizator trebuie completat");
+                Log.Error("Campul pentru numele de utilizator trebuie completat."); 
                 return;
             }
 
             if (password == null || password == "")
             {
                 MessageBox.Show("Campul pentru parola trebuie completat");
+                Log.Error("Campul pentru parola trebuie completat.");
                 return;
             }
 
             if (username == "admin" && password == "admin")
             {
                 MessageBox.Show("Buna ziua, admin");
+                Log.Information("Autentificare cu succes pentru admin.");
                 this.Hide();
                 var adminForm = _serviceProvider.GetRequiredService<ContAdmin>();
                 adminForm.Show();
@@ -48,10 +52,12 @@ namespace WinFormsApp2
             if (abonat == null || abonat.Password != password)
             {
                 MessageBox.Show("Nume de utilizator sau parola incorecte, incercati din nou");
+                Log.Error("Nume de utilizator sau parola incorecte.");
                 return;
             }
 
             MessageBox.Show($"Buna ziua, {abonat.NumeComplet}");
+            Log.Information("Autentificare cu succes pentru abonat.");
             this.Hide();
 
             var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
@@ -73,7 +79,7 @@ namespace WinFormsApp2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Log.Information("Form1 (Login) incarcata cu succes.");
         }
 
         private void button1_Click(object sender, EventArgs e)

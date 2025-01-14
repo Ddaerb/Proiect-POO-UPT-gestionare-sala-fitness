@@ -1,13 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Serilog;
 
 namespace WinFormsApp2
 {
@@ -70,7 +67,7 @@ namespace WinFormsApp2
 
         private void ContAbonat_Load(object sender, EventArgs e)
         {
-
+            Log.Information("ContAbonat incarcata cu succes.");
         }
     }
 }

@@ -1,13 +1,10 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace WinFormsApp2
 {
@@ -30,7 +27,7 @@ namespace WinFormsApp2
 
         private void AdaugaAntrenorAdmin_Load(object sender, EventArgs e)
         {
-
+            Log.Information("AdaugaAntrenorAdmin incarcata cu succes.");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,12 +45,14 @@ namespace WinFormsApp2
                 if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
                 {
                     MessageBox.Show("Toate campurile trebuie completate.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Log.Error("Unul sau mai multe campuri nu au fost completate.");
                     return;
                 }
 
                 if (!int.TryParse(textBox3.Text, out int nrMaximClienti) || nrMaximClienti <= 0)
                 {
                     MessageBox.Show("Numarul maxim de clienti trebuie sa fie un numar pozitiv.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Log.Error("Numarul maxim de clienti trebuie sa fie un numar pozitiv.");
                     return;
                 }
 
@@ -67,6 +66,7 @@ namespace WinFormsApp2
                 if (oraInceput > oraSfarsit)
                 {
                     MessageBox.Show("Ora de inceput nu poate fi mai mare decat ora de sfarsit.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Log.Error("Ora de inceput nu poate fi mai mare decat ora de sfarsit.");
                     return;
                 }
 
@@ -85,6 +85,7 @@ namespace WinFormsApp2
                 _antrenorManager.AdaugaAntrenor(antrenor);
 
                 MessageBox.Show($"Antrenorul '{numeComplet}' a fost adaugat cu succes.", "Informatie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Log.Information($"Antrenorul '{numeComplet}' a fost adaugat cu succes.");
 
                 this.Hide();
                 var detaliiAntrenoriAdmin = _serviceProvider.GetRequiredService<DetaliiAntrenoriAdmin>();
@@ -94,6 +95,7 @@ namespace WinFormsApp2
             catch (Exception ex)
             {
                 MessageBox.Show($"A aparut o eroare: {ex.Message}", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error(ex, "A aparut o eroare.");
             }
         }
     }

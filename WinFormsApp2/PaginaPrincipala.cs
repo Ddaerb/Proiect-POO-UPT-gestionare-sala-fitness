@@ -1,13 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Serilog;
 
 namespace WinFormsApp2
 {
@@ -42,11 +38,14 @@ namespace WinFormsApp2
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
+            Log.Information("Aplicatia a fost inchisa.");
             this.Close();
         }
 
         private void PaginaPrincipala_Load(object sender, EventArgs e)
         {
+            Log.Information("PaginaPrincipala incarcata cu succes.");
+
             var contAbonat = _serviceProvider.GetRequiredService<ContAbonat>();
             contAbonat.FormClosed += (s, args) => this.Show();
         }

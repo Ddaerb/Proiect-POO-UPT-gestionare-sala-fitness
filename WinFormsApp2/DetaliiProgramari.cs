@@ -1,13 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Serilog;
 
 namespace WinFormsApp2
 {
@@ -45,6 +42,7 @@ namespace WinFormsApp2
                 });
                 listView1.Items.Add(item);
             }
+            Log.Information("Istoricul programarilor a fost incarcat cu succes.");
         }
         public void InitializeUser(AbonatStandard abonat)
         {
@@ -74,6 +72,7 @@ namespace WinFormsApp2
             if (listView1.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Te rog selecteaza o programare pentru a o modifica.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Nu a fost selectata nicio programare pentru modificare.");
                 return;
             }
 
@@ -84,6 +83,7 @@ namespace WinFormsApp2
             if (programareSelectata.StatusProgramare == "anulata.")
             {
                 MessageBox.Show("Nu poti modifica o programare anulata.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Nu poti modifica o programare anulata.");
                 return;
             }
 
@@ -104,15 +104,19 @@ namespace WinFormsApp2
                 listView1.SelectedItems[0].SubItems[4].Text = "anulata.";
 
                 _programareManager.AnuleazaProgramare(_abonat.Username, index);
+                Log.Information("Programare anulata cu succes.");
             }
             else
             {
                 MessageBox.Show("Te rog selecteaza o programare pentru a o anula.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Nu a fost selectata nicio programare pentru anulare.");
             }
         }
 
         private void DetaliiProgramari_Load(object sender, EventArgs e)
         {
+            Log.Information("DetaliiProgramari incarcata cu succes.");
+
             label1.Text = $"Daca depasiti orele [{_salaFitness.OraInceput:hh\\:mm},{_salaFitness.OraSfarsit:hh\\:mm}], se adauga o \r\n                              taxa de penalizare de {_abonat.TaxaDepasireDurataProgramari} RON/ora!!!";
         }
 

@@ -1,13 +1,10 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace WinFormsApp2
 {
@@ -61,7 +58,7 @@ namespace WinFormsApp2
 
         private void DetaliiAbonatiAdmin_Load(object sender, EventArgs e)
         {
-
+            Log.Information("DetaliiAbonatiAdmin incarcata cu succes.");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -79,6 +76,7 @@ namespace WinFormsApp2
                 var index = listView1.SelectedIndices[0]; 
                 _abonatManager.StergeAbonatStandard(index); 
                 InitializeProgramariList(); 
+                Log.Information("Abonatul a fost sters cu succes.");
                 return;
             }
 
@@ -87,10 +85,12 @@ namespace WinFormsApp2
                 var index = listView2.SelectedIndices[0]; 
                 _abonatManager.StergeAbonatPremium(index); 
                 InitializeProgramariList(); 
+                Log.Information("Abonatul a fost sters cu succes.");
                 return;
             }
 
             MessageBox.Show("Va rugam sa selectati un abonat pentru a-l sterge.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Log.Error("Nu a fost selectat niciun abonat pentru stergere.");
         }
         
 

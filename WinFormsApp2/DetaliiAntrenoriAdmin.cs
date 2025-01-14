@@ -1,14 +1,10 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Extensions.DependencyInjection;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
+using Serilog;
 
 namespace WinFormsApp2
 {
@@ -45,7 +41,7 @@ namespace WinFormsApp2
 
         private void DetaliiAntrenoriAdmin_Load(object sender, EventArgs e)
         {
-
+            Log.Information("DetaliiAntrenoriAdmin incarcata cu succes.");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -78,15 +74,18 @@ namespace WinFormsApp2
                 {
                     _antrenorManager.StergeAntrenor(antrenor);
                     listView1.Items.Remove(selectedItem);
+                    Log.Information("Antrenorul a fost sters cu succes.");
                 }
                 else
                 {
                     MessageBox.Show("Antrenorul selectat nu mai exista.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Log.Error("Antrenorul selectat nu mai exista.");
                 }
             }
             else
             {
                 MessageBox.Show("Te rog selecteaza un antrenor pentru a-l sterge.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Nu a fost selectat niciun antrenor pentru stergere.");
             }
         }
 
@@ -98,6 +97,7 @@ namespace WinFormsApp2
             if (string.IsNullOrWhiteSpace(numeComplet) || string.IsNullOrWhiteSpace(specializare))
             {
                 MessageBox.Show("Ambele campuri trebuie completate pentru a cauta un antrenor.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Log.Error("Ambele campuri trebuie completate pentru a cauta un antrenor.");
                 return;
             }
             foreach (ListViewItem item in listView1.Items)
@@ -112,10 +112,12 @@ namespace WinFormsApp2
                     item.Selected = true;
                     item.EnsureVisible();
                     MessageBox.Show($"Antrenorul '{numeComplet}' cu specializarea '{specializare}' a fost gasit si selectat.", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Log.Information($"Antrenorul '{numeComplet}' cu specializarea '{specializare}' a fost gasit si selectat.");
                     return;
                 }
             }
             MessageBox.Show($"Antrenorul '{numeComplet}' cu specializarea '{specializare}' nu a fost gasit.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Log.Error($"Antrenorul '{numeComplet}' cu specializarea '{specializare}' nu a fost gasit.");
             return;
         }
     }
