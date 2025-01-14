@@ -19,6 +19,8 @@ namespace WinFormsApp2
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
+            string usernameAdmin = "admin";
+            string passwordAdmin = "admin";
 
             if (username == null || username == "")
             {
@@ -32,6 +34,15 @@ namespace WinFormsApp2
                 return;
             }
 
+            if (username == "admin" && password == "admin")
+            {
+                MessageBox.Show("Buna ziua, admin");
+                this.Hide();
+                var adminForm = _serviceProvider.GetRequiredService<ContAdmin>();
+                adminForm.Show();
+                return;
+            }
+
 
             AbonatStandard abonat = _abonatManager.GasesteAbonatDupaUsername(username);
             if (abonat == null || abonat.Password != password)
@@ -39,6 +50,7 @@ namespace WinFormsApp2
                 MessageBox.Show("Nume de utilizator sau parola incorecte, incercati din nou");
                 return;
             }
+
             MessageBox.Show($"Buna ziua, {abonat.NumeComplet}");
             this.Hide();
 
