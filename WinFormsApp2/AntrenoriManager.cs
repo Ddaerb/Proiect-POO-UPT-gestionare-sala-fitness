@@ -105,5 +105,48 @@ namespace WinFormsApp2
             );
             return null;
         }
+
+        public void StergeAntrenor(Antrenor antrenor)
+        {
+            if (antrenor == null)
+            {
+                MessageBox.Show
+                (
+                "Antrenorul nu poate fi null.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
+                return;
+            }
+
+            var antrenorDeSters = ListaAntrenori.FirstOrDefault(a =>
+                a.NumeComplet == antrenor.NumeComplet &&
+                a.Specializare == antrenor.Specializare);
+
+            if (antrenorDeSters == null)
+            {
+                MessageBox.Show
+                (
+                $"Antrenorul cu numele '{antrenor.NumeComplet}' si specializarea '{antrenor.Specializare}' nu exista in lista.",
+                "Eroare",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+                );
+                return;
+            }
+
+            ListaAntrenori.Remove(antrenorDeSters);
+            ActualizeazaFisierJSON();
+
+            MessageBox.Show
+            (
+            $"Antrenorul cu numele '{antrenor.NumeComplet}' si specializarea '{antrenor.Specializare}' a fost sters din lista.",
+            "Informatie",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information
+            );
+        }
+
     }
 }

@@ -62,5 +62,31 @@ namespace WinFormsApp2
             var adaugaAntrenorAdmin = _serviceProvider.GetRequiredService<AdaugaAntrenorAdmin>();
             adaugaAntrenorAdmin.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                var selectedItem = listView1.SelectedItems[0];
+                string numeComplet = selectedItem.SubItems[0].Text;
+                string specializare = selectedItem.SubItems[1].Text;
+
+                var antrenor = _antrenorManager.ListaAntrenori.FirstOrDefault(a => a.NumeComplet == numeComplet && a.Specializare == specializare);
+
+                if (antrenor != null)
+                {
+                    _antrenorManager.StergeAntrenor(antrenor);
+                    listView1.Items.Remove(selectedItem);
+                }
+                else
+                {
+                    MessageBox.Show("Antrenorul selectat nu mai exista.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Te rog selecteaza un antrenor pentru a-l sterge.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

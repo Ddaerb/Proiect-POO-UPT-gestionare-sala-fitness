@@ -128,5 +128,15 @@ namespace WinFormsApp2
             }
             return oreProgramare;
         }
+
+        public string ValideazaSpecializare(string input)
+        {
+            while (string.IsNullOrWhiteSpace(input) || !IsAlphabetic(input))
+            {
+                MessageBox.Show("Specializarea trebuie sa contina doar caractere alfabetice.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                input = PromptForInput("Introduceți o specializare:");
+            }
+            return input;
+        }
     }
 }
