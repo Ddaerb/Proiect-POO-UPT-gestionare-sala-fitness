@@ -16,8 +16,39 @@
     "CNP": "3234127890123",
     "Username": "ana.popescu",
     "Password": "parola2349",
-    "PretAbonament": 150,
-    "IstoricProgramari": []
+    "PretAbonament": 158,
+    "IstoricProgramari": [
+      {
+        "AbonatUsername": "ana.popescu",
+        "Antrenor": {
+          "NumeComplet": "Diana Pop",
+          "Specializare": "Yoga",
+          "NumarMaximClienti": 8,
+          "OrarPrestabilit": {
+            "OraInceput": "08:00:00",
+            "OraSfarsit": "16:00:00"
+          }
+        },
+        "Data": "2025-01-15T14:00:57.418",
+        "DurataProgramataOre": 6,
+        "StatusProgramare": "Valida."
+      },
+      {
+        "AbonatUsername": "ana.popescu",
+        "Antrenor": {
+          "NumeComplet": "Alex Stan",
+          "Specializare": "Fitness",
+          "NumarMaximClienti": 9,
+          "OrarPrestabilit": {
+            "OraInceput": "09:00:00",
+            "OraSfarsit": "17:00:00"
+          }
+        },
+        "Data": "2025-01-16T22:34:04.721",
+        "DurataProgramataOre": 4,
+        "StatusProgramare": "Valida."
+      }
+    ]
   },
   {
     "TipAbonament": "premium",

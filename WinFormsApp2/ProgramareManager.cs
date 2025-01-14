@@ -44,9 +44,14 @@ namespace WinFormsApp2
 
             double oreDepasite = CalculareOreDepasite(programare, salaFitness);
 
-            if (oreDepasite > 0)
+            if (abonat.TipAbonament == "standard" && oreDepasite > 0)
             {
-                int costOra = abonat.TipAbonament == "standard" ? 5 : 2;
+                int costOra = 5;
+                abonat.PretAbonament += (int)Math.Ceiling(oreDepasite) * costOra;
+            }
+            else if (abonat.TipAbonament == "premium" && oreDepasite > 2) 
+            {
+                int costOra = 2;
                 abonat.PretAbonament += (int)Math.Ceiling(oreDepasite) * costOra;
             }
 
